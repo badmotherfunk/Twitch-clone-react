@@ -1,0 +1,17 @@
+.sidebar {
+    position: fixed;
+    top: 50px;
+    width: 239px;
+    background: #eeeeee;
+    height: 100vh;
+  }
+  .titreSidebar {
+    padding: 15px 0 20px 0;
+    color: #000;
+    font-size: 13.5px;
+    font-weight: 600;
+  }
+  .listeStream {
+    padding: 0 0 0 10px;
+    color: #000;
+  }
