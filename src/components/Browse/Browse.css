@@ -1,0 +1,124 @@
+.categoryGlobal {
+    margin-left: 240px;
+    display: flex;
+    justify-content: center;
+}
+
+
+.categoryContainer {
+    position: relative;
+    top: 55px;
+    padding: 20px 40px;
+}
+
+.sectionTitle {
+    display: flex;
+    font-size: 50px;
+}
+
+.categoryTagsContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 0 85px;
+}
+
+.tagsContainerCategory {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding: 30px 0 40px 0;
+}
+
+.gamesTags,
+.IrlTags,
+.musicTags,
+.esportsTags,
+.creatifTags  {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 15px;
+    justify-content: space-between;
+    width: 330px;
+    height: 15px;
+    background-color: #7b31eb;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.gamesTags:hover,
+.IrlTags:hover,
+.musicTags:hover,
+.esportsTags:hover,
+.creatifTags:hover  {
+    background-color: #9146FF;
+}
+
+.filterSection {
+    display: flex;
+    padding: 0 0 20px 0;
+}
+.filterSection h3 {
+    font-size: 20px;
+    color: #7b31eb;
+    border-bottom: 2px solid #7b31eb;
+    padding-bottom: 5px;
+    font-weight: 500;
+}
+
+
+.flexCategory {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.carteCategory {
+    display: flex;
+    flex-direction: row;
+    width: 350px;
+}
+
+.imgCategory {
+    position: relative;
+    cursor: pointer;
+}
+.imgCategory:hover {
+    position: relative;
+}
+.categoryBackground {
+    height: 350px;
+    background-color: #9146FF;
+}
+
+.carteCategoryContainer {
+    position: relative;
+}
+
+.carteCategoryContainer:hover {
+    animation: slide 0.1s ease-in forwards;
+}
+@keyframes slide {
+    from {
+        bottom: 0;
+        left: 0;
+    }
+    to {
+        bottom: 5px;
+        left: 5px;
+    }
+}
+
+.carteBodyCategory {
+    text-align: left;
+}
+
+.categoryTitle {
+    font-size: 15px;
+    padding: 8px 0;
+}

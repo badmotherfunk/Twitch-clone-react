@@ -5,7 +5,7 @@
 
 body {
   background: #fafafa;
-  font-family: sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .App {
@@ -22,6 +22,10 @@ body {
 *::-webkit-scrollbar-thumb {
   background: rgb(177, 177, 177);
   border-radius: 20px;
+}
+
+a {
+  text-decoration: none;
 }
 
 

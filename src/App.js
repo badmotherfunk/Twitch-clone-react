@@ -1,16 +1,22 @@
+import {Routes, Route} from "react-router-dom"
 import './App.css';
 import Header from './components/Header/Header';
 import Sidebar from './components/Sidebar/Sidebar';
-import Games from './components/Games/Games';
+import Landing from './pages/Landing';
+import Directory from "./pages/Directory";
 import Banner from './components/Banner/Banner';
+
 
 function App() {
   return (
     <div className="App">
       <Header />
       <Sidebar />
-      <Games />
-      <Banner />
+      <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route path="/directory" element={<Directory />} />
+      </Routes>
+      <Banner />  
     </div>
   );
 }

@@ -35,13 +35,32 @@
   .liensNav:nth-child(7) {
     padding: 0 10px 0 5px
   }
-  /* .lien {
-  
-  } */
+
+  .directoryButton {
+    font-size: 18px;
+    color: #000;
+    margin-left: 10px;
+    background: none;
+  }
+  .directoryButton:hover {
+    color: #7b31eb;
+  }
+
+  .directoryButton.active {
+    position: fixed;
+    top: 15px;
+    padding-bottom: 12px;
+    color: #7b31eb;
+    border-bottom: 2px solid #7b31eb;   
+  }
+
   .logo {
     margin-top: 10px;
     width: 35px;
     cursor: pointer;
+  }
+  .logo:hover {
+    transform: scale(1.1);
   }
   .formSubmit {
     display: flex;

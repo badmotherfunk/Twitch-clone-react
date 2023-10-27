@@ -8,6 +8,7 @@
     height: 60px;
     border-radius: 5px;
     padding: 0 20px;
+    z-index: 2;
 }
 
 .coolCat {

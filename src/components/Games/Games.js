@@ -45,6 +45,9 @@ export default function Games() {
                             <div className="carteContainer">
                                 <p className='liveCarte'>LIVE</p>
                                 <img src={game.thumbnail_url} alt="jeu profile" className="imgCarte" />
+                                <div className="viewers">
+                                    <p>{game.viewer_count} spectateurs</p>
+                                </div>
                             </div>
                         </div>
 
@@ -54,8 +57,8 @@ export default function Games() {
                             <div className="jeuCarteGames">{game.game_name}</div>
                             <div className="tagsContainer">
 
-                                {game.tags.map(tags => (
-                                    <div className="tagsCartesGames">{tags}</div>
+                                {game.tags && game.tags.map((tags, index) => (
+                                    <div key={index} className="tagsCartesGames">{tags}</div>
                                 ))}
                           
                             </div>
