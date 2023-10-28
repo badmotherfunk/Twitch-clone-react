@@ -12,7 +12,6 @@ export default function Browse() {
         const fetchData = async () => {
 
             const result = await api.get('https://api.twitch.tv/helix/games/top')
-            console.log(result)
 
             let dataArray = result.data.data
             let finalArray = dataArray.map(game => {
@@ -43,23 +42,23 @@ export default function Browse() {
                     <div className="gamesTags">
 
                         <p>Jeux</p>
-                        <img class="tw-image vertical-selector__card_icon" alt="Icône jeux" sizes="65px" src="https://static-cdn.jtvnw.net/c3-vg/verticals/gaming.svg"></img>
+                        <img alt="Icône jeux" sizes="65px" src="https://static-cdn.jtvnw.net/c3-vg/verticals/gaming.svg"></img>
                     </div>
                     <div className="IrlTags">
                         <p>IRL</p>
-                        <img class="tw-image vertical-selector__card_icon" alt="Icône IRL" sizes="65px" src="https://static-cdn.jtvnw.net/c3-vg/verticals/irl.svg"></img>
+                        <img alt="Icône IRL" sizes="65px" src="https://static-cdn.jtvnw.net/c3-vg/verticals/irl.svg"></img>
                     </div>
                     <div className="musicTags">
                         <p>Musique</p>
-                        <img class="tw-image vertical-selector__card_icon" alt="Icône musique" sizes="65px" src="https://static-cdn.jtvnw.net/c3-vg/verticals/music.svg"></img>
+                        <img alt="Icône musique" sizes="65px" src="https://static-cdn.jtvnw.net/c3-vg/verticals/music.svg"></img>
                     </div>
                     <div className="esportsTags">
                         <p>Esports</p>
-                        <img class="tw-image vertical-selector__card_icon" alt="Icône esport" sizes="65px" src="https://static-cdn.jtvnw.net/c3-vg/verticals/esports.svg"></img>
+                        <img alt="Icône esport" sizes="65px" src="https://static-cdn.jtvnw.net/c3-vg/verticals/esports.svg"></img>
                     </div>
                     <div className="creatifTags">
                         <p>Créatif</p>
-                        <img class="tw-image vertical-selector__card_icon" alt="Icône créative" sizes="65px" src="https://static-cdn.jtvnw.net/c3-vg/verticals/creative.svg"></img>
+                        <img alt="Icône créative" sizes="65px" src="https://static-cdn.jtvnw.net/c3-vg/verticals/creative.svg"></img>
                     </div>
                 
                 </div>

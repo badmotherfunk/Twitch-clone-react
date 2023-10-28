@@ -1,7 +1,7 @@
 .landingContainer {
-    margin-left: 240px;
-    position: relative;
-    top: 55px;
+    padding-left: 240px;
+    padding-bottom: 80px;
+    padding-top: 55px;
 }
 
 .flexAccueil {
@@ -46,21 +46,14 @@
 
 .carteContainer {
     position: relative;
+    height: 200px;
+    transition: all 0.2s;
 }
 
 .carteContainer:hover {
-    animation: slide 0.1s ease-in forwards;
+    transform: translateY(-5px) translateX(5px);
 }
-@keyframes slide {
-    from {
-        bottom: 0;
-        left: 0;
-    }
-    to {
-        bottom: 5px;
-        left: 5px;
-    }
-}
+
 
 .liveCarte {
     position: absolute;
@@ -88,6 +81,12 @@
     text-align: left;
     color: #000;
     cursor: pointer;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 100%;
+    overflow: hidden;
+    font-size: 14px;
+    font-weight: 500;
 }
 .titreCarteGames:hover {
     color: #9146FF;
@@ -113,6 +112,7 @@
     flex-wrap: wrap;
     align-items: center;
     gap: 5px;
+
 }
 
 .tagsCartesGames {
@@ -140,3 +140,14 @@
     bottom: 35px;
     left: 10px;
 }
+
+
+  /* MEDIA QUERIES */
+  @media screen and (max-width: 1200px) {
+    .landingContainer {
+        padding-left: 50px;
+    }
+    .titreGames {
+        padding: 10px 0 10px 40px;
+    }
+  }

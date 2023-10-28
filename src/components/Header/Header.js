@@ -3,7 +3,6 @@ import logo from './IconeTwitch.svg'
 import search from './Search.svg'
 import menuIco from './MenuIco.svg'
 import crown from './Crown.svg'
-import user from './User.svg'
 import './Header.css'
 import { Link } from 'react-router-dom'
 import { useLocation } from 'react-router-dom'
@@ -61,7 +60,7 @@ export default function Header() {
 
 
                 <li className="liensNav">
-                    <img src={user} alt="logo couronne" className="logoUser" />
+                <svg className='logoUser' width="20px" height="20px"><g><path fillRule="evenodd" d="M5 7a5 5 0 116.192 4.857A2 2 0 0013 13h1a3 3 0 013 3v2h-2v-2a1 1 0 00-1-1h-1a3.99 3.99 0 01-3-1.354A3.99 3.99 0 017 15H6a1 1 0 00-1 1v2H3v-2a3 3 0 013-3h1a2 2 0 001.808-1.143A5.002 5.002 0 015 7zm5 3a3 3 0 110-6 3 3 0 010 6z" clipRule="evenodd"></path></g></svg>
                 </li>
 
             </ul>

@@ -5,6 +5,7 @@ import Sidebar from './components/Sidebar/Sidebar';
 import Landing from './pages/Landing';
 import Directory from "./pages/Directory";
 import Banner from './components/Banner/Banner';
+import Live from "./components/Live/Live";
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/directory" element={<Directory />} />
+        <Route path="/live/:slug" element={<Live />} />
       </Routes>
       <Banner />  
     </div>
