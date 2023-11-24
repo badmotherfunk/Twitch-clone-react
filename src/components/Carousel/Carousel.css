@@ -102,6 +102,10 @@
     user-select: none;
 }
 
+.card-info-tag:hover {
+    background-color: #dbdbdb;
+}
+
 .card-info-title {
     font-size: 13px;
     color: #4b4b55;
