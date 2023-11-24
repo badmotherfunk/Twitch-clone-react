@@ -66,9 +66,10 @@
 }
 
 .card-info-userName:hover {
-    border-bottom: 1px solid rgb(92 22 197);
+    border-bottom: 1px solid #7c3cdb;
     width: fit-content;
     height: 15px;
+    color: #7c3cdb;
 }
 
 .card-info-gameName {
@@ -79,7 +80,8 @@
 }
 
 .card-info-gameName:hover {
-    border-bottom: 1px solid rgb(92 22 197);
+    border-bottom: 1px solid #7c3cdb;
+    color: #7c3cdb;
     width: fit-content;
     height: 15px;
 }
