@@ -40,22 +40,13 @@ export default function Live() {
             //Récupérer le profil utilisateur
             const profile = await api.get(`https://api.twitch.tv/helix/users?id=${userID}`)
             const userProfile = profile.data.data
-            console.log(userProfile)
-            
-
-
 
             setInfoGame(gameName)
             setInfoStream(result.data.data[0])
             setUserInfo(userProfile[0])
-
-            
-            
+           
         }
         fetchData()
-        console.log(userInfo.profile_image_url)
-
-
 
     }, [slug, userInfo])
 
@@ -65,7 +56,9 @@ export default function Live() {
         <div className="contInfo">
 
         <div className="userInfo">
+            <div className='logoContainer'>
                 <img className='userLogo' src={userInfo.profile_image_url} alt="user logo" />
+            </div>
                 <div className="streamInfo">
                     <h2 className='userName'>{infoStream.user_name}</h2>
                     <div className="streamTitle">{infoStream.title}</div>

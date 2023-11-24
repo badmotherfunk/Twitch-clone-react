@@ -78,15 +78,12 @@ export default function Sidebar() {
           return stream
           
         })
-        console.log(finalArray)
 
       setTopStreams(finalArray.slice(0,10))
     }
     fetchData()
 
   }, [])
-
-  console.log(topStreams)
 
   return (
     <div className='sidebar'>

@@ -10,6 +10,12 @@
     width: 100%;
     margin-top: 5px;
     padding: 10px 20px;
+    width: 80%;
+}
+
+.logoContainer {
+    width: 70px;
+    height: 70px;
 }
 
 .userLogo {
@@ -19,10 +25,11 @@
     padding: 2px;
     border: 2px solid #7b31eb;
     cursor: pointer;
-    transition: border 0 ease-out;
+    transition: border 0 ease-in-out;
 }
 .userLogo:hover {
     border: 3px solid #7b31eb;
+    transform: translateX(-1px) translateY(-1px);
 }
 
 .userInfo {
