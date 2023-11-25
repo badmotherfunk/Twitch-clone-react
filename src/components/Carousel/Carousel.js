@@ -4,6 +4,8 @@ import {
   ResponsiveContainer,
 } from "react-stacked-center-carousel";
 import { Link } from "react-router-dom";
+import api from '../../api'
+import ReactTwitchEmbedVideo from 'react-twitch-embed-video'
 import './Carousel.css'
 // import Fab from "@material-ui/core/Fab";
 // import ArrowBackIcon from "@material-ui/icons/ArrowBack";
@@ -129,34 +131,52 @@ export default function Carousel({games}) {
 // If you want the absolute best performance then pass in a custom comparator function like below 
 export const Card = React.memo(function (props) {
   
-    const { data, dataIndex, slideIndex } = props;
-    const {thumbnail_url, truePic, user_name, game_name, viewer_count, tags, title, user_login} = data[dataIndex];
+  const { data, dataIndex, slideIndex } = props;
+  const {thumbnail_url, truePic, user_name, game_name, viewer_count, tags, title, user_login} = data[dataIndex];
+  
+  const [isActive, setIsActive] = useState()
+  
+  
+  useEffect(() => {
+    setIsActive(slideIndex)
+  }, [slideIndex])
 
-    const [isActive, setIsActive] = useState()
+useEffect(() => {
+  const fetchData = async () => {
+    const result = await api.get(`https://api.twitch.tv/helix/streams?user_login=${slug}`)
+    
+    console.log(result)
+  }
+  fetchData()
+})
 
-    useEffect(() => {
-      setIsActive(slideIndex)
-    }, [slideIndex])
-
-    console.log(props)
+  
+  
+  let slug = user_login
 
   return (
     <div className="card-container">
 
-  <Link className="lien" to={{pathname: `/live/${user_login}`}}>
+  <Link  to={{pathname: `/live/${user_login}`}}>
+  
+  {!isActive ?
+
+    <ReactTwitchEmbedVideo height='535' width="133.5%" muted="true" channel={slug} />
+
+   : 
 
     <div
-      style={{
-        width: "100%",
-        height: 300,
-        userSelect: "none",
-        marginRight: '230px'
-      }}
-      className="my-slide-component"
-      >
+    style={{
+      width: "100%",
+      height: 300,
+      userSelect: "none",
+      marginRight: '230px'
+    }}
+    className="my-slide-component"
+    >
         {!isActive ? 
         <p className='liveCarte'>LIVE</p>
-      : null}
+        : null}
         <img
         style={{
           height: "100%",
@@ -169,15 +189,20 @@ export const Card = React.memo(function (props) {
         alt="cover"
         />
     </div>
+    }
   </Link>
 
     <div className="card-info-container" style={ !isActive ? {display: 'block'} : {display: 'none'} }>
       <div className="carousel-user-container">
         
+      <Link className="lien" to={{pathname: `/live/${user_login}`}}>
         <img src={truePic} alt="User logo" className="user-carousel-logo" />
+      </Link>
 
         <div className="carousel-user-infos">
+        <Link className="lien" to={{pathname: `/live/${user_login}`}}>
           <p className="card-info-userName">{user_name}</p>
+        </Link>
           <p className="card-info-gameName">{game_name}</p>
           <p className="card-info-viewerCount">{viewer_count} spectateurs</p>
         </div>

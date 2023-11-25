@@ -12,6 +12,7 @@ export default function Games() {
     useEffect(() => {
 
         const fetchData = async () => {
+
     
           const result = await api.get('https://api.twitch.tv/helix/streams')
 
