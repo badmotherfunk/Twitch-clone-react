@@ -19,12 +19,12 @@
 }
 
 .titreChannel {
-    color: #7b31eb;
+    color: #5c16c5;
     cursor: pointer;
 }
 .titreChannel:hover {
-    color: #9146FF;
-    border-bottom: 1px solid #9146FF;
+    color: #7833e0;
+    border-bottom: 1px solid #7833e0;
     height: 19px;
 }
 
@@ -149,8 +149,8 @@
     border-radius: 50px;
     padding: 3.5px 10px;
     font-size: 12px;
-    font-weight: 600;
-    color: #6d6d6d;
+    font-weight: 500;
+    color: #525151;
     cursor: pointer;
     margin-top: 5px;
 }
