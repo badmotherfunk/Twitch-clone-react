@@ -150,6 +150,7 @@ export const Card = React.memo(function (props) {
         width: "100%",
         height: 300,
         userSelect: "none",
+        marginRight: '230px'
       }}
       className="my-slide-component"
       >
@@ -170,9 +171,9 @@ export const Card = React.memo(function (props) {
     </div>
   </Link>
 
-    {!isActive ?
-    <div className="card-info-container" >
+    <div className="card-info-container" style={ !isActive ? {display: 'block'} : {display: 'none'} }>
       <div className="carousel-user-container">
+        
         <img src={truePic} alt="User logo" className="user-carousel-logo" />
 
         <div className="carousel-user-infos">
@@ -191,7 +192,6 @@ export const Card = React.memo(function (props) {
       </div>
       <p className="card-info-title">{title}</p>
   </div>
-  : null}
 
 
   </div>
