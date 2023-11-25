@@ -90,7 +90,6 @@ export default function Carousel({games}) {
             slideWidth={parentWidth < 800 ? parentWidth - 40 : 750}
             carouselWidth={parentWidth}
             data={finalCover}
-            // data={finalCover}
             currentVisibleSlide={currentVisibleSlide}
             maxVisibleSlide={5}
             useGrabCursor
@@ -130,8 +129,16 @@ export default function Carousel({games}) {
 // If you want the absolute best performance then pass in a custom comparator function like below 
 export const Card = React.memo(function (props) {
   
-    const { data, dataIndex } = props;
+    const { data, dataIndex, slideIndex } = props;
     const {thumbnail_url, truePic, user_name, game_name, viewer_count, tags, title, user_login} = data[dataIndex];
+
+    const [isActive, setIsActive] = useState()
+
+    useEffect(() => {
+      setIsActive(slideIndex)
+    }, [slideIndex])
+
+    console.log(props)
 
   return (
     <div className="card-container">
@@ -146,6 +153,9 @@ export const Card = React.memo(function (props) {
       }}
       className="my-slide-component"
       >
+        {!isActive ? 
+        <p className='liveCarte'>LIVE</p>
+      : null}
         <img
         style={{
           height: "100%",
@@ -158,8 +168,9 @@ export const Card = React.memo(function (props) {
         alt="cover"
         />
     </div>
-        </Link>
+  </Link>
 
+    {!isActive ?
     <div className="card-info-container" >
       <div className="carousel-user-container">
         <img src={truePic} alt="User logo" className="user-carousel-logo" />
@@ -179,9 +190,10 @@ export const Card = React.memo(function (props) {
       : null }
       </div>
       <p className="card-info-title">{title}</p>
-    </div>
+  </div>
+  : null}
 
 
-    </div>
+  </div>
   );
 });

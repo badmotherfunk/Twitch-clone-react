@@ -64,13 +64,16 @@
 }
 .filterSection h3 {
     font-size: 20px;
-    color: #7b31eb;
-    border-bottom: 2px solid #7b31eb;
+    color: #5c16c5;
+    border-bottom: 2px solid #5c16c5;
     padding-bottom: 5px;
     font-weight: 500;
     cursor: pointer;
 }
 
+.filterSection h3:hover {
+    color: #7833e0;
+}
 
 .flexCategory {
     display: flex;
