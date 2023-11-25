@@ -4,7 +4,6 @@ import {
   ResponsiveContainer,
 } from "react-stacked-center-carousel";
 import { Link } from "react-router-dom";
-import api from '../../api'
 import ReactTwitchEmbedVideo from 'react-twitch-embed-video'
 import './Carousel.css'
 // import Fab from "@material-ui/core/Fab";
@@ -135,33 +134,27 @@ export const Card = React.memo(function (props) {
   const {thumbnail_url, truePic, user_name, game_name, viewer_count, tags, title, user_login} = data[dataIndex];
   
   const [isActive, setIsActive] = useState()
-  
+  const [stream, setStream] = useState([])
   
   useEffect(() => {
     setIsActive(slideIndex)
-  }, [slideIndex])
 
-useEffect(() => {
-  const fetchData = async () => {
-    const result = await api.get(`https://api.twitch.tv/helix/streams?user_login=${slug}`)
-    
-    console.log(result)
-  }
-  fetchData()
-})
+    //Vérifie que la slide est bien la slide actuelle, pour correspondre à l'user_login de la slide
+    if(!isActive) {
+      setStream(user_login)
+    }
+  }, [slideIndex, isActive, user_login])
+  
 
-  
-  
-  let slug = user_login
 
   return (
     <div className="card-container">
 
   <Link  to={{pathname: `/live/${user_login}`}}>
   
-  {!isActive ?
+  {!isActive && stream.length ?
 
-    <ReactTwitchEmbedVideo height='535' width="133.5%" muted="true" channel={slug} />
+    <ReactTwitchEmbedVideo height='535' width="133.5%" muted="true" channel={stream} />
 
    : 
 

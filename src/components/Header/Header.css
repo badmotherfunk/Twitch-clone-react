@@ -37,9 +37,10 @@
   }
 
   .directoryButton {
-    font-size: 18px;
+    font-size: 18.5px;
+    font-weight: 500;
     color: #000;
-    margin-left: 10px;
+    margin-left: 5px;
     background: none;
   }
   .directoryButton:hover {
@@ -56,7 +57,7 @@
 
   .logo {
     margin-top: 10px;
-    width: 35px;
+    width: 34px;
     cursor: pointer;
   }
   .logo:hover {
