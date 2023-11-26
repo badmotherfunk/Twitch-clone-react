@@ -2,6 +2,7 @@ import React from 'react'
 import {useState, useEffect} from 'react'
 import api from '../../api';
 import './Browse.css'
+import { Link } from 'react-router-dom';
 
 export default function Browse() {
 
@@ -29,6 +30,8 @@ export default function Browse() {
         fetchData()
 
     }, [])
+
+    console.log(categories)
 
   return (
     <div className="categoryGlobal">
@@ -74,9 +77,19 @@ export default function Browse() {
                 
                     <div key={index} className="carteCatgeory">
                         <div className="categoryBackground">
-                            <div className="carteCategoryContainer">
-                                <img src={category.box_art_url} alt="category" className="imgCategory" />
-                            </div>
+
+                            <Link to={ "/game/" + category.name} 
+                                state= {{
+                                    gameID: category.id,
+                                    cover: category.box_art_url,
+                                    name:  category.name
+                                }}
+ 
+                                className='lien'>
+                                <div className="carteCategoryContainer">
+                                    <img src={category.box_art_url} alt="category" className="imgCategory" />
+                                </div>
+                            </Link>
 
                         </div>
 

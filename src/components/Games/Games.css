@@ -6,7 +6,7 @@
 
 .flexAccueil {
     display: flex;
-    justify-content: center;
+    padding-left: 80px;
     flex-wrap: wrap;
     gap: 10px;
 }

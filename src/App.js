@@ -6,6 +6,7 @@ import Landing from './pages/Landing';
 import Directory from "./pages/Directory";
 import Banner from './components/Banner/Banner';
 import Live from "./components/Live/Live";
+import GameStreams from "./components/GameStreams/GameStreams";
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Route path="/" element={<Landing />} />
         <Route path="/directory" element={<Directory />} />
         <Route path="/live/:slug" element={<Live />} />
+        <Route path="/game/:slug" element={<GameStreams />} />
       </Routes>
       <Banner />  
     </div>

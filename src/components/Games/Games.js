@@ -7,7 +7,6 @@ import './Games.css'
 export default function Games() {
 
     const [games, setGames] = useState([])
-    const [gameCover, setGameCover] = useState([])
     
     useEffect(() => {
 

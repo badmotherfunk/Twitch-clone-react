@@ -11,10 +11,10 @@
     display: flex;
     flex-direction: row;
     box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.2);
-    transition: all 0.2s ease-in-out;
     width: 750px;
     height: 300px;
     overflow: hidden;
+    transition: all 0.2s ease-in-out;
 }
 
 .card-container:hover {
@@ -74,7 +74,7 @@
 .card-info-userName:hover {
     border-bottom: 1px solid #7c3cdb;
     width: fit-content;
-    height: fit-content;
+    height: 15px;
     color: #7c3cdb;
 }
 
@@ -89,7 +89,7 @@
     border-bottom: 1px solid #7c3cdb;
     color: #7c3cdb;
     width: fit-content;
-    height:fit-content;
+    height: 15px;
 }
 
 .card-info-viewerCount {
