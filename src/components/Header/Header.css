@@ -145,3 +145,146 @@
   .formRegister button:hover {
     background: #7b31eb;
   }
+
+
+
+  /* ------------------- Login ------------------- */
+
+.modal-container {
+    position: absolute;
+    width: 100vw;
+    height: 145vh;
+    z-index: 9999;
+}
+
+.modal-layout {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-login-container {
+    position: fixed;
+    top: 35%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+}
+
+.modal {
+    position: absolute;
+    width: 520px;
+    height: 390px;
+    background-color: #FFF;
+    border-radius: 5px;
+}
+
+.modal-title-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 0 10px 0;
+}
+
+.twitch-logo {
+    width: 60px;
+}
+
+.modal-title {
+    font-size: 25px;
+    font-weight: 500;
+    margin-left: 5px;
+}
+
+.form-modal-container {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 5px 30px;
+    gap: 5px;
+}
+
+.form-modal-container label {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.form-modal-container input {
+    height: 24px;
+}
+
+.form-modal-container input:nth-child(2) {
+    margin-bottom: 15px;
+}
+
+.conexion-issue {
+    font-size: 13px;
+    padding: 5px 0;
+    color: #8552cf;
+    margin-bottom: 10px;
+}
+
+.conexion-issue:hover {
+    border-bottom: 1px solid #8552cf;
+    width: fit-content;
+    height: 9px;
+}
+
+.modal-button {
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    color: #bfbfd3;
+    cursor: not-allowed;
+}
+
+.register-link {
+    display: flex;
+    justify-content: center;
+    margin: 13px 0;
+    padding: 8px;
+    font-size: 13.5px;
+    color: #772ce8;
+    font-weight: 500;
+    border-radius: 5px;
+}
+
+.register-link:hover {
+    background-color: #e1e1eb;
+    color: #000;
+}
+
+.cross-close-modal {
+    position: absolute;
+    width: 11px;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+}
+
+.modal-text {
+  font-size: 13px;
+  padding: 5px 30px 10px 30px;
+  text-align: left;
+}
+
+.register-step {
+  margin: 25px 0 5px 0;
+  display: flex;
+  justify-content: center;
+  padding: 5px 0;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.next-step-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.register-button {
+  height: 35px;
+}
