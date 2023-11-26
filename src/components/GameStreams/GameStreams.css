@@ -1,7 +1,7 @@
 .category-container-global {
     position: relative;
     margin-left: 240px;
-    padding: 50px 80px 100px 80px;
+    padding: 50px 30px 100px 80px;
     display: flex;
     flex-direction: column;
 
@@ -100,5 +100,18 @@
     display: flex;
     flex-wrap: wrap;
     margin-top: 20px;
+    margin-right: 50px;
     gap: 10px;
+    justify-content: center;
+}
+
+@media screen and (max-width: 1200px) {
+    .category-container-global {
+        margin-left: 0;
+        padding: 50px 20px 100px 80px;
+    }
+
+    .stream-container {
+        margin-right: 0;
+    }
 }
