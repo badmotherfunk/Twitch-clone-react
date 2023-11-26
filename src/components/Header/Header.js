@@ -5,11 +5,32 @@ import menuIco from './MenuIco.svg'
 import crown from './Crown.svg'
 import './Header.css'
 import { Link } from 'react-router-dom'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
+import { useState } from 'react'
+import { useEffect } from 'react'
+
 
 export default function Header() {
 
     const { pathname } = useLocation();
+    const navigate = useNavigate()
+
+    const [streamer, setStreamer] = useState([])
+
+    // Accéder au live d'un streamer dans la barre de recherche
+    const handleSubmit = () => {
+        navigate("/live/" + streamer)
+    }
+
+    // useEffect(() => {
+    //     if(error) {
+    //         navigate("/")
+    //     }
+    // }, [navigate])
+
+
+
+
 
   return (
     <div>
@@ -31,8 +52,8 @@ export default function Header() {
                 <li className="liensNav">
                     <form className="formSubmit">
 
-                        <input type="text" className="inputRecherche" placeholder='Rechercher'/>
-                        <button type='submit'>
+                        <input type="text" className="inputRecherche" placeholder='Rechercher' value={streamer} onChange={(e) => setStreamer(e.target.value)}/>
+                        <button type='submit' onClick={handleSubmit}>
                             <img src={search} alt="icone loupe" className="logoLoupe" />
                         </button>
 
