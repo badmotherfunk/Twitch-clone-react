@@ -59,3 +59,12 @@
     right: 30px;
     bottom: 20px;
 }
+
+@media screen and (max-width: 768px) {
+    .bannerContainer {
+        display: none;
+    }
+    .bannerButton {
+        display: none;
+    }
+}

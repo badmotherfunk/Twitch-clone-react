@@ -112,10 +112,19 @@
     color: rgb(151 19 17);
 }
 
-
-
-
 .streamTags {
     position: relative;
     left: 250px;
+}
+
+@media screen and (max-width: 1200px) {
+    .containerDecale {
+        padding-left: 50px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .viewer {
+        right: 20px;
+    }
 }

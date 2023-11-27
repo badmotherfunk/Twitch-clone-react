@@ -147,6 +147,24 @@
   }
 
 
+  /* ------------------- Media queires ------------------- */
+
+
+  @media screen and (max-width: 768px) {
+
+    .liensNav {
+      padding: 0 5px;
+    }
+    .formLogin {
+      transform: scale(0.8);
+
+  }
+    .formRegister {
+        transform: scale(0.8);
+    }
+}
+
+
 
   /* ------------------- Login ------------------- */
 
