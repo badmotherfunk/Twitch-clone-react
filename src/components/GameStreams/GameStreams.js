@@ -14,9 +14,6 @@ export default function GameStreams({games}) {
     const [streamData, setStreamData] = useState([])
     const [viewers, setViewers] = useState(0)
 
-    console.log(location)
-
-
 
     useEffect(() => {
 
@@ -83,7 +80,6 @@ export default function GameStreams({games}) {
             })
 
             setStreamData(finalArray)
-            console.log(finalArray)
 
         }
         fetchData()
@@ -91,7 +87,6 @@ export default function GameStreams({games}) {
 
     }, [location.state])
 
-    console.log(streamData)
 
   return (
     

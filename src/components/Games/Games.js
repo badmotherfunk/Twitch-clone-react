@@ -94,7 +94,6 @@ export default function Games() {
     
       }, [])
 
-      console.log(games)
 
   return (
     <div className="landingContainer">
