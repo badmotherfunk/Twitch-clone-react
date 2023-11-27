@@ -99,11 +99,12 @@ export default function Games() {
   return (
     <div className="landingContainer">
 
-        <div>
-            
+           
             { games ? <Carousel games={games}/> : null}
-
-            <h1 className="gamesTitle"><span className='titreChannel'>Chaînes live </span>&nbsp;qui pourraient vous plaire</h1>
+            
+            <div className="gamesTitleContainer">
+              <h1 className="gamesTitle"><span className='titreChannel'>Chaînes live </span>&nbsp;qui pourraient vous plaire</h1>
+            </div>
 
             <div className="flexAccueil">
                 {games.map((game,index) => (
@@ -158,7 +159,7 @@ export default function Games() {
 
             </div>
 
-        </div>
+
 
         <div>
 

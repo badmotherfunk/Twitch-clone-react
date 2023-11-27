@@ -119,3 +119,9 @@
     color: #4b4b55;
     user-select: none;
 }
+
+@media screen and (max-width: 768px) {
+    .card-info-container {
+        visibility: hidden;
+    }
+}
