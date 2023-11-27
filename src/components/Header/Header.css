@@ -153,8 +153,9 @@
 .modal-container {
     position: absolute;
     width: 100vw;
-    height: 145vh;
     z-index: 9999;
+    height: 100%;
+    top: 0;
 }
 
 .modal-layout {

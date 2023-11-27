@@ -6,8 +6,8 @@
 body {
   background: #fafafa;
   font-family: 'Roboto', sans-serif;
+  position: relative;
 }
-
 
 .App {
   text-align: center;

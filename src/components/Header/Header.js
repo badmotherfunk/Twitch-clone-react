@@ -38,12 +38,14 @@ export default function Header() {
     const handleLogin = (e) => {
         e.preventDefault()
         setIsOpen(true)
+        setIsRegister(false)
 
     }
 
     const handleRegister = (e) => {
         e.preventDefault()
         setIsRegister(true)
+        setIsOpen(false)
 
     }
 
@@ -133,7 +135,7 @@ export default function Header() {
 
                         <Link className='conexion-issue'>Problème de connexion ?</Link>
                         <button className="modal-button">Se connecter</button>
-                        <Link className="register-link">Pas de compte ? Inscrivez-vous</Link>
+                        <Link className="register-link" onClick={handleRegister}>Pas de compte ? Inscrivez-vous</Link>
                     </div>
                 </div>
             </div>
@@ -168,7 +170,7 @@ export default function Header() {
                             
                         <p className='register-step'>Etape 1 sur 3</p>
                         <div className='next-step-container'>
-                            <Link className="register-link">Vous utilisez déjà Twitch ? Connexion</Link>
+                            <Link className="register-link" onClick={handleLogin}>Vous utilisez déjà Twitch ? Connexion</Link>
                             <button className="modal-button register-button">Prochaine étape</button>
                         </div>
                     </div>
