@@ -35,6 +35,10 @@
     border-radius: 5px;
     cursor: pointer;
   }
+
+  .containerTitre svg:nth-child(2) {
+    cursor: default;
+  }
   
   .containerTitre svg:nth-child(1):hover {
     background-color: #d7d7e0;
@@ -53,7 +57,7 @@
   }
 
   .listeStream {
-    padding: 0 0 0 10px;
+    /* padding: 0 0 0 10px; */
     color: #000;
   }
 
@@ -66,6 +70,7 @@
     list-style: none;
     cursor: pointer;
     align-items: center;
+    padding-left: 10px;
   }
 
   .containerFlexSidebar:hover {
