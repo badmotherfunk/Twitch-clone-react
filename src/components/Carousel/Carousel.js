@@ -7,8 +7,8 @@ import { Link } from "react-router-dom";
 import ReactTwitchEmbedVideo from 'react-twitch-embed-video'
 import './Carousel.css'
 // import Fab from "@material-ui/core/Fab";
-// import ArrowBackIcon from "@material-ui/icons/ArrowBack";
-// import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
+import ArrowBackIcon from "@mui/icons-material/ChevronLeft";
+import ArrowForwardIcon from "@mui/icons-material/ChevronRight";
 
 
 export default function Carousel({games}) {
@@ -41,6 +41,20 @@ export default function Carousel({games}) {
           if (parentWidth <= 1440) currentVisibleSlide = 3;
           if (parentWidth <= 1080) currentVisibleSlide = 1;
           return (
+            <div className="test">
+            <div
+            // style={{ position: "absolute", top: "40%", left: 10, zIndex: 10 }}
+            style={ {display:"flex", alignItems:"center", marginBottom: "40px"}}
+            size="small"
+            color="primary"
+            onClick={() => {
+            ref.current?.goBack();
+            }}
+            >
+            {/* <ArrowBackIcon style={{width:"50px", height:"28px", position: "fixed", top: "17%", left: "26vh", zIndex: 10 }}/> */}
+            <ArrowBackIcon className="arrowBackIcon"/>
+            </div>
+            
             <StackedCarousel
             ref={carouselRef}
             slideComponent={Card}
@@ -51,32 +65,29 @@ export default function Carousel({games}) {
             maxVisibleSlide={5}
             useGrabCursor
             />
-            );
-          }}
-          />
-        : null }
 
-        <>
         <div
-        style={{ position: "absolute", top: "40%", left: 10, zIndex: 10 }}
-        size="small"
-        color="primary"
-        onClick={() => {
-          ref.current?.goBack();
-        }}
-        >
-        {/* <ArrowBackIcon /> */}
-        </div>
-        <div
-        style={{ position: "absolute", top: "40%", right: 10, zIndex: 10 }}
+        // style={{ position: "absolute", top: "40%", right: 10, zIndex: 10 }}
+        style={ {display:"flex", alignItems:"center", marginBottom: "40px"}}
         size="small"
         color="primary"
         onClick={() => {
           ref.current?.goNext(6);
         }}
         >
-        {/* <ArrowForwardIcon /> */}
+        {/* <ArrowForwardIcon style={{width:"50px", height:"28px", position: "fixed", top: "17%", right: "6vh", zIndex: 10 }}/> */}
+        <ArrowForwardIcon className="arrowForwardIcon"/>
         </div>
+
+            </div>
+            );
+          }}
+          />
+        : null }
+
+        <>
+
+
         </>
     </div>
 )};

@@ -1,4 +1,5 @@
 .react-stacked-center-carousel {
+    display: flex;
     padding: 15px 0 50px 0;
 }
 
@@ -6,6 +7,30 @@
    width: "100%";
    position: "relative";
 }
+
+.test {
+    display: flex;
+    width: 100%;
+}
+
+.arrowBackIcon {
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 5px;
+    margin-left: 70px;
+}
+
+.arrowForwardIcon {
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 5px;
+    margin-right: 80px;
+}
+
+.arrowBackIcon:hover, .arrowForwardIcon:hover {
+    background-color: #e1e1eb;
+}
+
 
 .card-container {
     display: flex;
@@ -120,8 +145,16 @@
     user-select: none;
 }
 
+
 @media screen and (max-width: 768px) {
     .card-info-container {
         visibility: hidden;
+    }
+
+    .arrowBackIcon {
+        margin-left: 0;
+    }
+    .arrowForwardIcon {
+        margin-right: 0;
     }
 }
