@@ -5,6 +5,41 @@
     background: #eeeeee;
     height: 100%;
   }
+
+  .toggleSidebar {
+    border: none;
+    display: flex;
+  }
+
+  .sidebarIcons {
+    margin-left: 10px;
+  }
+
+  .sidebarActive {
+    position: fixed;
+    top: 50px;
+    width: 50px;
+    background: #eeeeee;
+    height: 100%;
+  }
+
+  .containerTitre {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .containerTitre svg {
+    margin: 5px 10px 0 0;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .containerTitre svg:nth-child(1):hover {
+    background-color: #d7d7e0;
+  }
+
   .titreSidebar {
     padding: 15px 0 10px 10px;
     color: #000;
@@ -12,6 +47,11 @@
     font-weight: 500;
     text-align: left;
   }
+
+  .titreSidebarActive {
+    display: none;
+  }
+
   .listeStream {
     padding: 0 0 0 10px;
     color: #000;
@@ -51,6 +91,10 @@
     color: #000;
   }
 
+  .streamUserActive {
+    display: none;
+  }
+
   .gameNameSidebar {
     white-space: nowrap;
     overflow: hidden;
@@ -70,6 +114,10 @@
     justify-content: flex-end;
     font-size: 13.5px;
     margin-top: 5px;
+  }
+
+  .viewerRightActive {
+    display: none;
   }
 
   .redDot {
@@ -108,6 +156,10 @@
     }
 
     .viewerRight {
+      display: none;
+    }
+
+    .containerTitre {
       display: none;
     }
   }

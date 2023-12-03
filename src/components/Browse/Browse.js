@@ -31,8 +31,6 @@ export default function Browse() {
 
     }, [])
 
-    console.log(categories)
-
   return (
     <div className="categoryGlobal">
 
