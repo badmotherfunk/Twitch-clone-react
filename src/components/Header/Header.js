@@ -20,7 +20,7 @@ export default function Header() {
 
     // Accéder au live d'un streamer dans la barre de recherche
     const handleSubmit = () => {
-        navigate("/live/" + streamer)
+        navigate(`/live/${streamer}`)
     }
 
     // useEffect(() => {
@@ -37,20 +37,17 @@ export default function Header() {
 
     const handleLogin = (e) => {
         e.preventDefault()
-        setIsOpen(true)
+        setIsOpen(!isOpen)
         setIsRegister(false)
 
     }
 
     const handleRegister = (e) => {
         e.preventDefault()
-        setIsRegister(true)
+        setIsRegister(!isRegister)
         setIsOpen(false)
 
     }
-
-    console.log(isOpen)
-
 
 
   return (
