@@ -42,53 +42,45 @@ export default function Carousel({games}) {
           if (parentWidth <= 1080) currentVisibleSlide = 1;
           return (
             <div className="test">
+              <div
+              style={ {display:"flex", alignItems:"center", marginBottom: "40px"}}
+              size="small"
+              color="primary"
+              onClick={() => {
+              ref.current?.goBack();
+             }}
+              >
+              <ArrowBackIcon className="arrowBackIcon"/>
+              </div>
+            
+              <StackedCarousel
+              ref={carouselRef}
+              slideComponent={Card}
+              slideWidth={parentWidth < 800 ? parentWidth - 40 : 750}
+              carouselWidth={parentWidth}
+              data={finalCover}
+              currentVisibleSlide={currentVisibleSlide}
+              maxVisibleSlide={5}
+              useGrabCursor
+              />
+
             <div
-            // style={{ position: "absolute", top: "40%", left: 10, zIndex: 10 }}
             style={ {display:"flex", alignItems:"center", marginBottom: "40px"}}
             size="small"
             color="primary"
             onClick={() => {
-            ref.current?.goBack();
+            ref.current?.goNext(6);
             }}
             >
-            {/* <ArrowBackIcon style={{width:"50px", height:"28px", position: "fixed", top: "17%", left: "26vh", zIndex: 10 }}/> */}
-            <ArrowBackIcon className="arrowBackIcon"/>
+            <ArrowForwardIcon className="arrowForwardIcon"/>
             </div>
-            
-            <StackedCarousel
-            ref={carouselRef}
-            slideComponent={Card}
-            slideWidth={parentWidth < 800 ? parentWidth - 40 : 750}
-            carouselWidth={parentWidth}
-            data={finalCover}
-            currentVisibleSlide={currentVisibleSlide}
-            maxVisibleSlide={5}
-            useGrabCursor
-            />
 
-        <div
-        // style={{ position: "absolute", top: "40%", right: 10, zIndex: 10 }}
-        style={ {display:"flex", alignItems:"center", marginBottom: "40px"}}
-        size="small"
-        color="primary"
-        onClick={() => {
-          ref.current?.goNext(6);
-        }}
-        >
-        {/* <ArrowForwardIcon style={{width:"50px", height:"28px", position: "fixed", top: "17%", right: "6vh", zIndex: 10 }}/> */}
-        <ArrowForwardIcon className="arrowForwardIcon"/>
-        </div>
-
-            </div>
+          </div>
             );
           }}
           />
         : null }
 
-        <>
-
-
-        </>
     </div>
 )};
       
