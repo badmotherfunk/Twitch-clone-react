@@ -1,10 +1,9 @@
 .react-stacked-center-carousel {
-    display: flex;
     padding: 15px 0 50px 0;
 }
 
 .carousel-container {
-   width: 95%;
+   width: 90%;
    position: relative;
 
 }

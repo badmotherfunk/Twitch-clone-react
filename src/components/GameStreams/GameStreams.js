@@ -99,7 +99,7 @@ export default function GameStreams({games}) {
                 <p className='category-viewers'><strong>{viewers}</strong> spectateurs</p>
                 <button className='follow-button'>
                     <div className='heart-logo-container'>
-                        <img className='heart-logo' src={heart} alt="heart thin" />
+                        <img className='heart-logo heart-empty' src={heart} alt="heart thin" />
                         <img className='heart-logo heart-full' src={heartFull} alt="heart full" />
                     </div>
                     <i class="fa-solid fa-heart"></i>

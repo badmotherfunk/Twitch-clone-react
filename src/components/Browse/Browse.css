@@ -142,3 +142,18 @@
         }
     }
 
+    @media screen and (max-width: 635px) {
+        .gamesTags,
+        .IrlTags,
+        .musicTags,
+        .esportsTags,
+        .creatifTags  {
+         width: 90%;
+        }
+        .flexCategory {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
