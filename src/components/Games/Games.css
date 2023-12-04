@@ -1,10 +1,8 @@
 .landingContainer {
-    display: flex;
-    flex-direction: column;
+    display: grid;
     padding: 55px 50px 80px 50px;
     height: auto;
     width: 100%;
-    align-items: center;
 }
 
 .flexAccueil {
@@ -13,17 +11,26 @@
     text-align: left;
 }
 
-.streamContainer {
+/* .streamContainer {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 10px;
     justify-content: center;
+} */
+
+.streamContainer {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-gap: 10px;
+    height: 100%;
+
 }
 
 
 .gamesTitleContainer {
-    margin-left: 30px;
+    /* margin-left: 30px; */
     margin-bottom: 20px;
 }
 

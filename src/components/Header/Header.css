@@ -69,9 +69,15 @@
     margin-left: 175px;
     flex-shrink: 1;
   }
+
+  .formSubmit button:hover {
+    background-color: #e1e1eb;
+  }
+
   .logoLoupe {
     width: 22px;
   }
+
   .inputRecherche {
     width: 50%;
     border-top-left-radius: 5px;
