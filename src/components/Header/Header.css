@@ -123,11 +123,12 @@
   
   .formLogin button{
     background: #f1f1f1;
-    padding: 8px 9px;
+    padding: 9px 9px;
     border-radius: 3px;
     font-size: 13px;
     color: #000;
     font-weight: 600;
+    width: 100px
   }
   
   .formLogin button:hover {
@@ -185,8 +186,8 @@
 
 .modal-login-container {
     position: fixed;
-    top: 35%;
-    left: 40%;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
 }
 
@@ -196,6 +197,9 @@
     height: 390px;
     background-color: #FFF;
     border-radius: 5px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .modal-title-container {
@@ -306,4 +310,36 @@
 
 .register-button {
   height: 35px;
+}
+
+@media screen and (max-width: 768px) {
+  .formSubmit {
+    margin-left: 0;
+  }
+
+  .liensNav:nth-child(5),
+  .liensNav:nth-child(6) {
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+
+  .directoryButton {
+    font-size: 15px;
+    margin-left: 0;
+  }
+
+  .logoUser {
+    display: none;
+  }
+
+  .liensNav:nth-child(3) {
+    padding: 0;
+  }
+  
+  .formSubmit {
+    transform: scale(0.8);
+  }
+
 }

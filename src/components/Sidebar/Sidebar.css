@@ -1,9 +1,11 @@
 .sidebar {
-    position: fixed;
     top: 50px;
-    width: 239px;
+    width: 280px;
     background: #eeeeee;
-    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;
+    height: auto;
   }
 
   .toggleSidebar {
@@ -16,11 +18,12 @@
   }
 
   .sidebarActive {
-    position: fixed;
-    top: 50px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
     width: 50px;
     background: #eeeeee;
-    height: 100%;
+    height: auto;
   }
 
   .containerTitre {
@@ -57,7 +60,6 @@
   }
 
   .listeStream {
-    /* padding: 0 0 0 10px; */
     color: #000;
   }
 
@@ -146,6 +148,7 @@
 
     .containerFlexSidebar {
       padding: 6px 0;
+      margin-left: 10px;
     }
 
     .streamUser {

@@ -28,11 +28,11 @@ export default function Banner() {
         </form>
 
         {isRegister &&
-        <div className='modal-container'>
-          <div className="modal-layout" onClick={() => setIsRegister(false)}></div>
+        <div className='modal-container-banner'>
+          <div className="modal-layout-banner" onClick={() => setIsRegister(false)}></div>
             <div className="modal-login-container">
 
-                <div className="modal">
+                <div className="modal-banner">
                     <img src={cross} alt="cross close" onClick={() => setIsRegister(false)} className='cross-close-modal' />
                     
                     <div className='modal-title-container'>

@@ -6,7 +6,6 @@ import {
 import { Link } from "react-router-dom";
 import ReactTwitchEmbedVideo from 'react-twitch-embed-video'
 import './Carousel.css'
-// import Fab from "@material-ui/core/Fab";
 import ArrowBackIcon from "@mui/icons-material/ChevronLeft";
 import ArrowForwardIcon from "@mui/icons-material/ChevronRight";
 
@@ -41,7 +40,7 @@ export default function Carousel({games}) {
           if (parentWidth <= 1440) currentVisibleSlide = 3;
           if (parentWidth <= 1080) currentVisibleSlide = 1;
           return (
-            <div className="test">
+            <div className="carousel">
               <div
               style={ {display:"flex", alignItems:"center", marginBottom: "40px"}}
               size="small"

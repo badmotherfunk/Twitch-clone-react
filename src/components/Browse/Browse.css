@@ -1,13 +1,19 @@
 .categoryGlobal {
-    padding-left: 240px;
-    padding-bottom: 120px;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 130px;
+    padding-left: 50px;
+    padding-right: 50px;
+    height: auto;
+    width: 100%;
+    align-items: center;
 }
 
 
 .categoryContainer {
     position: relative;
     top: 60px;
-    padding: 20px 40px;
+    padding: 20px 0px;
 }
 
 .sectionTitle {
@@ -18,7 +24,7 @@
 .categoryTagsContainer {
     display: flex;
     flex-direction: column;
-    padding: 0 0 0 85px;
+    margin: 0 70px;
 }
 
 .tagsContainerCategory {

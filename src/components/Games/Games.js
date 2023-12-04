@@ -101,14 +101,16 @@ export default function Games() {
            
             { games ? <Carousel games={games}/> : null}
             
+            <div className="flexAccueil">
             <div className="gamesTitleContainer">
               <h1 className="gamesTitle"><span className='titreChannel'>Chaînes live </span>&nbsp;qui pourraient vous plaire</h1>
             </div>
 
-            <div className="flexAccueil">
+            <div className="streamContainer">
                 {games.map((game,index) => (
 
 
+                  
                     <div key={index} className="carteGames">
                         <div className="carteBackground">
 
@@ -153,8 +155,8 @@ export default function Games() {
                         </div>
 
                     </div>
-
                 ))}
+                </div>
 
             </div>
 

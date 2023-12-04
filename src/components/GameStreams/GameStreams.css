@@ -1,10 +1,12 @@
 .category-container-global {
-    position: relative;
-    margin-left: 240px;
-    padding: 50px 30px 100px 80px;
     display: flex;
     flex-direction: column;
-
+    padding-bottom: 130px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 50px;
+    height: auto;
+    width: 100%;
 }
 
 .category-header-container {

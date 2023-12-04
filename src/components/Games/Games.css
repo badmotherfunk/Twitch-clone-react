@@ -1,22 +1,29 @@
 .landingContainer {
-    padding-left: 240px;
-    display: block;
-    justify-content: center;
-    padding-bottom: 80px;
-    padding-top: 55px;
+    display: flex;
+    flex-direction: column;
+    padding: 55px 50px 80px 50px;
+    height: auto;
+    width: 100%;
+    align-items: center;
 }
 
 .flexAccueil {
     display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.streamContainer {
+    display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     gap: 10px;
     justify-content: center;
 }
 
+
 .gamesTitleContainer {
-    display: flex;
-    justify-content: flex-start;
-    margin-left: 85px;
+    margin-left: 30px;
     margin-bottom: 20px;
 }
 
@@ -216,5 +223,10 @@
         font-size: 15px;
         text-align: left;
         display: block;
+    }
+
+    .carteGames {
+        transform: scale(0.9);
+        margin-bottom: -15px;
     }
   }

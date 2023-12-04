@@ -10,7 +10,9 @@ body {
 }
 
 .App {
+  display: flex;
   text-align: center;
+  height: 100%;
 }
 
 *::-webkit-scrollbar {

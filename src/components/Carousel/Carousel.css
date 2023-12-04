@@ -4,11 +4,11 @@
 }
 
 .carousel-container {
-   width: "100%";
-   position: "relative";
+   width: 90%;
+   position: relative;
 }
 
-.test {
+.carousel {
     display: flex;
     width: 100%;
 }
@@ -17,14 +17,12 @@
     cursor: pointer;
     padding: 6px;
     border-radius: 5px;
-    margin-left: 70px;
 }
 
 .arrowForwardIcon {
     cursor: pointer;
     padding: 6px;
     border-radius: 5px;
-    margin-right: 80px;
 }
 
 .arrowBackIcon:hover, .arrowForwardIcon:hover {
@@ -157,4 +155,15 @@
     .arrowForwardIcon {
         margin-right: 0;
     }
+}
+
+@media screen and (max-width : 480px) {
+    .arrowBackIcon {
+        padding: 0;
+    }
+
+    .arrowForwardIcon {
+        padding: 0;
+    }
+
 }
