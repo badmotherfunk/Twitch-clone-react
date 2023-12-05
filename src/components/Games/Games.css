@@ -154,7 +154,7 @@
     color: rgb(230, 230, 230);
     border: 1px solid rgb(230, 230, 230);
     top: 40px;
-    left: 0;
+    left: 50px;
 }
 
 .titreCarteGames:hover:after {
@@ -187,7 +187,8 @@
     background-color: rgb(65, 65, 65);
     color: rgb(230, 230, 230);
     border: 1px solid rgb(230, 230, 230);
-    top: 53px;
+    top: 60px;
+    left: 50px;
 }
 
 .utilisateurCarteGames:hover:after {
