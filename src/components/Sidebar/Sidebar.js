@@ -91,6 +91,8 @@ export default function Sidebar() {
 
   }, [])
 
+  console.log(topStreams)
+
   return (
     <div className={active ? 'sidebarActive' : 'sidebar'}>
 
@@ -119,7 +121,7 @@ export default function Sidebar() {
 
 
               <li className={active ? "containerFlexSidebarActive" : "containerFlexSidebar"}
-              aria-label= { `${stream.user_name} • ${stream.gameName} | 🔴 Live | ${stream.viewer_count} spectateurs` }
+              aria-label= { `${stream.user_name} • ${stream.gameName} | ${stream.title} 🔴 Live | ${stream.viewer_count} spectateurs` }
               >
 
                 <img src={stream.truePic} alt="logo user" className="profilePicRonde" />
