@@ -66,6 +66,9 @@
     position: absolute;
 }
 
+.heart-empty {
+    transition: all 0.2s ease-in-out;
+}
 
 .heart-full {
     opacity: 0;
@@ -86,6 +89,10 @@
     opacity: 1;
     transform: scale(1.2);
     margin-top: 1px;
+}
+
+.follow-button:hover .heart-empty {
+    transform: scale(1.3);
 }
 
 .category-stream-container {
