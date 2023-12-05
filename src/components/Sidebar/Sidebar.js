@@ -91,7 +91,6 @@ export default function Sidebar() {
 
   }, [])
 
-  console.log(topStreams)
 
   return (
     <div className={active ? 'sidebarActive' : 'sidebar'}>
@@ -115,7 +114,6 @@ export default function Sidebar() {
         </div>
         <ul className="listeStream" >
 
-
             {topStreams.map((stream, index) => (
               <Link key={index} to={{pathname: `/live/${stream.user_login}`}}>
 
@@ -138,7 +136,6 @@ export default function Sidebar() {
               </li>
               </Link>
             ))}
-
             
         </ul>
 
