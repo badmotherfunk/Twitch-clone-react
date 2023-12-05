@@ -25,8 +25,25 @@ export default function Carousel({games}) {
 
 
     const ref = React.useRef();
-  return (
+
+    const ads = [
+      {
+        cover: "https://fr.weareholy.com/cdn/shop/files/Hero_BGs_2023_neuetubs.png?v=1696001441&width=3000"
+      },
+      {
+        cover: "https://fr.weareholy.com/cdn/shop/files/Hero_BGs_2023_Energy_Trial.png?v=1696001459&width=2600"
+      }
+    ]
     
+
+    const randomIndex = Math.floor(Math.random() * ads.length);
+    const pictureAds = ads[randomIndex]
+
+
+  return (
+    <div className="carousel-global">
+      <img className="ads-hero" src={pictureAds.cover} alt="comercial banner" />
+
     <div className="carousel-container">
       {finalCover && finalCover.length ? 
         <ResponsiveContainer
@@ -46,8 +63,8 @@ export default function Carousel({games}) {
               size="small"
               color="primary"
               onClick={() => {
-              ref.current?.goBack();
-             }}
+                ref.current?.goBack();
+              }}
               >
               <ArrowBackIcon className="arrowBackIcon"/>
               </div>
@@ -68,7 +85,7 @@ export default function Carousel({games}) {
             size="small"
             color="primary"
             onClick={() => {
-            ref.current?.goNext(6);
+              ref.current?.goNext(6);
             }}
             >
             <ArrowForwardIcon className="arrowForwardIcon"/>
@@ -78,9 +95,11 @@ export default function Carousel({games}) {
             );
           }}
           />
-        : null }
+          : null }
 
     </div>
+    </div>
+          
 )};
       
 // Very import to memoize your Slide component otherwise there might be performance issue

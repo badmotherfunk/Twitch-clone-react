@@ -9,6 +9,7 @@
     display: grid;
     flex-direction: column;
     text-align: left;
+    margin-top: 20px;
 }
 
 .streamContainer {
