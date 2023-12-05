@@ -63,6 +63,7 @@ export default function GameStreams({games}) {
 
             let userLoginArray = getUsersLogin.data.data
 
+
             finalArray = dataArray.map(stream => {
 
                 stream.login = ''
@@ -74,6 +75,14 @@ export default function GameStreams({games}) {
                         stream.truePic = login.profile_image_url
                     }
                 });
+
+                //Changer l'affichage des viewers en "K"
+                let newViewers = stream.viewer_count
+                if (newViewers < 1000) {
+                    stream.viewer_count = newViewers;
+                } else if (newViewers >= 1000 && newViewers < 1_000_000) {
+                    stream.viewer_count = (newViewers / 1000).toFixed(1) + " k";
+                }
 
                 return stream
 

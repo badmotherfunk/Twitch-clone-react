@@ -103,11 +103,10 @@ export default function Sidebar() {
           </button>
           : 
           <div className='sidebarIcons'>
-
-          <button className='toggleSidebar' onClick={toggleSidebar}>
-            <svg width="20px" version="1.1" viewBox="0 0 20 20" x="0px" y="0px" aria-hidden="true" focusable="false" class="ScIconSVG-sc-1q25cff-1 jpczqG"><g><path d="M4 16V4H2v12h2zM13 15l-1.5-1.5L14 11H6V9h8l-2.5-2.5L13 5l5 5-5 5z"></path></g></svg>
-          </button>
-            <svg width="20px" height="2rem" viewBox="0 0 20 20"><path fill="rgb(83 83 95)" fill-rule="evenodd" d="M12.002 3.999a2 2 0 0 1 2 2v2L18 6v8l-3.998-2v2a2 2 0 0 1-2 1.999h-8a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h8zM12 6H4v8h8V6z" clip-rule="evenodd"></path></svg>
+            <button className='toggleSidebar' onClick={toggleSidebar}>
+              <svg width="20px" version="1.1" viewBox="0 0 20 20" x="0px" y="0px" aria-hidden="true" focusable="false" class="ScIconSVG-sc-1q25cff-1 jpczqG"><g><path d="M4 16V4H2v12h2zM13 15l-1.5-1.5L14 11H6V9h8l-2.5-2.5L13 5l5 5-5 5z"></path></g></svg>
+            </button>
+              <svg width="20px" height="2rem" viewBox="0 0 20 20"><path fill="rgb(83 83 95)" fill-rule="evenodd" d="M12.002 3.999a2 2 0 0 1 2 2v2L18 6v8l-3.998-2v2a2 2 0 0 1-2 1.999h-8a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h8zM12 6H4v8h8V6z" clip-rule="evenodd"></path></svg>
           </div>
           }
 
