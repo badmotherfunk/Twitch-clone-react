@@ -135,9 +135,9 @@ export default function Games() {
 
                                 <div className="userStreamInfos">
                                     <Link className="titleLink" to={{pathname: `/live/${game.user_login}`}}>
-                                        <h5 className="titreCarteGames" aria-label={game.title}>{game.title}</h5>
+                                        <h5 className="titreCarteGames" data-text={game.title}>{game.title}</h5>
                                     </Link>
-                                    <div className="utilisateurCarteGames" aria-label={game.user_name}>{game.user_name}</div>
+                                    <div className="utilisateurCarteGames" data-text={game.user_name}>{game.user_name}</div>
                                     <div className="jeuCarteGames">{game.game_name}</div>
 
                                     

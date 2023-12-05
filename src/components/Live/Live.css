@@ -100,7 +100,7 @@
 }
 
 .viewer {
-    position: fixed;
+    position: absolute;
     display: flex;
     flex-direction: row;
     right: 400px;
@@ -133,8 +133,3 @@
     }
 }
 
-@media screen and (max-width: 768px) {
-    .viewer {
-        right: 20px;
-    }
-}

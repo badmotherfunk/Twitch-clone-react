@@ -118,9 +118,7 @@
 
 .titleLink {
     display: flex;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    width: 17.5em;
+    width: 18.5em;
     overflow: hidden;
 }
 
@@ -130,8 +128,8 @@
     cursor: pointer;
     white-space: nowrap;
     text-overflow: ellipsis;
-    width: 100%;
     overflow: hidden;
+    width: 100%;
     font-size: 14px;
     font-weight: 500;
 }
@@ -144,7 +142,7 @@
 
 .titreCarteGames:after {
     visibility: hidden;
-    content: attr(aria-label);
+    content: attr(data-text);
     text-align: center;
     border-radius: 2px;
     padding: 5px;
@@ -155,12 +153,13 @@
     border: 1px solid rgb(230, 230, 230);
     top: 40px;
     left: 50px;
+    width: 0;
+    position: absolute;
 }
 
 .titreCarteGames:hover:after {
     -webkit-transition: all 0.2s 0.5s;
     transition: all 0.2s 0.5s;
-    position: absolute;
     visibility: visible;
     z-index: 99;
     width: fit-content;
@@ -178,7 +177,7 @@
 
 .utilisateurCarteGames:after {
     visibility: hidden;
-    content: attr(aria-label);
+    content: attr(data-text);
     text-align: center;
     border-radius: 2px;
     padding: 5px;
@@ -189,14 +188,13 @@
     border: 1px solid rgb(230, 230, 230);
     top: 60px;
     left: 50px;
+    position: absolute;
 }
 
 .utilisateurCarteGames:hover:after {
     -webkit-transition: all 0.2s 0.5s;
     transition: all 0.2s 0.5s;
-    position: absolute;
     visibility: visible;
-    z-index: 99;
     width: fit-content;
 }
 
