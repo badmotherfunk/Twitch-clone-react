@@ -112,14 +112,16 @@ export default function Sidebar() {
           }
 
         </div>
-        <ul className="listeStream">
+        <ul className="listeStream" >
 
 
             {topStreams.map((stream, index) => (
               <Link key={index} to={{pathname: `/live/${stream.user_login}`}}>
 
 
-              <li className="containerFlexSidebar">
+              <li className={active ? "containerFlexSidebarActive" : "containerFlexSidebar"}
+              aria-label= { `${stream.user_name} • ${stream.gameName} | 🔴 Live | ${stream.viewer_count} spectateurs` }
+              >
 
                 <img src={stream.truePic} alt="logo user" className="profilePicRonde" />
               
@@ -130,7 +132,7 @@ export default function Sidebar() {
                   <div>{stream.viewer_count}</div>
                 </div>
 
-                <div className="gameNameSidebar">{stream.gameName}</div>
+                <div className={active ? "gameNameSidebarActive" : "gameNameSidebar"}>{stream.gameName}</div>
 
               </li>
               </Link>
