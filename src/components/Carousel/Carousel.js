@@ -39,27 +39,27 @@ export default function Carousel({games}) {
     <div className="carousel-global">
       <img className="ads-hero" src={pictureAds} alt="comercial banner" />
 
-    <div className="carousel-container">
-      {finalCover && finalCover.length ? 
-        <ResponsiveContainer
-        carouselRef={ref}
-        render={(parentWidth, carouselRef) => {
-          // If you want to use a ref to call the method of StackedCarousel, you cannot set the ref directly on the carousel component
-          // This is because ResponsiveContainer will not render the carousel before its parent's width is determined
-          // parentWidth is determined after your parent component mounts. Thus if you set the ref directly it will not work since the carousel is not rendered
-          // Thus you need to pass your ref object to the ResponsiveContainer as the carouselRef prop and in your render function you will receive this ref object
-          let currentVisibleSlide = 5;
-          if (parentWidth <= 1440) currentVisibleSlide = 3;
-          if (parentWidth <= 1080) currentVisibleSlide = 1;
-          return (
-            <div className="carousel">
-              <div
-              style={ {display:"flex", alignItems:"center", marginBottom: "40px"}}
-              size="small"
-              color="primary"
-              onClick={() => {
+      <div className="carousel-container">
+        {finalCover && finalCover.length ? 
+          <ResponsiveContainer
+          carouselRef={ref}
+          render={(parentWidth, carouselRef) => {
+            // If you want to use a ref to call the method of StackedCarousel, you cannot set the ref directly on the carousel component
+            // This is because ResponsiveContainer will not render the carousel before its parent's width is determined
+            // parentWidth is determined after your parent component mounts. Thus if you set the ref directly it will not work since the carousel is not rendered
+            // Thus you need to pass your ref object to the ResponsiveContainer as the carouselRef prop and in your render function you will receive this ref object
+            let currentVisibleSlide = 5;
+            if (parentWidth <= 1440) currentVisibleSlide = 3;
+            if (parentWidth <= 1080) currentVisibleSlide = 1;
+            return (
+              <div className="carousel">
+                <div
+                style={ {display:"flex", alignItems:"center", marginBottom: "40px"}}
+                size="small"
+                color="primary"
+                onClick={() => {
                 ref.current?.goBack();
-              }}
+                }}
               >
               <ArrowBackIcon className="arrowBackIcon"/>
               </div>
@@ -75,24 +75,25 @@ export default function Carousel({games}) {
               useGrabCursor
               />
 
-            <div
-            style={ {display:"flex", alignItems:"center", marginBottom: "40px"}}
-            size="small"
-            color="primary"
-            onClick={() => {
+              <div
+              style={ {display:"flex", alignItems:"center", marginBottom: "40px"}}
+              size="small"
+              color="primary"
+              onClick={() => {
               ref.current?.goNext(6);
-            }}
-            >
-            <ArrowForwardIcon className="arrowForwardIcon"/>
-            </div>
+              }}
+              >
+              <ArrowForwardIcon className="arrowForwardIcon"/>
+              </div>
 
-          </div>
+            </div>
             );
           }}
           />
           : null }
 
-    </div>
+      </div>
+      
     </div>
           
 )};
