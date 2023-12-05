@@ -21,16 +21,16 @@
 
 }
 
-
 .gamesTitleContainer {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .gamesTitle {
     display: flex;
     justify-content: flex-start;
     color: #000;
-    font-size: 17.5px; 
+    font-weight: 500;
+    font-size: 18.5px; 
 }
 
 
