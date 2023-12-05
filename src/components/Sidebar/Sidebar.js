@@ -118,7 +118,8 @@ export default function Sidebar() {
           <Link key={index} to={{pathname: `/live/${stream.user_login}`}}>
 
             <li className={active ? "containerFlexSidebarActive" : "containerFlexSidebar"}
-            aria-label= { `${stream.user_name} • ${stream.gameName} | ${stream.title} 🔴 Live | ${stream.viewer_count} spectateurs` }
+            data-text= { `${stream.user_name} • ${stream.gameName} \n ${stream.title} \n🔴 Live | ${stream.viewer_count} spectateurs` }
+            data= {stream.title}
             >
 
               <img src={stream.truePic} alt="logo user" className="profilePicRonde" />

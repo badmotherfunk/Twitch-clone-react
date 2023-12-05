@@ -161,10 +161,10 @@
 
 .containerFlexSidebar:after {
   display: none;
-  content: attr(aria-label);
-  text-align: center;
+  content: attr(data);
+  text-align: left;
   border-radius: 2px;
-  padding: 5px;
+  padding: 4px 10px;
   font-size: 11px;
   font-weight: 100;
   background: #FFF;
@@ -172,25 +172,30 @@
   left: 250px;
   border-radius: 5px;
   font-size: 13px;
+  line-height: 21px;
   box-shadow: 5px 5px 5px 1px rgba(54, 54, 54, 0.2);
+  width: 200px;
 }
 
 .containerFlexSidebar:hover:after {
+  display: flex;
   -webkit-transition: all 0.2s 0.5s;
   transition: all 0.2s 0.5s;
   position:absolute;
   z-index: 99;
-  width: 180px;
-  height: auto;
-  display: flex;
+  width: 200px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
 
 .containerFlexSidebarActive:after {
   display: none;
-  content: attr(aria-label);
-  text-align: center;
+  content: attr(data-text);
+  text-align: left;
   border-radius: 2px;
-  padding: 5px;
+  padding: 5px 10px;
   font-size: 11px;
   font-weight: 100;
   background: #FFF;
@@ -200,6 +205,8 @@
   border-radius: 5px;
   font-size: 13px;
   box-shadow: 5px 5px 5px 1px rgba(54, 54, 54, 0.2);
+  white-space: pre-line;
+
 }
 
 .containerFlexSidebarActive:hover:after {
@@ -207,10 +214,10 @@
   transition: all 0.2s 0.5s;
   position:absolute;
   z-index: 99;
-  width: 180px;
+  width: 220px;
   height: auto;
   display: flex;
-  flex-direction: column;
+  line-height: 20px;
 }
 
 /* ------------------------- */
