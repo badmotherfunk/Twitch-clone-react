@@ -6,7 +6,7 @@
 }
 
 .flexAccueil {
-    display: grid;
+    display: flex;
     flex-direction: column;
     text-align: left;
     margin-top: 20px;
