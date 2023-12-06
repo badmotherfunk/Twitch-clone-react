@@ -12,7 +12,20 @@ export default function Games() {
 
         const fetchData = async () => {
 
-    
+          //Récupérer les images des jeux les plus populaires
+          const response = await api.get('https://api.twitch.tv/helix/games/top')
+
+          let data = response.data.data
+          let finalData = data.map(game => {
+              let newUrl = game.box_art_url
+              .replace("{width}", "250")
+              .replace("{height}", "350")
+          game.box_art_url = newUrl
+
+          return game
+          })
+
+          //Récupérer les top streams
           const result = await api.get('https://api.twitch.tv/helix/streams')
 
           let dataArray = result.data.data
@@ -71,7 +84,8 @@ export default function Games() {
             stream.gameName = ""
             stream.truePic = ""
             stream.login = ""
-    
+            
+            // Vérifie que les données des requêtes correspondent pour assigner les informations utilisateur
             gamesNameArray.forEach(name => {
               arrayUsers.forEach(user => {
                   if(stream.user_id === user.id && stream.game_id === name.id) {
@@ -81,6 +95,16 @@ export default function Games() {
                     stream.login = user.login
                   }
                 })
+              })
+
+              
+              // Vérifie que les données des requêtes correspondent pour assigner l'image du jeu
+              dataArray.forEach(gameName => {
+                  finalData.forEach(name => {
+                    if(gameName.gameName === name.name) {
+                      stream.box_art_url = name.box_art_url
+                    }
+                  })
               })
     
               
@@ -95,78 +119,77 @@ export default function Games() {
       }, [])
 
 
+
   return (
     <div className="landingContainer">
-
-           
-            { games ? <Carousel games={games}/> : null}
+          
+      { games ? <Carousel games={games}/> : null}
             
-            <div className="flexAccueil">
+        <div className="flexAccueil">
             <div className="gamesTitleContainer">
               <h1 className="gamesTitle"><span className='titreChannel'>Chaînes live </span>&nbsp;qui pourraient vous plaire</h1>
             </div>
 
-            <div className="streamContainer">
-                {games.map((game,index) => (
+          <div className="streamContainer">
+            {games.map((game,index) => (
+               
+              <div key={index} className="carteGames">
+                <div className="carteBackground">
 
+                  <Link className="lien" to={{pathname: `/live/${game.user_login}`}}>
+                  <div className="carteContainer">
+                      <p className='liveCarte'>LIVE</p>
+                      <img src={game.thumbnail_url} alt="jeu profile" className="imgCarte" />
+                      <div className="viewers">
+                          <p>{game.viewer_count} spectateurs</p>
+                      </div>
+                  </div>
+                  </Link>
 
-                  
-                    <div key={index} className="carteGames">
-                        <div className="carteBackground">
-
-                            <Link className="lien" to={{pathname: `/live/${game.user_login}`}}>
-                            <div className="carteContainer">
-                                <p className='liveCarte'>LIVE</p>
-                                <img src={game.thumbnail_url} alt="jeu profile" className="imgCarte" />
-                                <div className="viewers">
-                                    <p>{game.viewer_count} spectateurs</p>
-                                </div>
-                            </div>
-                            </Link>
-
-                        </div>
-
-                        <div className="carteBodyGames">
-
-                            <div className='userStreamContainer'>
-                                <Link to={{pathname: `/live/${game.user_login}`}}>
-                                    <img src={game.truePic} alt="User logo" className='userLogos' />
-                                </Link>
-
-                                <div className="userStreamInfos">
-                                    <Link className="titleLink" to={{pathname: `/live/${game.user_login}`}}>
-                                        <h5 className="titreCarteGames" data-text={game.title}>{game.title}</h5>
-                                    </Link>
-                                    <div className="utilisateurCarteGames" data-text={game.user_name}>{game.user_name}</div>
-                                    <div className="jeuCarteGames">{game.game_name}</div>
-
-                                    
-                                    <div className="tagsContainer">
-
-                                        {game.tags && game.tags.slice(0, 4).map((tags, index) => (
-                                            <div key={index} className="tagsCartesGames">{tags}</div>
-                                        ))}
-
-                                    </div>
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-                ))}
                 </div>
 
-            </div>
+                <div className="carteBodyGames">
 
+                  <div className='userStreamContainer'>
+                    <Link to={{pathname: `/live/${game.user_login}`}}>
+                      <img src={game.truePic} alt="User logo" className='userLogos' />
+                    </Link>
 
+                    <div className="userStreamInfos">
+                      <Link className="titleLink" to={{pathname: `/live/${game.user_login}`}}>
+                      <h5 className="titreCarteGames" data-text={game.title}>{game.title}</h5>
+                      </Link>
+                      <div className="utilisateurCarteGames" data-text={game.user_name}>{game.user_name}</div>
+                      <Link to={{pathname: "/game/" + game.game_name}}
+                        state= {{
+                        gameID: game.game_id,
+                        cover: game.box_art_url,
+                        name:  game.game_name
+                        }}
+                      >
+                        <div className="jeuCarteGames">{game.game_name}</div>
+                      </Link>
 
-        <div>
+                                    
+                      <div className="tagsContainer">
 
+                        {game.tags && game.tags.slice(0, 4).map((tags, index) => (
+                          <div key={index} className="tagsCartesGames">{tags}</div>
+                        ))}
+
+                      </div>
+                    </div>
+
+                  </div>
+
+                </div>
+                  
+              </div>
+
+            ))}
+          </div>
 
         </div>
-
     </div>
   )
 }
