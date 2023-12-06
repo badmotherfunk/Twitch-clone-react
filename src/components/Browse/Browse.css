@@ -1,10 +1,7 @@
 .categoryGlobal {
-    /* padding-left: 240px; */
     display: flex;
     flex-direction: column;
-    padding-bottom: 130px;
-    padding-left: 50px;
-    padding-right: 50px;
+    padding: 0 50px 130px 50px;
     height: auto;
     width: 100%;
     align-items: center;

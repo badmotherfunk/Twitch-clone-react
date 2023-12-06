@@ -1,5 +1,6 @@
 .landingContainer {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     padding: 55px 50px 80px 50px;
     height: auto;
     width: 100%;

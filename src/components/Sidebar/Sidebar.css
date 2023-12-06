@@ -8,14 +8,28 @@
     height: auto;
   }
 
+  .sidebarStickyContainer {
+    position: sticky;
+    top: 50px;
+    z-index: 99;
+  }
+
   .toggleSidebar {
     border: none;
     display: flex;
+    align-items: center;
+  }
+
+  .toggleSidebarActive {
+    border: none;
+    display: flex;
+    align-items: center;
   }
 
   .sidebarIcons {
     margin-left: 10px;
   }
+
 
   .sidebarActive {
     display: flex;
@@ -37,6 +51,7 @@
     padding: 5px;
     border-radius: 5px;
     cursor: pointer;
+    background: #eeeeee;
   }
 
   .containerTitre svg:nth-child(2) {
@@ -157,7 +172,71 @@
   }
 
 
-  /* TOOLTIP STREAM */
+/* TOOLTIP BUTTON */
+
+.toggleSidebar:after {
+  display: none;
+  content: attr(data-text);
+  text-align: left;
+  border-radius: 2px;
+  padding: 4px 10px;
+  font-size: 11px;
+  font-weight: 100;
+  background: #222222;
+  color: #FFF;
+  left: 250px;
+  border-radius: 5px;
+  font-size: 13px;
+  line-height: 21px;
+  box-shadow: 5px 5px 5px 1px rgba(54, 54, 54, 0.2);
+  width: fit-content;
+  
+}
+  
+.toggleSidebar:hover:after {
+  display: flex;
+  -webkit-transition: all 0.2s 0.5s;
+  transition: all 0.2s 0.5s;
+  position:absolute;
+  z-index: 99;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+/* TOOLTIP BUTTON ACTIVE */
+
+.toggleSidebarActive:after {
+  display: none;
+  content: attr(data-text);
+  text-align: left;
+  border-radius: 2px;
+  padding: 5px 10px;
+  font-size: 11px;
+  font-weight: 100;
+  background: #222222;
+  color: #FFF;
+  left: 55px;
+  border-radius: 5px;
+  font-size: 13px;
+  box-shadow: 5px 5px 5px 1px rgba(54, 54, 54, 0.2);
+  width: fit-content;
+  text-wrap:nowrap;
+}
+  
+.toggleSidebarActive:hover:after {
+  display: flex;
+  -webkit-transition: all 0.2s 0.5s;
+  transition: all 0.2s 0.5s;
+  position:absolute;
+  z-index: 99;
+  overflow: hidden;
+}
+
+
+/* TOOLTIP STREAM */
+
 
 .containerFlexSidebar:after {
   display: none;
@@ -175,6 +254,7 @@
   line-height: 21px;
   box-shadow: 5px 5px 5px 1px rgba(54, 54, 54, 0.2);
   width: 200px;
+
 }
 
 .containerFlexSidebar:hover:after {
@@ -183,12 +263,13 @@
   transition: all 0.2s 0.5s;
   position:absolute;
   z-index: 99;
-  width: 200px;
   overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
 }
+
+/* TOOLTIP STREAM ACTIVE  */
 
 .containerFlexSidebarActive:after {
   display: none;
@@ -207,7 +288,6 @@
   box-shadow: 5px 5px 5px 1px rgba(54, 54, 54, 0.2);
   white-space: pre-line;
   overflow: hidden;
-
 }
 
 .containerFlexSidebarActive:hover:after {
@@ -220,8 +300,6 @@
   display: flex;
   line-height: 20px;
 }
-
-/* ------------------------- */
 
 
   /* MEDIA QUERIES */
