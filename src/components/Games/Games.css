@@ -18,7 +18,6 @@
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     grid-gap: 10px;
     height: 100%;
-
 }
 
 .gamesTitleContainer {

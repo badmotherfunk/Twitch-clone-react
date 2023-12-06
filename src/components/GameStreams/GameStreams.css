@@ -1,10 +1,7 @@
 .category-container-global {
     display: flex;
     flex-direction: column;
-    padding-bottom: 130px;
-    padding-left: 50px;
-    padding-right: 50px;
-    padding-top: 50px;
+    padding: 50px 50px 70px 50px;
     height: auto;
     width: 100%;
 }
@@ -32,7 +29,6 @@
     font-size: 14.5px;
     padding: 5px 0 15px 0;
 }
-
 
 .follow-button {
     display: flex;
@@ -75,7 +71,6 @@
     transition: all 0.2s ease-in-out;
     width: 0;
 }
-
 
 .follow-button img {
     width: 15px;

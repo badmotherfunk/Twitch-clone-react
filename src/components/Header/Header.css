@@ -112,6 +112,7 @@
     height: 50px;
     cursor: pointer;
   }
+
   .menuIco {
     width: 25px;
   }
@@ -122,6 +123,7 @@
     padding: 5px;
     margin-top: 5px;
   }
+
   .logoUser:hover {
     background-color: #e9e7e7;
     border-radius: 5px;
@@ -154,7 +156,7 @@
   }
 
 
-  /* ------------------- Media queires ------------------- */
+  /* ------------------- Media queries ------------------- */
 
 
   @media screen and (max-width: 768px) {
@@ -170,7 +172,6 @@
         transform: scale(0.8);
     }
 }
-
 
 
   /* ------------------- Login ------------------- */
