@@ -37,20 +37,16 @@
     cursor: pointer;
     padding: 6px;
     border-radius: 5px;
-    background-color: #0e0e10;
-    color: #e1e1eb;
 }
 
 .arrowForwardIcon {
     cursor: pointer;
     padding: 6px;
     border-radius: 5px;
-    color: #e1e1eb;
-    background-color: #0e0e10;
 }
 
 .arrowBackIcon:hover, .arrowForwardIcon:hover {
-    background-color: #323239;
+    background-color: #e9e7e7;
 }
 
 
@@ -136,7 +132,7 @@
     border-bottom: 1px solid #7c3cdb;
     color: #7c3cdb;
     width: fit-content;
-    height: 15px;
+    height: fit-content;
 }
 
 .card-info-viewerCount {

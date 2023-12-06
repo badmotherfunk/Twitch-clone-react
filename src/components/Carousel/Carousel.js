@@ -8,9 +8,6 @@ import ReactTwitchEmbedVideo from 'react-twitch-embed-video'
 import './Carousel.css'
 import ArrowBackIcon from "@mui/icons-material/ChevronLeft";
 import ArrowForwardIcon from "@mui/icons-material/ChevronRight";
-import HeroBg1 from './Hero_ads_1.webp'
-import HeroBg2 from './Hero_ads_2.webp'
-import HeroBg3 from './Hero_ads_3.webp'
 
 
 export default function Carousel({games}) {
@@ -27,16 +24,10 @@ export default function Carousel({games}) {
 
 
     const ref = React.useRef();
-
-
-    const ads = [HeroBg1, HeroBg2, HeroBg3]
-    const randomIndex = Math.floor(Math.random() * ads.length);
-    const pictureAds = ads[randomIndex]
   
 
   return (
     <div className="carousel-global">
-      <img className="ads-hero" src={pictureAds} alt="comercial banner" />
 
       <div className="carousel-container">
         {finalCover && finalCover.length ? 
@@ -89,7 +80,7 @@ export default function Carousel({games}) {
             );
           }}
           />
-          : null }
+        : null }
 
       </div>
       
