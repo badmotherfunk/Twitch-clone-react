@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import { Link } from 'react-router-dom'
 import ReactTwitchEmbedVideo from 'react-twitch-embed-video'
 import {useParams} from 'react-router-dom'
 import api from '../../api'
@@ -13,6 +14,8 @@ export default function Live() {
     const [infoStream, setInfoStream] = useState([])
     const [infoGame, setInfoGame] = useState([])
     const [userInfo, setUserInfo] = useState([])
+    const [gameId, setGameId] = useState([])
+    const [gameCover, setGameCover] = useState([])
 
     useEffect(() => {
 
@@ -33,6 +36,14 @@ export default function Live() {
                 return gameName.name
             })
 
+            let gamePic = resultGameName.data.data.map(gameCover => {
+                let newUrl = gameCover.box_art_url
+                .replace("{width}", "250")
+                .replace("{height}", "350")
+                gameCover.box_art_url = newUrl
+                return gameCover.box_art_url
+            })
+
             let userID = result.data.data.map(userid => {
                 return userid.user_id
             })
@@ -44,6 +55,8 @@ export default function Live() {
             setInfoGame(gameName)
             setInfoStream(result.data.data[0])
             setUserInfo(userProfile[0])
+            setGameId(gameID)
+            setGameCover(gamePic)
            
         }
         fetchData()
@@ -59,20 +72,29 @@ export default function Live() {
             <div className='logoContainer'>
                 <img className='userLogo' src={userInfo.profile_image_url} alt="user logo" />
             </div>
-                <div className="streamInfo">
-                    <h2 className='userName'>{infoStream.user_name}</h2>
-                    <div className="streamTitle">{infoStream.title}</div>
-                    <div className="gameInfo">
-                        <p className='gameTitle'>{infoGame}</p>
+            <div className="streamInfo">
+                <h2 className='userName'>{infoStream.user_name}</h2>
+                <div className="streamTitle">{infoStream.title}</div>
 
-                        {infoStream.tags && infoStream.tags.slice(0, 5).map((tags, index) => (
-                            <div key={index} className="tagsInfo">
-                                <p>{tags}</p>
-                            </div>
-                        ))}
+                <div className="gameInfo">
+                    <Link to={"/game/" + infoGame}
+                        state= {{
+                            gameID: gameId,
+                            cover: gameCover,
+                            name:  infoGame
+                        }}
+                    >
+                    <p className='gameTitle'>{infoGame}</p>
+                    </Link>
 
-                    </div>
+                    {infoStream.tags && infoStream.tags.slice(0, 5).map((tags, index) => (
+                        <div key={index} className="tagsInfo">
+                            <p>{tags}</p>
+                        </div>
+                    ))}
                 </div>
+                
+            </div>
         </div>
 
 
