@@ -61,8 +61,13 @@ export default function Header() {
                     <form className="formSubmit">
 
                         <input type="text" className="inputRecherche" placeholder='Rechercher' value={streamer} onChange={(e) => setStreamer(e.target.value)}/>
-                        <button type='submit' onClick={streamer.length !== 0 ? handleSubmit : (e) => e.preventDefault()}>
-                            <img src={search} alt="icone loupe" className={streamer.length === 0 ? "notAllowed" : "logoLoupe"} />
+                        <button type='submit'
+                        className={streamer.length === 0 ? "notAllowed" : "searchButton"}
+                        onClick={streamer.length !== 0 ? handleSubmit : (e) => e.preventDefault()}>
+                            <img src={search} 
+                            alt="icone loupe" 
+                            className="logoLoupe"
+                            />
                         </button>
 
                     </form>

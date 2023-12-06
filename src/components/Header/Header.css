@@ -74,8 +74,20 @@
     background-color: #e6e6e7;
   }
 
+  .searchButton {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 4px 6px;
+    border: none;
+    cursor: pointer;
+  }
+
   .notAllowed {
     cursor: not-allowed;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 4px 6px;
+    border: none;
   }
 
   .logoLoupe {
@@ -96,14 +108,6 @@
   }
   .inputRecherche:focus {
     border: 4px solid #7b31eb;
-  }
-  
-  .liensNav button {
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    padding: 4px 6px;
-    border: none;
-    cursor: pointer;
   }
   
   .menuResBtn {
