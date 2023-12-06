@@ -15,6 +15,7 @@
     margin-top: 5px;
     padding: 10px 20px;
     width: 100%;
+    justify-content: space-between;
 }
 
 .logoContainer {
@@ -39,6 +40,49 @@
 .userInfo {
     display: flex;
     flex-direction: row;
+    justify-content: flex-start;
+}
+
+.streamInfos {
+    display: flex;
+    flex-direction: column;
+    margin-right: 350px;
+    gap: 10px;
+}
+
+.streamButtons {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.subscribeButton {
+    background: #f1f1f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+    flex-direction: row;
+    width: fit-content;
+    padding: 9px 15px 9px 11px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.subscribeButton p {
+    font-weight: 500;
+    font-size: 14.5px;
+    font-family: 'roboto', sans-serif;
+}
+
+.subscribeButton:hover {
+    background: #e9e7e7;
+}
+
+.star-logo-container {
+    display: flex;
 }
 
 .userName {
@@ -85,7 +129,7 @@
 }
 
 .tagsInfo {
-    background-color: #e7e6e6;
+    background-color: #e6e6e9;
     border-radius: 50px;
     padding: 3.5px 10px;
     font-size: 12px;
@@ -96,16 +140,16 @@
     margin-left: 10px;
 }
 .tagsInfo:hover {
-    background-color: #dbdbdb;
+    background-color: #e0dfdf;
 }
 
 .viewer {
-    position: absolute;
     display: flex;
     flex-direction: row;
     right: 400px;
     color: rgb(151 19 17);
     gap: 1px;
+    justify-content: flex-end;
 }
 .viewer p {
     font-size: 14.5px;
