@@ -111,12 +111,12 @@
   }
 
   .streamUser {
+    position: relative;
     flex-basis: 50%;
     overflow: hidden;
     text-align: left;
     font-size: 15px;
     font-weight: 500;
-    position: relative;
     top: 1px;
     color: #000;
   }
@@ -126,6 +126,8 @@
   }
 
   .gameNameSidebar {
+    position: relative;
+    width: 120px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -133,7 +135,6 @@
     color: rgb(83 83 95);
     font-size: 13px;
     margin-left: 39px;
-    position: relative;
     top: -4px;
   }
 
@@ -187,7 +188,7 @@
   padding: 5px 10px;
   background: #222222;
   color: #FFF;
-  left: 260px;
+  left: 250px;
   border-radius: 5px;
   font-size: 13px;
   box-shadow: 5px 5px 5px 1px rgba(54, 54, 54, 0.2);
@@ -244,7 +245,7 @@
   padding: 4px 10px;
   background: #FFF;
   color: rgb(58, 58, 58);
-  left: 265px;
+  left: 250px;
   border-radius: 5px;
   font-size: 13px;
   line-height: 21px;
