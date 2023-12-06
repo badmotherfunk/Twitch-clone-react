@@ -21,8 +21,8 @@ export default function Banner() {
         <h3 className='bannerTitre'>Rejoignez la communauté Twitch !</h3>
         <h4 className='bannerTexte'>Découvrez les meilleurs streams où que vous soyez.</h4>
       </div>
-      <form className="formLogin bannerButton">
-        <button onClick={handleRegister}>
+      <form>
+        <button className='bannerButton' onClick={handleRegister}>
           S'inscrire
         </button>
       </form>
