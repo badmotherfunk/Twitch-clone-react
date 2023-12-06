@@ -184,9 +184,7 @@
   content: attr(data-text);
   text-align: left;
   border-radius: 2px;
-  padding: 4px 10px;
-  font-size: 11px;
-  font-weight: 100;
+  padding: 5px 10px;
   background: #222222;
   color: #FFF;
   left: 250px;
@@ -195,17 +193,17 @@
   box-shadow: 5px 5px 5px 1px rgba(54, 54, 54, 0.2);
   width: fit-content;
   position: absolute;
+  overflow: hidden;
 }
   
 .toggleSidebar:hover:after {
   visibility: visible;
   -webkit-transition: all 0.2s 0.5s;
   transition: all 0.2s 0.5s;
-  z-index: 99;
-  overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
+  z-index: 99;
 }
 
 /* TOOLTIP BUTTON ACTIVE */
@@ -216,8 +214,6 @@
   text-align: left;
   border-radius: 2px;
   padding: 5px 10px;
-  font-size: 11px;
-  font-weight: 100;
   background: #222222;
   color: #FFF;
   left: 55px;
@@ -227,6 +223,7 @@
   width: fit-content;
   text-wrap: nowrap;
   position: absolute;
+  overflow: hidden;
 }
   
 .toggleSidebarActive:hover:after {
@@ -234,12 +231,10 @@
   -webkit-transition: all 0.2s 0.5s;
   transition: all 0.2s 0.5s;
   z-index: 99;
-  overflow: hidden;
 }
 
 
 /* TOOLTIP STREAM */
-
 
 .containerFlexSidebar:after {
   visibility: hidden;
@@ -247,8 +242,6 @@
   text-align: left;
   border-radius: 2px;
   padding: 4px 10px;
-  font-size: 11px;
-  font-weight: 100;
   background: #FFF;
   color: rgb(58, 58, 58);
   left: 250px;
@@ -264,11 +257,11 @@
   visibility: visible;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
-  z-index: 99;
   overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
+  z-index: 99;
 }
 
 /* TOOLTIP STREAM ACTIVE  */
@@ -279,8 +272,6 @@
   text-align: left;
   border-radius: 2px;
   padding: 5px 10px;
-  font-size: 11px;
-  font-weight: 100;
   background: #FFF;
   color: rgb(58, 58, 58);
   border: 1px solid rgb(230, 230, 230);
@@ -297,10 +288,10 @@
   visibility: visible;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
-  z-index: 99;
   width: 220px;
   height: auto;
   line-height: 20px;
+  z-index: 99;
 }
 
 
