@@ -74,12 +74,12 @@
     background-color: #e6e6e7;
   }
 
-  .logoLoupe {
-    width: 22px;
-  }
-
   .notAllowed {
     cursor: not-allowed;
+  }
+
+  .logoLoupe {
+    width: 22px;
   }
 
   .inputRecherche {

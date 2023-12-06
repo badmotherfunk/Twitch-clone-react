@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import logo from './IconeTwitch.svg'
 import search from './Search.svg'
 import menuIco from './MenuIco.svg'
@@ -8,7 +8,6 @@ import { Link } from 'react-router-dom'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import cross from './cross-close.svg'
-// import { useEffect } from 'react'
 
 
 export default function Header() {
