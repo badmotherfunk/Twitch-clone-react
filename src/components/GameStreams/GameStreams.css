@@ -38,7 +38,7 @@
     flex-direction: row;
     background-color: #9147ff;
     width: fit-content;
-    padding: 10px 11px;
+    padding: 9px 11px;
     border: none;
     outline: none;
     border-radius: 5px;
@@ -48,9 +48,10 @@
 }
 
 .follow-button p {
-    margin-left: 15px;
-    font-weight: 600;
+    margin-left: 16px;
+    font-weight: 500;
     font-size: 14.5px;
+    font-family: 'roboto', sans-serif;
 }
 
 .heart-logo-container {
