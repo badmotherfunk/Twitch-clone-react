@@ -20,10 +20,9 @@ export default function Carousel({games}) {
   useEffect(() => {
     
     let game = games.slice(0,10).map(game => {
-
       return game
-  })
-      setFinalCover(game)
+    })
+    setFinalCover(game)
     }, [games])
 
 

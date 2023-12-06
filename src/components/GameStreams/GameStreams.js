@@ -136,7 +136,7 @@ export default function GameStreams({games}) {
                                     <img src={stream.thumbnail_url} alt="jeu profile" className="imgCarte" />
                                     <div className="viewers">
                                         <p>{stream.viewer_count} spectateurs</p>
-                                        </div>
+                                    </div>
                              </div>
                             </Link>
                 

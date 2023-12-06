@@ -41,7 +41,6 @@ export default function Browse() {
                 <div className="tagsContainerCategory">
 
                     <div className="gamesTags">
-
                         <p>Jeux</p>
                         <img alt="Icône jeux" sizes="65px" src="https://static-cdn.jtvnw.net/c3-vg/verticals/gaming.svg"></img>
                     </div>
@@ -65,7 +64,7 @@ export default function Browse() {
                 </div>
 
                 <div className="filterSection">
-                        <h3>Catégories</h3>
+                    <h3>Catégories</h3>
                 </div>
 
             </div>
