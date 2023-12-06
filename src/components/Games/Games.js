@@ -6,117 +6,115 @@ import './Games.css'
 
 export default function Games() {
 
-    const [games, setGames] = useState([])
+  const [games, setGames] = useState([])
     
-    useEffect(() => {
+  useEffect(() => {
 
-        const fetchData = async () => {
+    const fetchData = async () => {
 
-          //Récupérer les images des jeux les plus populaires
-          const response = await api.get('https://api.twitch.tv/helix/games/top')
+      //Récupérer les images des jeux les plus populaires
+      const response = await api.get('https://api.twitch.tv/helix/games/top')
 
-          let data = response.data.data
-          let finalData = data.map(game => {
-              let newUrl = game.box_art_url
-              .replace("{width}", "250")
-              .replace("{height}", "350")
-          game.box_art_url = newUrl
+      let data = response.data.data
+      let finalData = data.map(game => {
+        let newUrl = game.box_art_url
+        .replace("{width}", "250")
+        .replace("{height}", "350")
+      game.box_art_url = newUrl
 
-          return game
-          })
+      return game
+      })
 
-          //Récupérer les top streams
-          const result = await api.get('https://api.twitch.tv/helix/streams')
+      //Récupérer les top streams
+      const result = await api.get('https://api.twitch.tv/helix/streams')
 
-          let dataArray = result.data.data
+      let dataArray = result.data.data
     
-          let gameIDs = dataArray.map(stream => {
-            return stream.game_id
-          })
-          let userIDs = dataArray.map(stream => {
-            return stream.user_id
-          })
+      let gameIDs = dataArray.map(stream => {
+        return stream.game_id
+      })
+      let userIDs = dataArray.map(stream => {
+        return stream.user_id
+      })
     
-          // Création des URLs personnalisés
-          let baseUrlGames = 'https://api.twitch.tv/helix/games?'
-          let baseUrlUsers = 'https://api.twitch.tv/helix/users?'
+      // Création des URLs personnalisés
+      let baseUrlGames = 'https://api.twitch.tv/helix/games?'
+      let baseUrlUsers = 'https://api.twitch.tv/helix/users?'
     
-          let queryParamsGame = ""
-          let queryParamsUsers = ""
+      let queryParamsGame = ""
+      let queryParamsUsers = ""
     
-          gameIDs.map(id => {
-            return (queryParamsGame = queryParamsGame + `id=${id}&`)
-          })
-          userIDs.map(id => {
-            return (queryParamsUsers = queryParamsUsers + `id=${id}&`)
-          })
+      gameIDs.map(id => {
+        return (queryParamsGame = queryParamsGame + `id=${id}&`)
+      })
+      userIDs.map(id => {
+        return (queryParamsUsers = queryParamsUsers + `id=${id}&`)
+      })
     
-          //url final 
-          let urlFinalGames = baseUrlGames + queryParamsGame
-          let urlFinalUsers = baseUrlUsers + queryParamsUsers
+      //url final 
+      let urlFinalGames = baseUrlGames + queryParamsGame
+      let urlFinalUsers = baseUrlUsers + queryParamsUsers
     
-          // Appel
-          let gamesNames = await api.get(urlFinalGames)
-          let getUsers = await api.get(urlFinalUsers)
+      // Appel
+      let gamesNames = await api.get(urlFinalGames)
+      let getUsers = await api.get(urlFinalUsers)
     
-          let gamesNameArray = gamesNames.data.data
-          let arrayUsers = getUsers.data.data
+      let gamesNameArray = gamesNames.data.data
+      let arrayUsers = getUsers.data.data
     
-          //Création du tableau final
-          let finalArray = dataArray.map(stream => {
+      //Création du tableau final
+      let finalArray = dataArray.map(stream => {
 
-            //Redimensionner les images
-            let newUrl = stream.thumbnail_url
-            .replace("{width}", "350")
-            .replace("{height}", "200")
-            stream.thumbnail_url = newUrl
+        //Redimensionner les images
+        let newUrl = stream.thumbnail_url
+        .replace("{width}", "350")
+        .replace("{height}", "200")
+        stream.thumbnail_url = newUrl
         
     
-            //Changer l'affichage des viewers en "K"
-            let newViewers = stream.viewer_count
-            if (newViewers < 1000) {
-                stream.viewer_count = newViewers;
-            } else if (newViewers >= 1000 && newViewers < 1_000_000) {
-                stream.viewer_count = (newViewers / 1000).toFixed(1) + " k";
-            }
+        //Changer l'affichage des viewers en "K"
+        let newViewers = stream.viewer_count
+        if (newViewers < 1000) {
+          stream.viewer_count = newViewers;
+        } else if (newViewers >= 1000 && newViewers < 1_000_000) {
+          stream.viewer_count = (newViewers / 1000).toFixed(1) + " k";
+        }
     
-            //Ajout des nouvelles propriétés
-            stream.gameName = ""
-            stream.truePic = ""
-            stream.login = ""
+        //Ajout des nouvelles propriétés
+        stream.gameName = ""
+        stream.truePic = ""
+        stream.login = ""
             
-            // Vérifie que les données des requêtes correspondent pour assigner les informations utilisateur
-            gamesNameArray.forEach(name => {
-              arrayUsers.forEach(user => {
-                  if(stream.user_id === user.id && stream.game_id === name.id) {
+        // Vérifie que les données des requêtes correspondent pour assigner les informations utilisateur
+        gamesNameArray.forEach(name => {
+          arrayUsers.forEach(user => {
+            if(stream.user_id === user.id && stream.game_id === name.id) {
     
-                    stream.truePic = user.profile_image_url
-                    stream.gameName = name.name 
-                    stream.login = user.login
-                  }
-                })
-              })
+              stream.truePic = user.profile_image_url
+              stream.gameName = name.name 
+              stream.login = user.login
+            }
+          })
+        })
 
               
-              // Vérifie que les données des requêtes correspondent pour assigner l'image du jeu
-              dataArray.forEach(gameName => {
-                  finalData.forEach(name => {
-                    if(gameName.gameName === name.name) {
-                      stream.box_art_url = name.box_art_url
-                    }
-                  })
-              })
-    
-              
-              return stream
-              
+        // Vérifie que les données des requêtes correspondent pour assigner l'image du jeu
+        dataArray.forEach(gameName => {
+            finalData.forEach(name => {
+              if(gameName.gameName === name.name) {
+                stream.box_art_url = name.box_art_url
+              }
             })
+        })
+                 
+        return stream
+              
+      })
+      setGames(finalArray)
+    }
+    fetchData()
     
-          setGames(finalArray)
-        }
-        fetchData()
-    
-      }, [])
+  }, [])
 
 
 
@@ -162,9 +160,9 @@ export default function Games() {
                       <div className="utilisateurCarteGames" data-text={game.user_name}>{game.user_name}</div>
                       <Link to={{pathname: "/game/" + game.game_name}}
                         state= {{
-                        gameID: game.game_id,
-                        cover: game.box_art_url,
-                        name:  game.game_name
+                          gameID: game.game_id,
+                          cover: game.box_art_url,
+                          name:  game.game_name
                         }}
                       >
                         <div className="jeuCarteGames">{game.game_name}</div>

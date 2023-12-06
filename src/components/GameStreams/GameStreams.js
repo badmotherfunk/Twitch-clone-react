@@ -154,8 +154,6 @@ export default function GameStreams({games}) {
                                         <h5 className="titreCarteGames" data-text={stream.title}>{stream.title}</h5>
                                     </Link>
                                     <div className="utilisateurCarteGames" data-text={stream.user_name}>{stream.user_name}</div>
-                                    <div className="jeuCarteGames">{stream.game_name}</div>
-                
                                                     
                                     <div className="tagsContainer">
                 
