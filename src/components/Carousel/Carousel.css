@@ -22,17 +22,6 @@
     width: 100%;
 }
 
-.ads-hero {
-    position: absolute;
-    top: 50px;
-    left: 0;
-    width: 100%;
-    height: 350px;
-    object-fit: cover;
-    object-position: center;
-    z-index: -1;
-}
-
 .arrowBackIcon {
     cursor: pointer;
     padding: 6px;
@@ -48,7 +37,6 @@
 .arrowBackIcon:hover, .arrowForwardIcon:hover {
     background-color: #e9e7e7;
 }
-
 
 .card-container {
     display: flex;
@@ -126,6 +114,10 @@
     font-size: 13.4px;
     margin-bottom: 3px;
     cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 140px;
 }
 
 .card-info-gameName:hover {
@@ -141,7 +133,7 @@
 }
 
 .card-info-tag {
-    background-color: #e7e6e6;
+    background-color: #e6e6e9;
     border-radius: 50px;
     padding: 3.5px 10px;
     font-size: 12px;
@@ -154,7 +146,7 @@
 }
 
 .card-info-tag:hover {
-    background-color: #dbdbdb;
+    background-color: #e0dfdf;
 }
 
 .card-info-title {

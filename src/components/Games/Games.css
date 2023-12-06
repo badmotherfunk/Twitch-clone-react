@@ -218,7 +218,7 @@
 }
 
 .tagsCartesGames {
-    background-color: #e7e6e6;
+    background-color: #e6e6e9;
     border-radius: 50px;
     padding: 3.5px 10px;
     font-size: 12px;
@@ -228,7 +228,7 @@
     margin-top: 5px;
 }
 .tagsCartesGames:hover {
-    background-color: #dbdbdb;
+    background-color: #e0dfdf;
 }
 
 .viewers {
