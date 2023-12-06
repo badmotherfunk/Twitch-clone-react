@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import logo from './IconeTwitch.svg'
 import search from './Search.svg'
 import menuIco from './MenuIco.svg'
@@ -23,14 +23,6 @@ export default function Header() {
         navigate(`/live/${streamer}`)
     }
 
-    // useEffect(() => {
-    //     if(error) {
-    //         navigate("/")
-    //     }
-    // }, [navigate])
-
-    //Login modal
-
     const [isOpen, setIsOpen] = useState(false)
     const [isRegister, setIsRegister] = useState(false)
 
@@ -46,7 +38,6 @@ export default function Header() {
         e.preventDefault()
         setIsRegister(!isRegister)
         setIsOpen(false)
-
     }
 
 
@@ -71,8 +62,8 @@ export default function Header() {
                     <form className="formSubmit">
 
                         <input type="text" className="inputRecherche" placeholder='Rechercher' value={streamer} onChange={(e) => setStreamer(e.target.value)}/>
-                        <button type='submit' onClick={handleSubmit}>
-                            <img src={search} alt="icone loupe" className="logoLoupe" />
+                        <button type='submit' onClick={streamer.length !== 0 ? handleSubmit : (e) => e.preventDefault()}>
+                            <img src={search} alt="icone loupe" className={streamer.length === 0 ? "notAllowed" : "logoLoupe"} />
                         </button>
 
                     </form>

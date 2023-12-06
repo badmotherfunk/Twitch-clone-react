@@ -78,6 +78,10 @@
     width: 22px;
   }
 
+  .notAllowed {
+    cursor: not-allowed;
+  }
+
   .inputRecherche {
     width: 50%;
     border-top-left-radius: 5px;
