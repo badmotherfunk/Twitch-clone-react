@@ -43,11 +43,11 @@
     border: none;
     cursor: pointer;
     width: 78px;
-    height: 31px;
+    height: 30px;
     background-color: #fcfcfc;
-    font-family: 'roboto', sans-serif;;
+    font-family: 'roboto', sans-serif;
     font-weight: 500;
-    font-size: 13.5px;
+    font-size: 13px;
 }
 
 .bannerButton:hover {
