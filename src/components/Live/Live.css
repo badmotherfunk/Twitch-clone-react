@@ -56,6 +56,26 @@
     gap: 10px;
 }
 
+.reactButton {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: none;
+    color: #6b2fc5;
+    background: none;
+    font-weight: 500;
+    font-family: 'roboto', sans-serif;
+    font-size: 13.5px;
+    gap: 5px;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.reactButton:hover {
+    background: #e9e7e7;
+}
+
 .subscribeButton {
     background: #f1f1f1;
     display: flex;
