@@ -79,14 +79,14 @@ export default function Header() {
             
                 <li className="liensNav">
                     <form className="formLogin">
-                        <button onClick={handleLogin}>
+                        <button className="loginButton" onClick={handleLogin}>
                             Se connecter
                         </button>
                     </form>
                 </li>
                 <li className="liensNav">
                     <form className="formRegister">
-                        <button onClick={handleRegister}>
+                        <button className="registerButton" onClick={handleRegister}>
                             S'inscrire
                         </button>
                     </form>
