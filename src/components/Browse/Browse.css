@@ -45,7 +45,7 @@
     justify-content: space-between;
     width: 375px;
     height: 15px;
-    background-color: #7b31eb;
+    background-color: #5c16c5;
     border-radius: 5px;
     color: #fff;
     font-size: 25px;
@@ -58,7 +58,7 @@
 .musicTags:hover,
 .esportsTags:hover,
 .creatifTags:hover  {
-    background-color: #9146FF;
+    background-color: rgb(122, 77, 190);
 }
 
 .filterSection {
