@@ -6,6 +6,7 @@ import heart from './heart-thin.svg'
 import heartFull from './heart-icon.svg'
 import './GameStreams.css'
 import { Link } from 'react-router-dom'
+import Register from '../Register/Register'
 
 export default function GameStreams({games}) {
 
@@ -97,83 +98,96 @@ export default function GameStreams({games}) {
     }, [location.state])
 
 
-  return (
-    
-    <div className='category-container-global'>
+    const [isOpen, setIsOpen] = useState(false)
 
-        <div className='category-header-container'>
-            <img src={location.state.cover} alt="Category thumbnail" className='category-img' />
-            <div className='category-header-info'>
-                <h1 className='category-title'>{location.state.name}</h1>
-                <p className='category-viewers'><strong>{viewers}</strong> spectateurs</p>
-                <button className='follow-button'>
-                    <div className='heart-logo-container'>
-                        <img className='heart-logo heart-empty' src={heart} alt="heart thin" />
-                        <img className='heart-logo heart-full' src={heartFull} alt="heart full" />
-                    </div>
-                    <i class="fa-solid fa-heart"></i>
-                    <p>Suivre</p>
-                </button>
+    const handleRegister = (e) => {
+        e.preventDefault()
+        setIsOpen(true)
+    }
+
+
+  return (
+    <>
+        <div className='category-container-global'>
+
+            <div className='category-header-container'>
+                <img src={location.state.cover} alt="Category thumbnail" className='category-img' />
+                <div className='category-header-info'>
+                    <h1 className='category-title'>{location.state.name}</h1>
+                    <p className='category-viewers'><strong>{viewers}</strong> spectateurs</p>
+                    <button className='follow-button' onClick={handleRegister}>
+                        <div className='heart-logo-container'>
+                            <img className='heart-logo heart-empty' src={heart} alt="heart thin" />
+                            <img className='heart-logo heart-full' src={heartFull} alt="heart full" />
+                        </div>
+                        <i class="fa-solid fa-heart"></i>
+                        <p>Suivre</p>
+                    </button>
+                </div>
+
+            </div>
+            <div className="filterSection">
+                <h3>Chaînes Live</h3>
             </div>
 
-        </div>
-        <div className="filterSection">
-                <h3>Chaînes Live</h3>
-        </div>
+            <div className="category-stream-container">
+                <h3 className='category-stream-title'>Toutes les chaînes</h3>
 
-        <div className="category-stream-container">
-            <h3 className='category-stream-title'>Toutes les chaînes</h3>
+                <div className="stream-container">
 
-            <div className="stream-container">
-
-                {streamData.map((stream, index) => (
-                    <div key={index} className="carteGames">
-                        <div className="carteBackground">
+                    {streamData.map((stream, index) => (
+                        <div key={index} className="carteGames">
+                            <div className="carteBackground">
                 
-                            <Link className="lien" to={{pathname: `/live/${stream.user_login}`}}>
-                                <div className="carteContainer">
-                                    <p className='liveCarte'>LIVE</p>
-                                    <img src={stream.thumbnail_url} alt="jeu profile" className="imgCarte" />
-                                    <div className="viewers">
-                                        <p>{stream.viewer_count} spectateurs</p>
+                                <Link className="lien" to={{pathname: `/live/${stream.user_login}`}}>
+                                    <div className="carteContainer">
+                                        <p className='liveCarte'>LIVE</p>
+                                        <img src={stream.thumbnail_url} alt="jeu profile" className="imgCarte" />
+                                        <div className="viewers">
+                                            <p>{stream.viewer_count} spectateurs</p>
+                                        </div>
                                     </div>
-                             </div>
-                            </Link>
-                
-                        </div>
-                
-                        <div className="carteBodyGames">
-                
-                            <div className='userStreamContainer'>
-                                <Link to={{pathname: `/live/${stream.user_login}`}}>
-                                    <img src={stream.truePic} alt="User logo" className='userLogos' />
                                 </Link>
                 
-                                <div className="userStreamInfos">
-                                    <Link className="titleLink" to={{pathname: `/live/${stream.user_login}`}}>
-                                        <h5 className="titreCarteGames" data-text={stream.title}>{stream.title}</h5>
+                            </div>
+                
+                            <div className="carteBodyGames">
+                
+                                <div className='userStreamContainer'>
+                                    <Link to={{pathname: `/live/${stream.user_login}`}}>
+                                        <img src={stream.truePic} alt="User logo" className='userLogos' />
                                     </Link>
-                                    <div className="utilisateurCarteGames" data-text={stream.user_name}>{stream.user_name}</div>
+                
+                                    <div className="userStreamInfos">
+                                        <Link className="titleLink" to={{pathname: `/live/${stream.user_login}`}}>
+                                            <h5 className="titreCarteGames" data-text={stream.title}>{stream.title}</h5>
+                                        </Link>
+                                        <div className="utilisateurCarteGames" data-text={stream.user_name}>{stream.user_name}</div>
                                                     
-                                    <div className="tagsContainer">
+                                        <div className="tagsContainer">
                 
-                                        {stream.tags && stream.tags.slice(0, 4).map((tags, index) => (
-                                            <div key={index} className="tagsCartesGames">{tags}</div>
-                                        ))}
+                                            {stream.tags && stream.tags.slice(0, 4).map((tags, index) => (
+                                                <div key={index} className="tagsCartesGames">{tags}</div>
+                                            ))}
                 
+                                        </div>
                                     </div>
+                
                                 </div>
                 
                             </div>
                 
                         </div>
-                
-                    </div>
-                ))}
+                    ))}
+
+                </div>
 
             </div>
-
         </div>
-    </div>
+        
+        {isOpen &&
+            <Register onClose={() => setIsOpen(false)}/>
+        }
+    </>
   )
 }

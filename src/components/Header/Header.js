@@ -7,7 +7,8 @@ import './Header.css'
 import { Link } from 'react-router-dom'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
-import cross from './cross-close.svg'
+import Login from '../Login/Login'
+import Register from '../Register/Register'
 
 
 export default function Header() {
@@ -106,71 +107,11 @@ export default function Header() {
         </div>
 
         {isOpen &&
-        <div className='modal-container'>
-            <div className="modal-layout" onClick={() => setIsOpen(false)}></div>
-            <div className="modal-login-container">
-
-                <div className="modal">
-                    <img src={cross} alt="cross close" onClick={() => setIsOpen(false)} className='cross-close-modal' />
-                    
-                    <div className='modal-title-container'>
-                        <img src={logo} alt="logo twitch" className='twitch-logo'/>
-                        <h1 className='modal-title'>Se connecter à Twitch</h1>
-                    </div>
-
-                    <div className="form-modal-container">
-                        <label htmlFor="email">Identifiant</label>
-                        <input type="text" />
-
-                        <label htmlFor="password">Mot de passe</label>
-                        <input type="password" />
-
-                        <Link className='conexion-issue'>Problème de connexion ?</Link>
-                        <button className="modal-button">Se connecter</button>
-                        <Link className="register-link" onClick={handleRegister}>Pas de compte ? Inscrivez-vous</Link>
-                    </div>
-                </div>
-            </div>
-
-            
-        </div>
+            <Login onClose={() => setIsOpen(false)}/>
         }
 
         {isRegister &&
-        <div className='modal-container'>
-            <div className="modal-layout" onClick={() => setIsRegister(false)}></div>
-            <div className="modal-login-container">
-
-                <div className="modal">
-                    <img src={cross} alt="cross close" onClick={() => setIsRegister(false)} className='cross-close-modal' />
-                    
-                    <div className='modal-title-container'>
-                        <img src={logo} alt="logo twitch" className='twitch-logo'/>
-                        <h1 className='modal-title'>Rejoignez Twitch aujourd'hui</h1>
-                    </div>
-
-                    <div className='modal-text'>
-                        <p>Créer un compte vous permet de participer dans le chat, de suivre vos chaînes préférées et de diffuser sur votre propre chaîne.</p>
-                    </div>
-
-                    <div className="form-modal-container">
-                        <label htmlFor="email">Identifiant</label>
-                        <input type="text" />
-
-                        <label htmlFor="password">Mot de passe</label>
-                        <input type="password" />
-                            
-                        <p className='register-step'>Etape 1 sur 3</p>
-                        <div className='next-step-container'>
-                            <Link className="register-link" onClick={handleLogin}>Vous utilisez déjà Twitch ? Connexion</Link>
-                            <button className="modal-button register-button">Prochaine étape</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            
-        </div>
+            <Register isRegister={isRegister} onClose={() => setIsRegister(false)}/>
         }
 
     </div>
