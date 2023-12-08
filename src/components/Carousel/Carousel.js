@@ -94,7 +94,7 @@ export default function Carousel({games}) {
 export const Card = React.memo(function (props) {
   
   const { data, dataIndex, slideIndex } = props;
-  const {thumbnail_url, truePic, user_name, game_name, viewer_count, tags, title, user_login} = data[dataIndex];
+  const {thumbnail_url, truePic, user_name, game_name, viewer_count, tags, title, user_login, game_id, box_art_url} = data[dataIndex];
   
   const [isActive, setIsActive] = useState()
   const [stream, setStream] = useState([])
@@ -107,6 +107,8 @@ export const Card = React.memo(function (props) {
       setStream(user_login)
     }
   }, [slideIndex, isActive, user_login])
+
+  console.log(data)
   
 
 
@@ -158,7 +160,14 @@ export const Card = React.memo(function (props) {
         <Link className="lien" to={{pathname: `/live/${user_login}`}}>
           <p className="card-info-userName">{user_name}</p>
         </Link>
+        <Link to={{pathname: `/game/${game_name}`}}
+          state= {{
+            gameID: game_id,
+            cover: box_art_url,
+            name:  game_name
+          }}>
           <p className="card-info-gameName">{game_name}</p>
+        </Link>
           <p className="card-info-viewerCount">{viewer_count} spectateurs</p>
         </div>
 
