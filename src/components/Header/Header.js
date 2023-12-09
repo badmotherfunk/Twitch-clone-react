@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import logo from './IconeTwitch.svg'
 import search from './Search.svg'
 import menuIco from './MenuIco.svg'
@@ -9,6 +9,7 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import Login from '../Login/Login'
 import Register from '../Register/Register'
+import api from '../../api'
 
 
 export default function Header() {
@@ -17,10 +18,43 @@ export default function Header() {
     const navigate = useNavigate()
 
     const [streamer, setStreamer] = useState([])
+    const [game, setGame] = useState([])
 
-    // Accéder au live d'un streamer dans la barre de recherche
-    const handleSubmit = () => {
-        navigate(`/live/${streamer}`)
+    useEffect(() => {
+        if(streamer.length !== 0 ) {
+
+            const fetchData = async () => {
+                
+                const result = await api.get('https://api.twitch.tv/helix/search/categories?query=' + streamer)
+                
+                let dataArray = result.data.data
+                
+                const gameName = dataArray.find(games => {
+                    let newUrl = games.box_art_url
+                    .replace("52x72", "250x350")
+                    games.box_art_url = newUrl
+
+                    const game = games.name === streamer
+                    return game
+                })                
+                setGame(gameName)             
+            }
+            fetchData()
+        }
+    }, [streamer])
+
+    
+    // Accéder au live d'un streamer ou de la catégorie d'un jeu dans la barre de recherche
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        
+        if(game !== undefined) {
+            navigate(`/game/${game.name}`, { 
+                state:{gameID: game.id, cover: game.box_art_url, name: game.name} 
+            })
+        } else if (streamer){
+            navigate(`/live/${streamer}`)
+        }
     }
 
     const [isOpen, setIsOpen] = useState(false)
@@ -76,7 +110,7 @@ export default function Header() {
 
                 <li className="liensNav">
                     <img src={crown} alt="logo couronne" className="logoUser" />
-                </li>
+                </li> 
             
                 <li className="liensNav">
                     <form className="formLogin">

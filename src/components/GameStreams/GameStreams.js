@@ -8,7 +8,7 @@ import './GameStreams.css'
 import { Link } from 'react-router-dom'
 import Register from '../Register/Register'
 
-export default function GameStreams({games}) {
+export default function GameStreams() {
 
     let location = useLocation()
 
@@ -120,7 +120,7 @@ export default function GameStreams({games}) {
                             <img className='heart-logo heart-empty' src={heart} alt="heart thin" />
                             <img className='heart-logo heart-full' src={heartFull} alt="heart full" />
                         </div>
-                        <i class="fa-solid fa-heart"></i>
+                        <i className="fa-solid fa-heart"></i>
                         <p>Suivre</p>
                     </button>
                 </div>

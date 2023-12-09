@@ -108,10 +108,7 @@ export const Card = React.memo(function (props) {
     }
   }, [slideIndex, isActive, user_login])
 
-  console.log(data)
   
-
-
   return (
     <div className="card-container">
   

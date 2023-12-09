@@ -59,9 +59,9 @@ export default function Sidebar() {
         //Changer l'affichage des viewers en "K"
         let newViewers = stream.viewer_count
         if (newViewers < 1000) {
-            stream.viewer_count = newViewers;
+          stream.viewer_count = newViewers;
         } else if (newViewers >= 1000 && newViewers < 1_000_000) {
-            stream.viewer_count = (newViewers / 1000).toFixed(1) + " k";
+          stream.viewer_count = (newViewers / 1000).toFixed(1) + " k";
         }
 
         //Ajout des nouvelles propriétés
@@ -72,19 +72,15 @@ export default function Sidebar() {
         gamesNameArray.forEach(name => {
           arrayUsers.forEach(user => {
               if(stream.user_id === user.id && stream.game_id === name.id) {
-
-                stream.truePic = user.profile_image_url
-                stream.gameName = name.name 
-                stream.login = user.login
-              }
-            })
+              stream.truePic = user.profile_image_url
+              stream.gameName = name.name 
+              stream.login = user.login
+            }
           })
-
+        })       
+        return stream
           
-          return stream
-          
-        })
-
+      })
       setTopStreams(finalArray.slice(0,10))
     }
     fetchData()
@@ -102,12 +98,12 @@ export default function Sidebar() {
           
           {!active ? 
           <button className='toggleSidebar' onClick={toggleSidebar} data-text="Masquer">
-            <svg width="20px" version="1.1" viewBox="0 0 20 20" x="0px" y="0px" aria-hidden="true" focusable="false" class="ScIconSVG-sc-1q25cff-1 jpczqG"><g><path d="M16 16V4h2v12h-2zM6 9l2.501-2.5-1.5-1.5-5 5 5 5 1.5-1.5-2.5-2.5h8V9H6z"></path></g></svg>
+            <svg width="20px" version="1.1" viewBox="0 0 20 20" x="0px" y="0px" aria-hidden="true" focusable="false" ><g><path d="M16 16V4h2v12h-2zM6 9l2.501-2.5-1.5-1.5-5 5 5 5 1.5-1.5-2.5-2.5h8V9H6z"></path></g></svg>
           </button>
           : 
           <div className='sidebarIcons'>
             <button className='toggleSidebarActive' onClick={toggleSidebar} data-text="Développer">
-              <svg width="20px" version="1.1" viewBox="0 0 20 20" x="0px" y="0px" aria-hidden="true" focusable="false" class="ScIconSVG-sc-1q25cff-1 jpczqG"><g><path d="M4 16V4H2v12h2zM13 15l-1.5-1.5L14 11H6V9h8l-2.5-2.5L13 5l5 5-5 5z"></path></g></svg>
+              <svg width="20px" version="1.1" viewBox="0 0 20 20" x="0px" y="0px" aria-hidden="true" focusable="false" ><g><path d="M4 16V4H2v12h2zM13 15l-1.5-1.5L14 11H6V9h8l-2.5-2.5L13 5l5 5-5 5z"></path></g></svg>
             </button>
             <button className='toggleSidebarActive' data-text="Chaînes recommandées">
               <svg width="20px" height="2rem" viewBox="0 0 20 20"><path fill="rgb(83 83 95)" fill-rule="evenodd" d="M12.002 3.999a2 2 0 0 1 2 2v2L18 6v8l-3.998-2v2a2 2 0 0 1-2 1.999h-8a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h8zM12 6H4v8h8V6z" clip-rule="evenodd"></path></svg>
