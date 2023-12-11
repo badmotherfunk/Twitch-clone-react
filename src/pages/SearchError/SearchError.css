@@ -1,0 +1,22 @@
+.errorContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    align-items: center;
+    margin-top: 155px;
+    gap: 10px;
+}
+
+.errorContainer img {
+    width: 160px;
+}
+
+.errorContainer h1 {
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.errorContainer p {
+    font-size: 19px;
+}

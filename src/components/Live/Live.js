@@ -7,64 +7,78 @@ import './Live.css'
 import heart from '../GameStreams/heart-thin.svg'
 import heartFull from '../GameStreams/heart-icon.svg'
 import Register from '../Register/Register'
+import { useNavigate } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 
 export default function Live() {
 
     //Récupérer le login du streamer dans la barre de navigation
     let {slug} = useParams()
-
+    const location = useLocation()
 
     const [infoStream, setInfoStream] = useState([])
     const [infoGame, setInfoGame] = useState([])
     const [userInfo, setUserInfo] = useState([])
     const [gameId, setGameId] = useState([])
     const [gameCover, setGameCover] = useState([])
+    const [error, setError] = useState([])
 
     useEffect(() => {
 
         const fetchData = async () => {
+            try {
 
-            const result = await api.get(`https://api.twitch.tv/helix/streams?user_login=${slug}`)
+                const result = await api.get(`https://api.twitch.tv/helix/streams?user_login=${slug}`)
+                               
+                let gameID = result.data.data.map(gameid => {
+                    return gameid.game_id
+                })
+                                        
+                //Récupérer les info du jeu
+                const resultGameName = await api.get(`https://api.twitch.tv/helix/games?id=${gameID}`)
+                    
+                let gameName = resultGameName.data.data.map(gameName => {
+                    return gameName.name
+                })
+                    
+                let gamePic = resultGameName.data.data.map(gameCover => {
+                    let newUrl = gameCover.box_art_url
+                    .replace("{width}", "250")
+                    .replace("{height}", "350")
+                    gameCover.box_art_url = newUrl
+                    return gameCover.box_art_url
+                })
+                    
+                let userID = result.data.data.map(userid => {
+                    return userid.user_id
+                })
+                    
+                //Récupérer le profil utilisateur
+                const profile = await api.get(`https://api.twitch.tv/helix/users?id=${userID}`)
+                const userProfile = profile.data.data
+                    
+                setInfoGame(gameName)
+                setInfoStream(result.data.data[0])
+                setUserInfo(userProfile[0])
+                setGameId(gameID)
+                setGameCover(gamePic)
 
-
-            let gameID = result.data.data.map(gameid => {
-                return gameid.game_id
-            })
-
-
-            //Récupérer les info du jeu
-            const resultGameName = await api.get(`https://api.twitch.tv/helix/games?id=${gameID}`)
-
-            let gameName = resultGameName.data.data.map(gameName => {
-                return gameName.name
-            })
-
-            let gamePic = resultGameName.data.data.map(gameCover => {
-                let newUrl = gameCover.box_art_url
-                .replace("{width}", "250")
-                .replace("{height}", "350")
-                gameCover.box_art_url = newUrl
-                return gameCover.box_art_url
-            })
-
-            let userID = result.data.data.map(userid => {
-                return userid.user_id
-            })
-
-            //Récupérer le profil utilisateur
-            const profile = await api.get(`https://api.twitch.tv/helix/users?id=${userID}`)
-            const userProfile = profile.data.data
-
-            setInfoGame(gameName)
-            setInfoStream(result.data.data[0])
-            setUserInfo(userProfile[0])
-            setGameId(gameID)
-            setGameCover(gamePic)
+            } catch (error) {
+                setError(error)
+            }
            
         }
         fetchData()
 
     }, [slug, userInfo])
+
+    const navigate = useNavigate()
+
+    if(error.code === "ERR_BAD_REQUEST") {
+        navigate("/searchError", { 
+            state:{name: location.state} 
+        })
+    }
 
     //Gére l'ouverture de la modale
     const [isOpen, setIsOpen] = useState(false)

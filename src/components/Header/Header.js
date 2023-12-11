@@ -19,32 +19,37 @@ export default function Header() {
 
     const [streamer, setStreamer] = useState([])
     const [game, setGame] = useState([])
+    const [error, setError] = useState([])
 
     useEffect(() => {
         if(streamer.length !== 0 ) {
 
             const fetchData = async () => {
                 
-                const result = await api.get('https://api.twitch.tv/helix/search/categories?query=' + streamer)
+                try {
+                    const result = await api.get('https://api.twitch.tv/helix/search/categories?query=' + streamer)
+                    let dataArray = result.data.data
                 
-                let dataArray = result.data.data
-                
-                const gameName = dataArray.find(games => {
-                    let newUrl = games.box_art_url
-                    .replace("52x72", "250x350")
-                    games.box_art_url = newUrl
-
-                    const game = games.name === streamer
-                    return game
-                })                
-                setGame(gameName)             
+                    const gameName = dataArray.find(games => {
+                        let newUrl = games.box_art_url
+                        .replace("52x72", "250x350")
+                        games.box_art_url = newUrl
+    
+                        const game = games.name === streamer
+                        return game
+                    })                
+                    setGame(gameName) 
+                } catch (error) {
+                    setError(error)
+                }
+                           
             }
             fetchData()
         }
     }, [streamer])
 
     
-    // Accéder au live d'un streamer ou de la catégorie d'un jeu dans la barre de recherche
+    // Accéder à la catégorie d'un jeu, où au live d'un streamer dans la barre de recherche
     const handleSubmit = (e) => {
         e.preventDefault()
         
@@ -53,10 +58,17 @@ export default function Header() {
                 state:{gameID: game.id, cover: game.box_art_url, name: game.name} 
             })
         } else if (streamer){
-            navigate(`/live/${streamer}`)
+            navigate(`/live/${streamer}`, {
+                state:{name: streamer}
+        })
+        } else if (error) {
+            navigate('/')
         }
+
     }
 
+
+    // Gérer l'état des modales de connexion et d'inscription
     const [isOpen, setIsOpen] = useState(false)
     const [isRegister, setIsRegister] = useState(false)
 
@@ -65,7 +77,6 @@ export default function Header() {
         e.preventDefault()
         setIsOpen(!isOpen)
         setIsRegister(false)
-
     }
 
     const handleRegister = (e) => {
