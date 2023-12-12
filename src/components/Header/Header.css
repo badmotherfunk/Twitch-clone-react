@@ -21,7 +21,8 @@
   .liensNav:nth-child(3) {
     margin: 0 auto;
     flex-shrink: 1;
-    width: 850px;
+    display: flex;
+    justify-content: center;
   }
   .liensNav:nth-child(4) {
     padding: 0 5px 0 5px
@@ -63,15 +64,83 @@
   .logo:hover {
     transform: scale(1.1);
   }
+
   .formSubmit {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     margin-left: 175px;
     flex-shrink: 1;
+    width: 400px;
+    position: fixed;
+    top: 0;
   }
 
   .formSubmit button:hover {
     background-color: #e6e6e7;
+  }
+
+  .searchContainer {
+    padding: 5px;
+    background-color: #fff;
+    border-radius: 10px;
+  }
+
+  .searchContainerFocus {
+    padding: 5px;
+    background-color: #fff;
+    border-radius: 10px;
+  }
+
+  .searchContainerFocus:focus-within {
+    box-shadow: 0 0 5px 3px rgba(26, 26, 26, 0.2);
+  }
+
+  .searchInputContainer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .searchFocus {
+    display: none;
+    font-size: 14px;
+    color: #333333;
+    padding: 5px;
+    cursor: pointer;
+  }
+
+ .searchContent {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 5px;
+ }
+
+ .searchGameInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+ }
+
+ .searchInputContainer:focus-within + .searchFocus {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 10px;
+ }
+
+ .logoLoupeInfo {
+    height: 18px;
+ }
+
+  .searchContent img {
+    width: 8%;
+  }
+
+  .goToChannel {
+    padding-top: 5px;
   }
 
   .searchButton {
@@ -95,7 +164,7 @@
   }
 
   .inputRecherche {
-    width: 50%;
+    width: 100%;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     padding: 8px;

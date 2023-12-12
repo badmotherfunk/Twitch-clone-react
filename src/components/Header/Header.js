@@ -65,6 +65,8 @@ export default function Header() {
             navigate('/')
         }
 
+
+        setStreamer([])
     }
 
 
@@ -105,16 +107,48 @@ export default function Header() {
                 </li>
                 <li className="liensNav">
                     <form className="formSubmit">
+                        <div className={ streamer && game && streamer === game.name ? "searchContainerFocus" : "searchContainer"}>
 
-                        <input type="text" className="inputRecherche" placeholder='Rechercher' value={streamer} onChange={(e) => setStreamer(e.target.value)}/>
-                        <button type='submit'
-                        className={streamer.length === 0 ? "notAllowed" : "searchButton"}
-                        onClick={streamer.length !== 0 ? handleSubmit : (e) => e.preventDefault()}>
-                            <img src={search} 
-                            alt="icone loupe" 
-                            className="logoLoupe"
-                            />
-                        </button>
+
+                            <div className="searchInputContainer">
+                                <input type="text" className="inputRecherche" placeholder='Rechercher' value={streamer} onChange={(e) => setStreamer(e.target.value)}/>
+                                <button type='submit'
+                                className={streamer.length === 0 ? "notAllowed" : "searchButton"}
+                                onClick={streamer.length !== 0 ? handleSubmit : (e) => e.preventDefault()}
+                                >
+                                    <img src={search} 
+                                    alt="icone loupe" 
+                                    className="logoLoupe"
+                                    />
+                                </button>
+                            </div>
+
+                            {streamer.length !== 0 &&
+                                <div className="searchFocus" onClick={handleSubmit}>
+                                    <div className="searchContent">
+
+                                        { streamer && game && streamer === game.name && 
+
+                                            <div className='searchGameInfo'>
+                                                <img src={game.box_art_url} alt="Game Cover" />
+                                                <p>{game.name}</p>
+                                            </div>  
+
+                                        }
+
+                                        <div className='searchGameInfo'>
+                                            <img src={search}                               
+                                                alt="icone loupe" 
+                                                className="logoLoupeInfo"
+                                            />
+                                            <p>{streamer}</p>
+                                        </div>                       
+                                        <p className='goToChannel'>Aller sur la chaîne de {streamer}</p>
+
+                                    </div>
+                                </div>
+                            }
+                        </div>
 
                     </form>
                 </li>
