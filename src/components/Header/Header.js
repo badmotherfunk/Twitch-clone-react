@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect} from 'react'
 import logo from './IconeTwitch.svg'
 import search from './Search.svg'
 import menuIco from './MenuIco.svg'
@@ -20,6 +20,7 @@ export default function Header() {
     const [streamer, setStreamer] = useState([])
     const [game, setGame] = useState([])
     const [error, setError] = useState([])
+    const [isActive, setIsActive] = useState(false)
 
     useEffect(() => {
         if(streamer.length !== 0 ) {
@@ -30,15 +31,16 @@ export default function Header() {
                     const result = await api.get('https://api.twitch.tv/helix/search/categories?query=' + streamer)
                     let dataArray = result.data.data
                 
-                    const gameName = dataArray.find(games => {
+                    const gameName = dataArray.map(games => {
                         let newUrl = games.box_art_url
                         .replace("52x72", "250x350")
                         games.box_art_url = newUrl
     
-                        const game = games.name === streamer
-                        return game
+                        // const game = games.name === streamer
+                        return games
                     })                
                     setGame(gameName) 
+                    
                 } catch (error) {
                     setError(error)
                 }
@@ -48,32 +50,46 @@ export default function Header() {
         }
     }, [streamer])
 
+    useEffect(() => {
+        if(streamer.length !== 0) {
+            setIsActive(true)
+        } else {
+            setIsActive(false)
+        }
+    }, [streamer])
+
+
     
     // Accéder à la catégorie d'un jeu, où au live d'un streamer dans la barre de recherche
     const handleSubmit = (e) => {
         e.preventDefault()
         
-        if(game !== undefined) {
-            navigate(`/game/${game.name}`, { 
-                state:{gameID: game.id, cover: game.box_art_url, name: game.name} 
+        const gameFiltered = game.find(games => {
+            let game = games.name === streamer || streamer === games.name.toLowerCase()
+    
+            return game
+        })
+
+        if(streamer === gameFiltered.name) {
+            navigate(`/game/${gameFiltered.name}`, { 
+                state:{gameID: gameFiltered.id, cover: gameFiltered.box_art_url, name: gameFiltered.name} 
             })
         } else if (streamer){
             navigate(`/live/${streamer}`, {
                 state:{name: streamer}
-        })
+            })
         } else if (error) {
-            navigate('/')
+            navigate("/")
         }
 
-
         setStreamer([])
+        setIsActive(false)
     }
 
 
     // Gérer l'état des modales de connexion et d'inscription
     const [isOpen, setIsOpen] = useState(false)
     const [isRegister, setIsRegister] = useState(false)
-
 
     const handleLogin = (e) => {
         e.preventDefault()
@@ -85,6 +101,19 @@ export default function Header() {
         e.preventDefault()
         setIsRegister(!isRegister)
         setIsOpen(false)
+    }
+
+    // Gérer le comportement du focus sur l'input recherche
+    const handleFocus = () => {
+        if(streamer.length !== 0) {
+            setIsActive(true)
+        }
+    }
+
+    const handleCloseFocus = () => {
+        setTimeout(() => {
+            setIsActive(false)
+        }, 115);
     }
 
 
@@ -106,12 +135,12 @@ export default function Header() {
                     </Link>
                 </li>
                 <li className="liensNav">
-                    <form className="formSubmit">
+                    <form className={!isActive ? "formSubmit" : "formSubmitActive"}>
                         <div className={ streamer && game && streamer === game.name ? "searchContainerFocus" : "searchContainer"}>
 
 
                             <div className="searchInputContainer">
-                                <input type="text" className="inputRecherche" placeholder='Rechercher' value={streamer} onChange={(e) => setStreamer(e.target.value)}/>
+                                <input type="text" className="inputRecherche" onFocus={handleFocus} onBlur={handleCloseFocus} placeholder='Rechercher' value={streamer} onChange={(e) => setStreamer(e.target.value)}/>
                                 <button type='submit'
                                 className={streamer.length === 0 ? "notAllowed" : "searchButton"}
                                 onClick={streamer.length !== 0 ? handleSubmit : (e) => e.preventDefault()}
@@ -123,36 +152,44 @@ export default function Header() {
                                 </button>
                             </div>
 
-                            {streamer.length !== 0 &&
-                                <div className="searchFocus" onClick={handleSubmit}>
-                                    <div className="searchContent">
-
-                                        { streamer && game && streamer === game.name && 
-
-                                            <div className='searchGameInfo'>
-                                                <img src={game.box_art_url} alt="Game Cover" />
-                                                <p>{game.name}</p>
-                                            </div>  
+                            {isActive &&
+                                <div className="searchFocus">
+                                    
+                                    <ul className="searchContent">
+                                            
+                                        { streamer && game && 
+                                            game.slice(0, 5).map((games, index) => (
+                                                <Link to={{pathname: `/game/${games.name}`}}
+                                                state= {{
+                                                    gameID: games.id,
+                                                    cover: games.box_art_url,
+                                                    name:  games.name
+                                                }}>
+                                                    <li key={index} className='searchGameInfo'>
+                                                        <img src={games.box_art_url} alt="Game Cover" />
+                                                        <p>{games.name}</p>
+                                                    </li>  
+                                                </Link>
+                                            ))
 
                                         }
 
-                                        <div className='searchGameInfo'>
+                                        <li className='searchGameInfo'>
                                             <img src={search}                               
-                                                alt="icone loupe" 
-                                                className="logoLoupeInfo"
+                                            alt="icone loupe" 
+                                            className="logoLoupeInfo"
                                             />
-                                            <p>{streamer}</p>
-                                        </div>                       
-                                        <p className='goToChannel'>Aller sur la chaîne de {streamer}</p>
-
-                                    </div>
+                                                <p>{streamer}</p>
+                                        </li>
+                                                               
+                                    </ul>
+                                    <button className='goToChannel' onClick={handleSubmit}>Aller sur la chaîne de {streamer}</button>
+                                   
                                 </div>
                             }
                         </div>
-
                     </form>
                 </li>
-
                 <li className="liensNav">
                     <img src={crown} alt="logo couronne" className="logoUser" />
                 </li> 
