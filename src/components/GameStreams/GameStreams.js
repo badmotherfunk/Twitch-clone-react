@@ -14,6 +14,7 @@ export default function GameStreams() {
 
     const [streamData, setStreamData] = useState([])
     const [viewers, setViewers] = useState(0)
+    const [noData, setNoData] = useState(false)
 
 
     useEffect(() => {
@@ -88,8 +89,11 @@ export default function GameStreams() {
                 return stream
 
             })
-
             setStreamData(finalArray)
+           
+            if(finalArray.length === 0) {
+                setNoData(true)
+            }
 
         }
         fetchData()
@@ -132,7 +136,8 @@ export default function GameStreams() {
 
             <div className="category-stream-container">
                 <h3 className='category-stream-title'>Toutes les chaînes</h3>
-                {streamData.length === 0 &&
+
+                {noData && streamData.length === 0 &&
                     <p className='noStreamFound'>Aucun résultat trouvé</p>
                 }
 
