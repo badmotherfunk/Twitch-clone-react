@@ -22,6 +22,7 @@ export default function Header() {
     const [error, setError] = useState([])
     const [isActive, setIsActive] = useState(false)
 
+    // Appel API pour récupérer les jeux en fonction du nom inscrit dans la barre de recherche
     useEffect(() => {
         if(streamer.length !== 0 ) {
 
@@ -36,7 +37,6 @@ export default function Header() {
                         .replace("52x72", "250x350")
                         games.box_art_url = newUrl
     
-                        // const game = games.name === streamer
                         return games
                     })                
                     setGame(gameName) 
@@ -50,6 +50,7 @@ export default function Header() {
         }
     }, [streamer])
 
+    // Si il y a du contenu d'écrit dans la barre de recherche, alors on montre le composant de suggestion
     useEffect(() => {
         if(streamer.length !== 0) {
             setIsActive(true)
