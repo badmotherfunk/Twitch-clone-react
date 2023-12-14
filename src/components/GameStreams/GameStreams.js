@@ -132,6 +132,9 @@ export default function GameStreams() {
 
             <div className="category-stream-container">
                 <h3 className='category-stream-title'>Toutes les chaînes</h3>
+                {streamData.length === 0 &&
+                    <p className='noStreamFound'>Aucun résultat trouvé</p>
+                }
 
                 <div className="stream-container">
 
