@@ -113,7 +113,7 @@ export default function Header() {
     const handleCloseFocus = () => {
         setTimeout(() => {
             setIsActive(false)
-        }, 115);
+        }, 120);
     }
 
 
