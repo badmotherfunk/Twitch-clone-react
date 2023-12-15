@@ -3,7 +3,7 @@
     background: #FFF;
     height: 50px;
     position: fixed;
-    width: 100%;
+    width: 100vw;
     z-index: 1000;
     box-shadow: 1px 1px 2px rgba(26, 26, 26, 0.2);
   }
@@ -69,7 +69,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-left: 175px;
+    /* margin-left: 175px; */
     flex-shrink: 1;
     width: 400px;
     position: fixed;
@@ -80,7 +80,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-left: 175px;
+    /* margin-left: 175px; */
     flex-shrink: 1;
     width: 400px;
     position: fixed;
@@ -261,6 +261,17 @@
   /* ------------------- Media queries ------------------- */
 
 
+  @media screen and (max-width: 1024px) {
+
+    .formSubmit {
+      width: 30%;
+    }
+    .formSubmitActive {
+      width: 30%;
+  }
+}
+
+
   @media screen and (max-width: 768px) {
 
     .liensNav {
@@ -268,8 +279,13 @@
     }
     .formLogin {
       transform: scale(0.8);
-
-  }
+    }
+    .formSubmit {
+      transform: scale(0.8);
+    }
+    .formSubmitActive {
+      transform: scale(0.8);
+    }
     .formRegister {
         transform: scale(0.8);
     }
