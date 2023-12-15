@@ -23,7 +23,7 @@
     padding: 5px;
     border-radius: 5px;
     cursor: pointer;
-    background: #eeeeee;
+    /* background: #eeeeee; */
   }
 
   .toggleSidebar:hover {
@@ -39,7 +39,7 @@
     padding: 5px;
     border-radius: 5px;
     cursor: pointer;
-    background: #eeeeee;
+    /* background: #eeeeee; */
     width: 100%;
   }
   .toggleSidebarActive:nth-child(2) {
@@ -60,7 +60,7 @@
     margin-top: 50px;
     padding-top: 5px;
     width: 50px;
-    background: #eeeeee;
+    /* background: #eeeeee; */
     height: auto;
     min-height: 100vh;
   }

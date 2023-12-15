@@ -1,5 +1,6 @@
 import React from 'react'
-import { useEffect, useState } from "react"
+import { useEffect, useState, useContext } from "react"
+import { ThemeContext } from '../../Context/Theme'
 import { useLocation } from 'react-router-dom'
 import api from '../../api'
 import heart from './heart-thin.svg'
@@ -9,6 +10,8 @@ import { Link } from 'react-router-dom'
 import Register from '../Register/Register'
 
 export default function GameStreams() {
+
+    const [{theme}] = useContext(ThemeContext)
 
     let location = useLocation()
 
@@ -130,8 +133,9 @@ export default function GameStreams() {
                 </div>
 
             </div>
-            <div className="filterSection">
-                <h3>Chaînes Live</h3>
+            <div 
+            className="filterSection">
+                <h3 style={{color: theme.link.color, borderBottom: theme.link.borderBottom}}>Chaînes Live</h3>
             </div>
 
             <div className="category-stream-container">
@@ -168,14 +172,30 @@ export default function GameStreams() {
                 
                                     <div className="userStreamInfos">
                                         <Link className="titleLink" to={{pathname: `/live/${stream.user_login}`}}>
-                                            <h5 className="titreCarteGames" data-text={stream.title}>{stream.title}</h5>
+                                            <h5 className="titreCarteGames" 
+                                            data-text={stream.title}
+                                            style={{color: theme.layout.color}}
+                                            >
+                                                {stream.title}
+                                            </h5>
                                         </Link>
-                                        <div className="utilisateurCarteGames" data-text={stream.user_name}>{stream.user_name}</div>
+                                        <div className="utilisateurCarteGames" 
+                                        data-text={stream.user_name}
+                                        style={{color: theme.text.color}}
+                                        >
+                                            {stream.user_name}
+                                        </div>
                                                     
                                         <div className="tagsContainer">
                 
                                             {stream.tags && stream.tags.slice(0, 4).map((tags, index) => (
-                                                <div key={index} className="tagsCartesGames">{tags}</div>
+                                                <div 
+                                                key={index} 
+                                                className="tagsCartesGames"
+                                                style={{backgroundColor: theme.tags.backgroundColor, color: theme.tags.color}}
+                                                >
+                                                    {tags}
+                                                </div>
                                             ))}
                 
                                         </div>

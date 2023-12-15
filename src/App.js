@@ -1,4 +1,6 @@
 import {Routes, Route} from "react-router-dom"
+import { useContext } from "react";
+import { ThemeContext } from "./Context/Theme";
 import './App.css';
 import Header from './components/Header/Header';
 import Sidebar from './components/Sidebar/Sidebar';
@@ -12,8 +14,9 @@ import Error from "./pages/Error/Error";
 
 
 function App() {
+  const [{theme}] = useContext(ThemeContext)
   return (
-    <div className="App">
+    <div className="App" style={{backgroundColor: theme.body.backgroundColor, color: theme.body.color}}>
       <Header />
       <Sidebar />
       <Routes>

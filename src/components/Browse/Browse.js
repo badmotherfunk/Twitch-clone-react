@@ -1,10 +1,13 @@
 import React from 'react'
-import {useState, useEffect} from 'react'
+import {useState, useEffect, useContext} from 'react'
+import { ThemeContext } from '../../Context/Theme';
 import api from '../../api';
 import './Browse.css'
 import { Link } from 'react-router-dom';
 
 export default function Browse() {
+
+    const [{theme}] = useContext(ThemeContext)
 
     const [categories, setCategories] = useState([]);
 
@@ -64,7 +67,7 @@ export default function Browse() {
                 </div>
 
                 <div className="filterSection">
-                    <h3>Catégories</h3>
+                    <h3 style={{color: theme.link.color, borderBottom: theme.link.borderBottom}}>Catégories</h3>
                 </div>
 
             </div>

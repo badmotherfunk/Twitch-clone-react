@@ -1,4 +1,5 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useContext} from 'react'
+import { ThemeContext } from '../../Context/Theme'
 import { Link } from 'react-router-dom'
 import ReactTwitchEmbedVideo from 'react-twitch-embed-video'
 import {useParams} from 'react-router-dom'
@@ -11,6 +12,8 @@ import { useNavigate } from 'react-router-dom'
 import { useLocation } from 'react-router-dom'
 
 export default function Live() {
+
+    const [{theme}] = useContext(ThemeContext)
 
     //Récupérer le login du streamer dans la barre de navigation
     let {slug} = useParams()
@@ -100,8 +103,16 @@ export default function Live() {
                         <img className='userLogo' src={userInfo.profile_image_url} alt="user logo" />
                     </div>
                     <div className="streamInfo">
-                        <h2 className='userName'>{infoStream.user_name}</h2>
-                        <div className="streamTitle">{infoStream.title}</div>
+                        <h2 className='userName' 
+                        style={{color: theme.layout.color}}
+                        >
+                            {infoStream.user_name}
+                        </h2>
+                        <div className="streamTitle"
+                        style={{color: theme.layout.color}}
+                        >
+                            {infoStream.title}
+                        </div>
 
                         <div className="gameInfo">
                             <Link to={"/game/" + infoGame}
@@ -111,7 +122,11 @@ export default function Live() {
                                     name:  infoGame
                                 }}
                             >
-                                <p className='gameTitle'>{infoGame}</p>
+                                <p className='gameTitle'
+                                style={{color: theme.link.color}}
+                                >
+                                    {infoGame}
+                                </p>
                             </Link>
 
                             {infoStream.tags && infoStream.tags.slice(0, 5).map((tags, index) => (

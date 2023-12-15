@@ -1,4 +1,5 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { ThemeContext } from "../../Context/Theme";
 import {
   StackedCarousel,
   ResponsiveContainer,
@@ -93,6 +94,8 @@ export default function Carousel({games}) {
 // If you want the absolute best performance then pass in a custom comparator function like below 
 export const Card = React.memo(function (props) {
   
+  const [{theme}] = useContext(ThemeContext)
+  
   const { data, dataIndex, slideIndex } = props;
   const {thumbnail_url, truePic, user_name, game_name, viewer_count, tags, title, user_login, game_id, box_art_url} = data[dataIndex];
   
@@ -146,7 +149,7 @@ export const Card = React.memo(function (props) {
         </div>
       }
 
-    <div className="card-info-container" style={ !isActive ? {display: 'block'} : {display: 'none'} }>
+    <div className="card-info-container" style={ !isActive ? {display: 'block', backgroundColor: theme.userInfo.backgroundColor, color: theme.userInfo.color} : {display: 'none'} }>
       <div className="carousel-user-container">
         
       <Link className="lien" to={{pathname: `/live/${user_login}`}}>
@@ -154,29 +157,51 @@ export const Card = React.memo(function (props) {
       </Link>
 
         <div className="carousel-user-infos">
-        <Link className="lien" to={{pathname: `/live/${user_login}`}}>
-          <p className="card-info-userName">{user_name}</p>
-        </Link>
-        <Link to={{pathname: `/game/${game_name}`}}
-          state= {{
-            gameID: game_id,
-            cover: box_art_url,
-            name:  game_name
-          }}>
-          <p className="card-info-gameName">{game_name}</p>
-        </Link>
-          <p className="card-info-viewerCount">{viewer_count} spectateurs</p>
+          <Link className="lien" to={{pathname: `/live/${user_login}`}}>
+            <p className="card-info-userName"
+            style={{color: theme.link.color}}
+            >
+              {user_name}
+            </p>
+          </Link>
+          <Link to={{pathname: `/game/${game_name}`}}
+            state= {{
+              gameID: game_id,
+              cover: box_art_url,
+              name:  game_name
+            }}>
+            <p className="card-info-gameName"
+            style={{color: theme.link.color}}
+            >
+              {game_name}
+            </p>
+          </Link>
+          <p className="card-info-viewerCount"
+          style={{color: theme.title.color}}
+          >
+            {viewer_count} spectateurs</p>
         </div>
 
       </div>
 
       <div className="tags-container">
-        <p className="card-info-tag">{tags[0]}</p>
+        <p className="card-info-tag" 
+        style={{backgroundColor: theme.tags.backgroundColor, color: theme.tags.color}}
+        >
+          {tags[0]}
+        </p>
         {tags[1] ? 
-        <p className="card-info-tag">{tags[1]}</p>
+        <p className="card-info-tag" style={{backgroundColor: theme.tags.backgroundColor, color: theme.tags.color}}
+        
+        >{tags[1]}
+      </p>
       : null }
       </div>
-      <p className="card-info-title">{title}</p>
+      <p className="card-info-title"
+      style={{color: theme.title.color}}
+      >
+        {title}
+      </p>
   </div>
 
 

@@ -1,4 +1,5 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useContext} from 'react'
+import { ThemeContext } from '../../Context/Theme'
 import api from '../../api'
 import { Link } from 'react-router-dom'
 import Carousel from '../Carousel/Carousel'
@@ -6,9 +7,12 @@ import './Games.css'
 
 export default function Games() {
 
+  const [{theme}] = useContext(ThemeContext)
+
   const [games, setGames] = useState([])
     
   useEffect(() => {
+
 
     const fetchData = async () => {
 
@@ -125,7 +129,7 @@ export default function Games() {
             
         <div className="flexAccueil">
             <div className="gamesTitleContainer">
-              <h1 className="gamesTitle"><span className='titreChannel'>Chaînes live </span>&nbsp;qui pourraient vous plaire</h1>
+              <h1 className="gamesTitle" style={{color: theme.layout.color}}><span className='titreChannel'>Chaînes live </span>&nbsp;qui pourraient vous plaire</h1>
             </div>
 
           <div className="streamContainer">
@@ -155,9 +159,19 @@ export default function Games() {
 
                     <div className="userStreamInfos">
                       <Link className="titleLink" to={{pathname: `/live/${game.user_login}`}}>
-                      <h5 className="titreCarteGames" data-text={game.title}>{game.title}</h5>
+                      <h5 className="titreCarteGames" 
+                      data-text={game.title}
+                      style={{color: theme.layout.color}}
+                      >
+                        {game.title}
+                      </h5>
                       </Link>
-                      <div className="utilisateurCarteGames" data-text={game.user_name}>{game.user_name}</div>
+                      <div className="utilisateurCarteGames" 
+                      data-text={game.user_name}
+                      style={{color: theme.text.color}}
+                      >
+                        {game.user_name}
+                      </div>
                       <Link to={{pathname: `/game/${game.game_name}`}}
                         state= {{
                           gameID: game.game_id,
@@ -165,14 +179,20 @@ export default function Games() {
                           name:  game.game_name
                         }}
                       >
-                        <div className="jeuCarteGames">{game.game_name}</div>
+                        <div className="jeuCarteGames" style={{color: theme.text.color}}>{game.game_name}</div>
                       </Link>
 
                                     
                       <div className="tagsContainer">
 
                         {game.tags && game.tags.slice(0, 4).map((tags, index) => (
-                          <div key={index} className="tagsCartesGames">{tags}</div>
+                          <div 
+                          key={index} 
+                          className="tagsCartesGames"
+                          style={{backgroundColor: theme.tags.backgroundColor, color: theme.tags.color}}
+                          >
+                            {tags}
+                          </div>
                         ))}
 
                       </div>

@@ -1,11 +1,12 @@
 
 .headerTop {
-    background: #FFF;
+    background-color: #FFF;
     height: 50px;
     position: fixed;
     width: 100vw;
     z-index: 1000;
     box-shadow: 1px 1px 2px rgba(26, 26, 26, 0.2);
+    color: #000;
   }
   
   .listeMenu {
@@ -35,6 +36,9 @@
   }
   .liensNav:nth-child(7) {
     padding: 0 10px 0 5px
+  }
+  .liensNav:nth-child(8) {
+    padding: 0 10px 0 0
   }
 
   .directoryButton {
@@ -256,6 +260,79 @@
   .formRegister button:hover {
     background: #7b31eb;
   }
+
+  .userButton {
+    outline: none;
+    border: none;
+    background: none;
+  }
+
+  .userPreferences {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 205px;
+    border-radius: 5px;
+    height: 100px;
+    padding: 15px;
+    top: 40px;
+    right: 15px;
+    font-size: 14px;
+    box-shadow: 0 0 5px 2px rgba(26, 26, 26, 0.2);
+  }
+
+  .toggleTheme {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px
+  }
+
+  .toggleText {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .toggleButton {
+    cursor: pointer;
+    border: 2px solid black;
+    outline: none;
+    width: 35px;
+    height: 20px;
+    border-radius: 10px;
+    position: relative;
+  }
+
+  .toggleButton::before {
+    content: "";
+    width: 12px;
+    height: 12px;
+    border: 1px solid #000;
+    background-color: #000;
+    position: absolute;
+    border-radius: 10px;
+    left: 1px;
+    top: 1px;
+  }
+
+  /* .toggleButton::after {
+    content: "";
+    width: 12px;
+    height: 12px;
+    border: 1px solid #000;
+    background-color: #000;
+    position: absolute;
+    border-radius: 10px;
+    right: 1px;
+    top: 1px;
+  }
+
+  .toggleButton:checked::after {
+    transform: translateX(100%);
+  } */
 
 
   /* ------------------- Media queries ------------------- */
