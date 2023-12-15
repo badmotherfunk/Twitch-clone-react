@@ -16,6 +16,7 @@ const themes = {
         },
         userInfo: {
             backgroundColor: "#1f1f23",
+            color: "#FFFFFF"
         },
         title: {
             color: "#FFFFFF",
@@ -52,6 +53,7 @@ const themes = {
         },
         userInfo: {
             backgroundColor: "#FFF",
+            color: "rgb(83 83 95)"
         },
         title: {
             color: "#adadb8",

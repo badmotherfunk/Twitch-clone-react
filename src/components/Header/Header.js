@@ -129,9 +129,9 @@ export default function Header() {
     }
 
     const handleCloseUserPreferences = () => {
-        // setTimeout(() => {
-        //     setUserActive(false)
-        // }, 160);
+        setTimeout(() => {
+            setUserActive(false)
+        }, 160);
     }
 
 

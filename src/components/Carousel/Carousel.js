@@ -177,7 +177,7 @@ export const Card = React.memo(function (props) {
             </p>
           </Link>
           <p className="card-info-viewerCount"
-          style={{color: theme.title.color}}
+          style={{color: theme.userInfo.color}}
           >
             {viewer_count} spectateurs</p>
         </div>
@@ -198,7 +198,7 @@ export const Card = React.memo(function (props) {
       : null }
       </div>
       <p className="card-info-title"
-      style={{color: theme.title.color}}
+      style={{color: theme.userInfo.color}}
       >
         {title}
       </p>
