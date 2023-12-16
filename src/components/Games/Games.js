@@ -7,7 +7,7 @@ import './Games.css'
 
 export default function Games() {
 
-  const [{theme}] = useContext(ThemeContext)
+  const [{isDark, theme}] = useContext(ThemeContext)
 
   const [games, setGames] = useState([])
     
@@ -158,10 +158,9 @@ export default function Games() {
                     </Link>
 
                     <div className="userStreamInfos">
-                      <Link className="titleLink" to={{pathname: `/live/${game.user_login}`}}>
-                      <h5 className="titreCarteGames" 
+                      <Link to={{pathname: `/live/${game.user_login}`}} className="titleLink" >
+                      <h5 className={isDark ? "darkTitreCarteGames" : "titreCarteGames"} 
                       data-text={game.title}
-                      style={{color: theme.layout.color}}
                       >
                         {game.title}
                       </h5>
@@ -179,7 +178,7 @@ export default function Games() {
                           name:  game.game_name
                         }}
                       >
-                        <div className="jeuCarteGames" style={{color: theme.text.color}}>{game.game_name}</div>
+                        <div className={isDark ? "darkJeuCarteGames" : "jeuCarteGames"}>{game.game_name}</div>
                       </Link>
 
                                     
@@ -188,8 +187,7 @@ export default function Games() {
                         {game.tags && game.tags.slice(0, 4).map((tags, index) => (
                           <div 
                           key={index} 
-                          className="tagsCartesGames"
-                          style={{backgroundColor: theme.tags.backgroundColor, color: theme.tags.color}}
+                          className={isDark ? "darkTagsCartesGames" : "tagsCartesGames"}
                           >
                             {tags}
                           </div>

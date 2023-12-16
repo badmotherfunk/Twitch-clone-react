@@ -11,7 +11,7 @@ import Register from '../Register/Register'
 
 export default function GameStreams() {
 
-    const [{theme}] = useContext(ThemeContext)
+    const [{isDark, theme}] = useContext(ThemeContext)
 
     let location = useLocation()
 
@@ -172,9 +172,8 @@ export default function GameStreams() {
                 
                                     <div className="userStreamInfos">
                                         <Link className="titleLink" to={{pathname: `/live/${stream.user_login}`}}>
-                                            <h5 className="titreCarteGames" 
+                                            <h5 className={isDark ? "darkTitreCarteGames" : "titreCarteGames"} 
                                             data-text={stream.title}
-                                            style={{color: theme.layout.color}}
                                             >
                                                 {stream.title}
                                             </h5>
@@ -191,8 +190,7 @@ export default function GameStreams() {
                                             {stream.tags && stream.tags.slice(0, 4).map((tags, index) => (
                                                 <div 
                                                 key={index} 
-                                                className="tagsCartesGames"
-                                                style={{backgroundColor: theme.tags.backgroundColor, color: theme.tags.color}}
+                                                className={isDark ? "darkTagsCartesGames" : "tagsCartesGames"}
                                                 >
                                                     {tags}
                                                 </div>

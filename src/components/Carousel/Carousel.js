@@ -13,6 +13,8 @@ import ArrowForwardIcon from "@mui/icons-material/ChevronRight";
 
 export default function Carousel({games}) {
 
+  const [{isDark}] = useContext(ThemeContext)
+
   const [finalCover, setFinalCover] = useState([])
 
   useEffect(() => {
@@ -52,7 +54,7 @@ export default function Carousel({games}) {
                 ref.current?.goBack();
                 }}
               >
-              <ArrowBackIcon className="arrowBackIcon"/>
+              <ArrowBackIcon className={isDark ? "darkArrowBackIcon" : "arrowBackIcon"}/>
               </div>
             
               <StackedCarousel
@@ -74,7 +76,7 @@ export default function Carousel({games}) {
               ref.current?.goNext(6);
               }}
               >
-              <ArrowForwardIcon className="arrowForwardIcon"/>
+              <ArrowForwardIcon className={isDark ? "darkArrowForwardIcon" : "arrowForwardIcon"}/>
               </div>
 
             </div>
@@ -94,7 +96,7 @@ export default function Carousel({games}) {
 // If you want the absolute best performance then pass in a custom comparator function like below 
 export const Card = React.memo(function (props) {
   
-  const [{theme}] = useContext(ThemeContext)
+  const [{isDark, theme}] = useContext(ThemeContext)
   
   const { data, dataIndex, slideIndex } = props;
   const {thumbnail_url, truePic, user_name, game_name, viewer_count, tags, title, user_login, game_id, box_art_url} = data[dataIndex];
@@ -158,8 +160,7 @@ export const Card = React.memo(function (props) {
 
         <div className="carousel-user-infos">
           <Link className="lien" to={{pathname: `/live/${user_login}`}}>
-            <p className="card-info-userName"
-            style={{color: theme.link.color}}
+            <p className={isDark ? "dark-card-info-userName" : "card-info-userName"}
             >
               {user_name}
             </p>
@@ -170,8 +171,7 @@ export const Card = React.memo(function (props) {
               cover: box_art_url,
               name:  game_name
             }}>
-            <p className="card-info-gameName"
-            style={{color: theme.link.color}}
+            <p className={isDark ? "dark-card-info-gameName" : "card-info-gameName"}
             >
               {game_name}
             </p>
@@ -185,17 +185,14 @@ export const Card = React.memo(function (props) {
       </div>
 
       <div className="tags-container">
-        <p className="card-info-tag" 
-        style={{backgroundColor: theme.tags.backgroundColor, color: theme.tags.color}}
-        >
-          {tags[0]}
-        </p>
+        <p className={isDark ? "dark-card-info-tag" : "card-info-tag"}>{tags[0]}</p>
+
         {tags[1] ? 
-        <p className="card-info-tag" style={{backgroundColor: theme.tags.backgroundColor, color: theme.tags.color}}
-        
-        >{tags[1]}
-      </p>
-      : null }
+          <p className={isDark ? "dark-card-info-tag" : "card-info-tag"}>{tags[1]}</p>
+        : 
+        null 
+        }
+
       </div>
       <p className="card-info-title"
       style={{color: theme.userInfo.color}}

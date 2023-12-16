@@ -37,6 +37,23 @@
     background-color: #e9e7e7;
 }
 
+.darkArrowBackIcon {
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 5px;
+}
+
+.darkArrowForwardIcon {
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 5px;
+}
+
+.darkArrowBackIcon:hover, .darkArrowForwardIcon:hover {
+    background-color: rgba(103, 103, 117, 0.38);
+}
+
+
 .card-container {
     display: flex;
     flex-direction: row;
@@ -108,6 +125,21 @@
     color: #7c3cdb;
 }
 
+.dark-card-info-userName {
+    color: #a467ff;
+    font-weight: 500;
+    font-size: 13.5px;
+    margin-bottom: 4px;
+    cursor: pointer;
+}
+
+.dark-card-info-userName:hover {
+    border-bottom: 1px solid #9b5ef7;
+    color: #9b5ef7;
+    width: fit-content;
+    height: 15px;
+}
+
 .card-info-gameName {
     color: rgb(92 22 197);
     font-size: 13.4px;
@@ -122,6 +154,29 @@
 .card-info-gameName:hover {
     border-bottom: 1px solid #7c3cdb;
     color: #7c3cdb;
+    width: fit-content;
+    max-width: 133px;
+    height: fit-content;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 15px;
+}
+
+.dark-card-info-gameName {
+    color: #a467ff;
+    font-size: 13.4px;
+    margin-bottom: 3px;
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 140px;
+}
+
+.dark-card-info-gameName:hover {
+    border-bottom: 1px solid #9b5ef7;
+    color: #9b5ef7;
     width: fit-content;
     max-width: 133px;
     height: fit-content;
@@ -151,6 +206,23 @@
 
 .card-info-tag:hover {
     background-color: #e0dfdf;
+}
+
+.dark-card-info-tag {
+    background-color: rgba(83,83,95,.38);
+    border-radius: 50px;
+    padding: 3.5px 10px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #adadb8;
+    cursor: pointer;
+    margin-top: 5px;
+    margin: 8px 0;
+    user-select: none;
+}
+
+.dark-card-info-tag:hover {
+    background-color: rgba(103, 103, 117, 0.38);
 }
 
 .card-info-title {

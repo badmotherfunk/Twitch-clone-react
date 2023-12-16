@@ -28,7 +28,7 @@ export default function Login(props) {
                 <div className="modal-layout" onClick={() => onClose(false)}></div>
                 <div className="modal-login-container">
         
-                    <div className="modal" style={{backgroundColor: theme.sidebarLayout.backgroundColor, color: theme.sidebarLayout.color}}>
+                    <div className={isDark ? "darkModal" : "modal"}>
                         {isDark ?
                             <svg viewBox="0 0 20 20" focusable="false" aria-hidden="true" onClick={() => onClose(false)} className='cross-close-modal' fill='#FFFFFF' ><path d="M8.5 10 4 5.5 5.5 4 10 8.5 14.5 4 16 5.5 11.5 10l4.5 4.5-1.5 1.5-4.5-4.5L5.5 16 4 14.5 8.5 10z"></path></svg>
 
@@ -43,20 +43,17 @@ export default function Login(props) {
         
                         <div className="form-modal-container">
                             <label htmlFor="email">Identifiant</label>
-                            <input type="text" style={{backgroundColor: theme.sidebarLayout.backgroundColor, color: theme.sidebarLayout.color}}/>
+                            <input type="text" className={isDark && "darkInput"}/>
         
                             <label htmlFor="password">Mot de passe</label>
-                            <input type="password" style={{backgroundColor: theme.sidebarLayout.backgroundColor, color: theme.sidebarLayout.color}}/>
+                            <input type="password" className={isDark && "darkInput"}/>
         
-                            <Link className='conexion-issue' 
-                            style={{color: theme.link.color}}
-                            >
+                            <Link className={isDark ? 'dark-conexion-issue' : 'conexion-issue'} >
                                 Problème de connexion ?
                             </Link>
-                                <button className="modal-button" style={{backgroundColor: theme.button.backgroundColor, color: theme.text.color}}>Se connecter</button>
-                            <Link className="register-link" 
+                                <button className={isDark ? "dark-modal-button" : "modal-button"}>Se connecter</button>
+                            <Link className={isDark ? "dark-register-link" : "register-link"} 
                             onClick={handleRegister} 
-                            style={{color: theme.link.color}}
                             >
                                 Pas de compte ? Inscrivez-vous
                             </Link>

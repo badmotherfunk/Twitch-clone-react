@@ -28,10 +28,7 @@ const themes = {
             backgroundColor: "rgba(83,83,95,.38)",
             color: "#FFFFFF"
         },
-        tags: {
-            color: "#adadb8",
-            backgroundColor: "rgba(83,83,95,.38)"
-        },
+
         link: {
             color: "#bf94ff",
             borderBottom: "2px solid #bf94ff"
@@ -65,16 +62,12 @@ const themes = {
             backgroundColor: "#f1f1f1",
             color: "#000"
         },
-        tags: {
-            backgroundColor: "#e6e6e9",
-            color: "#525151"
-        },
         buttonHover: {
             backgroundColor: "black",
         },
         link: {
-            color: "#6b2fc5",
-            borderBottom: "2px solid #6b2fc5"
+            color: "#7b31eb",
+            borderBottom: "2px solid #7b31eb",
         },
     }
 }

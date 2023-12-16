@@ -13,7 +13,7 @@ import { useLocation } from 'react-router-dom'
 
 export default function Live() {
 
-    const [{theme}] = useContext(ThemeContext)
+    const [{isDark, theme}] = useContext(ThemeContext)
 
     //Récupérer le login du streamer dans la barre de navigation
     let {slug} = useParams()
@@ -130,7 +130,7 @@ export default function Live() {
                             </Link>
 
                             {infoStream.tags && infoStream.tags.slice(0, 5).map((tags, index) => (
-                                <div key={index} className="tagsInfo">
+                                <div key={index} className={isDark ? "darkTagsInfo" : "tagsInfo"}>
                                     <p>{tags}</p>
                                 </div>
                             ))}
@@ -140,7 +140,7 @@ export default function Live() {
 
                 <div className="streamInfos">
                     <div className="streamButtons">
-                        <button className='reactButton' onClick={handleRegister}>
+                        <button className={isDark ? 'darkReactButton' : 'reactButton'} onClick={handleRegister}>
                             <svg width="20px" height="20px" viewBox="0 0 20 20" aria-hidden="true" fill='#6b2fc5'><path d="M15 7V5h-2V3h2V1h2v2h2v2h-2v2h-2Z"></path><path d="M10 2c.339 0 .672.021 1 .062v2.021A6 6 0 1 0 15.917 9h2.021A8 8 0 1 1 10 2Z"></path><path d="M12 10a1 1 0 1 1 2 0 1 1 0 0 1-2 0Zm-5 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2Zm5 1a2 2 0 1 1-4 0h4Z"></path></svg>
                             <p>Réagir</p>
                         </button>
@@ -153,9 +153,13 @@ export default function Live() {
                             <p>Suivre</p>
                         </button>
 
-                        <button className='subscribeButton' onClick={handleRegister}>
+                        <button className={isDark ? 'darkSubscribeButton' : 'subscribeButton'} onClick={handleRegister}>
                             <div className='star-logo-container'>
-                                <svg width="20px" height="20px" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M11.456 8.255 10 5.125l-1.456 3.13-3.49.485 2.552 2.516-.616 3.485L10 13.064l3.01 1.677-.616-3.485 2.553-2.516-3.491-.485zM7.19 6.424l-4.2.583c-.932.13-1.318 1.209-.664 1.853l3.128 3.083-.755 4.272c-.163.92.876 1.603 1.722 1.132L10 15.354l3.579 1.993c.846.47 1.885-.212 1.722-1.132l-.755-4.272 3.128-3.083c.654-.644.268-1.723-.664-1.853l-4.2-.583-1.754-3.77c-.406-.872-1.706-.872-2.112 0L7.19 6.424z" clip-rule="evenodd"></path></svg>
+                                {isDark ?
+                                    <svg width="20px" height="20px" viewBox="0 0 20 20" aria-hidden="true" fill='#FFFFFF'><path fill-rule="evenodd" d="M11.456 8.255 10 5.125l-1.456 3.13-3.49.485 2.552 2.516-.616 3.485L10 13.064l3.01 1.677-.616-3.485 2.553-2.516-3.491-.485zM7.19 6.424l-4.2.583c-.932.13-1.318 1.209-.664 1.853l3.128 3.083-.755 4.272c-.163.92.876 1.603 1.722 1.132L10 15.354l3.579 1.993c.846.47 1.885-.212 1.722-1.132l-.755-4.272 3.128-3.083c.654-.644.268-1.723-.664-1.853l-4.2-.583-1.754-3.77c-.406-.872-1.706-.872-2.112 0L7.19 6.424z" clip-rule="evenodd"></path></svg>
+                                :
+                                    <svg width="20px" height="20px" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M11.456 8.255 10 5.125l-1.456 3.13-3.49.485 2.552 2.516-.616 3.485L10 13.064l3.01 1.677-.616-3.485 2.553-2.516-3.491-.485zM7.19 6.424l-4.2.583c-.932.13-1.318 1.209-.664 1.853l3.128 3.083-.755 4.272c-.163.92.876 1.603 1.722 1.132L10 15.354l3.579 1.993c.846.47 1.885-.212 1.722-1.132l-.755-4.272 3.128-3.083c.654-.644.268-1.723-.664-1.853l-4.2-.583-1.754-3.77c-.406-.872-1.706-.872-2.112 0L7.19 6.424z" clip-rule="evenodd"></path></svg>                                
+                                }
                             </div>
                             <i class="fa-solid fa-heart"></i>
                             <p>S'abonner</p>
