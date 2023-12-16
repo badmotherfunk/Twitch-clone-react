@@ -363,11 +363,6 @@
     border-radius: 10px;
     left: 2px;
     top: 2px;
-    transition: transform 0.1s ease-in-out;
-  }
-
-  .toggleButton:checked::after {
-    transform: translateX(100%);
   }
 
   /* Dark toggle button */
@@ -391,13 +386,8 @@
     background-color: #a871fa;
     position: absolute;
     border-radius: 10px;
-    left: 5px;
+    left: 15px;
     top: 2px;
-    transition: transform 0.1s ease-in-out;
-  }
-
-  .darkToggleButton:checked::after {
-    transform: translateX(100%);
   }
 
   .borderPreferences {
