@@ -9,7 +9,7 @@ import './Login.css'
 
 export default function Login(props) {
 
-    const [{theme, isDark}] = useContext(ThemeContext)
+    const [{isDark}] = useContext(ThemeContext)
 
     const [isRegister, setIsRegister] = useState(false)
 

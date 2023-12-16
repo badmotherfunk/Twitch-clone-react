@@ -252,7 +252,8 @@ export default function Header() {
                     <button 
                     className='userButton' 
                     onClick={handleUserPreferences}
-                    onBlur={handleCloseUserPreferences}
+                    // onBlur={handleCloseUserPreferences}
+
                     >
 
                         {isDark ?
@@ -263,26 +264,37 @@ export default function Header() {
                     </button>
 
                     {userActive && 
-                        <div className="userPreferences"
-                        style={{backgroundColor: theme.sidebarLayout.backgroundColor, color: theme.sidebarLayout.color}}
+                        <div className={isDark ? "darkUserPreferences" : "userPreferences"} 
+                        onBlur={handleCloseUserPreferences}
                         >
                             <div className="toggleTheme">
 
                                 <div className="toggleText">
                                     {isDark ?
-                                        <svg width="20px" height="100%" version="1.1" viewBox="0 0 20 20" x="0px" y="0px" class="ScIconSVG-sc-1q25cff-1 jpczqG" fill='#FFFFFF'><g><path fill-rule="evenodd" d="M8.614 2.134a8.001 8.001 0 001.388 15.879 8.003 8.003 0 007.884-6.635 6.947 6.947 0 01-2.884.62 7.004 7.004 0 01-6.388-9.864zM6.017 5.529a5.989 5.989 0 00-2.015 4.484c0 3.311 2.69 6 6 6a5.99 5.99 0 004.495-2.028 9.006 9.006 0 01-8.48-8.456z" clip-rule="evenodd"></path></g></svg>                 
+                                        <svg width="20px" height="100%" version="1.1" viewBox="0 0 20 20" x="0px" y="0px" fill='#FFFFFF'><g><path fill-rule="evenodd" d="M8.614 2.134a8.001 8.001 0 001.388 15.879 8.003 8.003 0 007.884-6.635 6.947 6.947 0 01-2.884.62 7.004 7.004 0 01-6.388-9.864zM6.017 5.529a5.989 5.989 0 00-2.015 4.484c0 3.311 2.69 6 6 6a5.99 5.99 0 004.495-2.028 9.006 9.006 0 01-8.48-8.456z" clip-rule="evenodd"></path></g></svg>                 
                                         :
-                                        <svg width="20px" height="100%" version="1.1" viewBox="0 0 20 20" x="0px" y="0px" class="ScIconSVG-sc-1q25cff-1 jpczqG"><g><path fill-rule="evenodd" d="M8.614 2.134a8.001 8.001 0 001.388 15.879 8.003 8.003 0 007.884-6.635 6.947 6.947 0 01-2.884.62 7.004 7.004 0 01-6.388-9.864zM6.017 5.529a5.989 5.989 0 00-2.015 4.484c0 3.311 2.69 6 6 6a5.99 5.99 0 004.495-2.028 9.006 9.006 0 01-8.48-8.456z" clip-rule="evenodd"></path></g></svg>
+                                        <svg width="20px" height="100%" version="1.1" viewBox="0 0 20 20" x="0px" y="0px"><g><path fill-rule="evenodd" d="M8.614 2.134a8.001 8.001 0 001.388 15.879 8.003 8.003 0 007.884-6.635 6.947 6.947 0 01-2.884.62 7.004 7.004 0 01-6.388-9.864zM6.017 5.529a5.989 5.989 0 00-2.015 4.484c0 3.311 2.69 6 6 6a5.99 5.99 0 004.495-2.028 9.006 9.006 0 01-8.48-8.456z" clip-rule="evenodd"></path></g></svg>
                                     }
                                     <p>Thème sombre</p>
                                 </div>
 
-                                <button 
-                                className='toggleButton' 
+                                <input 
+                                className={isDark ? 'darkToggleButton' : 'toggleButton'} 
                                 onClick={toggleTheme}
                                 type='checkbox'
-                                ></button>
+                                />
                             </div>
+
+                            <div className={isDark ? "darkBorderPreferences" : "borderPreferences"}></div>
+
+                            <button className={isDark ? 'darkConexionButton' : 'conexionButton'} onClick={handleLogin}>
+                            {isDark ?
+                                <svg width="20px" height="100%" version="1.1" viewBox="0 0 20 20" x="0px" y="0px" fill='#FFFFFF'><g><path d="M16 18h-4a2 2 0 0 1-1.964-1.622L12 14.414V16h4V4h-4v1.586l-1.964-1.964A2 2 0 0 1 12 2h4a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2Z"></path><path d="M7.5 6.5 9 5l5 5-5 5-1.5-1.5L10 11H2V9h8L7.5 6.5Z"></path></g></svg>
+                                :
+                                <svg width="20px" height="100%" version="1.1" viewBox="0 0 20 20" x="0px" y="0px"><g><path d="M16 18h-4a2 2 0 0 1-1.964-1.622L12 14.414V16h4V4h-4v1.586l-1.964-1.964A2 2 0 0 1 12 2h4a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2Z"></path><path d="M7.5 6.5 9 5l5 5-5 5-1.5-1.5L10 11H2V9h8L7.5 6.5Z"></path></g></svg>
+                            }
+                            <p>Se connecter</p>
+                            </button>
                         </div>               
                     }
                 </li>
