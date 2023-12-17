@@ -75,13 +75,13 @@ export default function Header() {
             return game
         })
 
-        if(streamer === gameFiltered.name) {
-            navigate(`/game/${gameFiltered.name}`, { 
-                state:{gameID: gameFiltered.id, cover: gameFiltered.box_art_url, name: gameFiltered.name} 
-            })
-        } else if (streamer){
-            navigate(`/live/${streamer}`, {
+        if(streamer && gameFiltered === undefined) {
+            return navigate(`/live/${streamer}`, {
                 state:{name: streamer}
+            })
+        } else if (streamer === gameFiltered.name) {
+            return navigate(`/game/${gameFiltered.name}`, { 
+                state:{gameID: gameFiltered.id, cover: gameFiltered.box_art_url, name: gameFiltered.name} 
             })
         } else if (error) {
             navigate("/")
@@ -170,9 +170,9 @@ export default function Header() {
                                 style={{backgroundColor: theme.button.backgroundColor, color: theme.button.color}}
                                 >
                                     {isDark ?
-                                        <svg width="22px" height="100%" version="1.1" viewBox="0 0 20 20" x="0px" y="0px" data-a-selector="tw-core-button-icon" class="ScIconSVG-sc-1q25cff-1 jpczqG" fill='#FFFFFF'><g><path fill-rule="evenodd" d="M13.192 14.606a7 7 0 111.414-1.414l3.101 3.1-1.414 1.415-3.1-3.1zM14 9A5 5 0 114 9a5 5 0 0110 0z" clip-rule="evenodd"></path></g></svg>
+                                        <svg width="22px" height="100%" version="1.1" viewBox="0 0 20 20" x="0px" y="0px" data-a-selector="tw-core-button-icon" fill='#FFFFFF'><g><path fillRule="evenodd" d="M13.192 14.606a7 7 0 111.414-1.414l3.101 3.1-1.414 1.415-3.1-3.1zM14 9A5 5 0 114 9a5 5 0 0110 0z" clipRule="evenodd"></path></g></svg>
                                     :
-                                        <svg width="22px" height="100%" version="1.1" viewBox="0 0 20 20" x="0px" y="0px" data-a-selector="tw-core-button-icon" class="ScIconSVG-sc-1q25cff-1 jpczqG"><g><path fill-rule="evenodd" d="M13.192 14.606a7 7 0 111.414-1.414l3.101 3.1-1.414 1.415-3.1-3.1zM14 9A5 5 0 114 9a5 5 0 0110 0z" clip-rule="evenodd"></path></g></svg>
+                                        <svg width="22px" height="100%" version="1.1" viewBox="0 0 20 20" x="0px" y="0px" data-a-selector="tw-core-button-icon"><g><path fillRule="evenodd" d="M13.192 14.606a7 7 0 111.414-1.414l3.101 3.1-1.414 1.415-3.1-3.1zM14 9A5 5 0 114 9a5 5 0 0110 0z" clipRule="evenodd"></path></g></svg>
                                     }
                                 </button>
                             </div>
@@ -186,12 +186,13 @@ export default function Header() {
                                         { streamer && game && 
                                             game.slice(0, 5).map((games, index) => (
                                                 <Link to={{pathname: `/game/${games.name}`}}
+                                                key={index}
                                                 state= {{
                                                     gameID: games.id,
                                                     cover: games.box_art_url,
                                                     name:  games.name
                                                 }}>
-                                                    <li key={index} className='searchGameInfo' style={{backgroundColor: theme.layout.backgroundColor, color: theme.layout.color}}>
+                                                    <li className='searchGameInfo' style={{backgroundColor: theme.layout.backgroundColor, color: theme.layout.color}}>
                                                         <img src={games.box_art_url} alt="Game Cover" />
                                                         <p>{games.name}</p>
                                                     </li>  
@@ -202,9 +203,9 @@ export default function Header() {
 
                                         <li className='searchGameInfo'>
                                             {isDark ?
-                                                <svg width="20px" height="100%" version="1.1" viewBox="0 0 20 20" x="0px" y="0px" data-a-selector="tw-core-button-icon" class="ScIconSVG-sc-1q25cff-1 jpczqG" fill='#FFFFFF'><g><path fill-rule="evenodd" d="M13.192 14.606a7 7 0 111.414-1.414l3.101 3.1-1.414 1.415-3.1-3.1zM14 9A5 5 0 114 9a5 5 0 0110 0z" clip-rule="evenodd"></path></g></svg>
+                                                <svg width="20px" height="100%" version="1.1" viewBox="0 0 20 20" x="0px" y="0px" data-a-selector="tw-core-button-icon" fill='#FFFFFF'><g><path fillRule="evenodd" d="M13.192 14.606a7 7 0 111.414-1.414l3.101 3.1-1.414 1.415-3.1-3.1zM14 9A5 5 0 114 9a5 5 0 0110 0z" clipRule="evenodd"></path></g></svg>
                                             :
-                                                <svg width="20px" height="100%" version="1.1" viewBox="0 0 20 20" x="0px" y="0px" data-a-selector="tw-core-button-icon" class="ScIconSVG-sc-1q25cff-1 jpczqG"><g><path fill-rule="evenodd" d="M13.192 14.606a7 7 0 111.414-1.414l3.101 3.1-1.414 1.415-3.1-3.1zM14 9A5 5 0 114 9a5 5 0 0110 0z" clip-rule="evenodd"></path></g></svg>
+                                                <svg width="20px" height="100%" version="1.1" viewBox="0 0 20 20" x="0px" y="0px" data-a-selector="tw-core-button-icon"><g><path fillRule="evenodd" d="M13.192 14.606a7 7 0 111.414-1.414l3.101 3.1-1.414 1.415-3.1-3.1zM14 9A5 5 0 114 9a5 5 0 0110 0z" clipRule="evenodd"></path></g></svg>
                                             }
                                                 <p>{streamer}</p>
                                         </li>
@@ -226,9 +227,9 @@ export default function Header() {
                 
                 <li className="liensNav">
                     {isDark ?  
-                        <svg className={isDark ? 'darkLogoUser' : 'logoUser'} width="25px" height="100%" viewBox="0 0 20 20" focusable="false" aria-hidden="true" fill='#FFFFFF'><path fill-rule="evenodd" d="M13.798 10.456 10 6.657l-3.798 3.799L4 8.805V13h12V8.805l-2.202 1.65zM18 5v8a2 2 0 0 1-2 2H4a2.002 2.002 0 0 1-2-2V5l4 3 4-4 4 4 4-3z" clip-rule="evenodd"></path></svg>
+                        <svg className={isDark ? 'darkLogoUser' : 'logoUser'} width="25px" height="100%" viewBox="0 0 20 20" focusable="false" aria-hidden="true" fill='#FFFFFF'><path fillRule="evenodd" d="M13.798 10.456 10 6.657l-3.798 3.799L4 8.805V13h12V8.805l-2.202 1.65zM18 5v8a2 2 0 0 1-2 2H4a2.002 2.002 0 0 1-2-2V5l4 3 4-4 4 4 4-3z" clipRule="evenodd"></path></svg>
                     :
-                        <svg className={isDark ? 'darkLogoUser' : 'logoUser'} width="25px" height="100%" viewBox="0 0 20 20" focusable="false" aria-hidden="true"><path fill-rule="evenodd" d="M13.798 10.456 10 6.657l-3.798 3.799L4 8.805V13h12V8.805l-2.202 1.65zM18 5v8a2 2 0 0 1-2 2H4a2.002 2.002 0 0 1-2-2V5l4 3 4-4 4 4 4-3z" clip-rule="evenodd"></path></svg>
+                        <svg className={isDark ? 'darkLogoUser' : 'logoUser'} width="25px" height="100%" viewBox="0 0 20 20" focusable="false" aria-hidden="true"><path fillRule="evenodd" d="M13.798 10.456 10 6.657l-3.798 3.799L4 8.805V13h12V8.805l-2.202 1.65zM18 5v8a2 2 0 0 1-2 2H4a2.002 2.002 0 0 1-2-2V5l4 3 4-4 4 4 4-3z" clipRule="evenodd"></path></svg>
                     }
                 </li> 
             
@@ -271,9 +272,9 @@ export default function Header() {
 
                                 <div className="toggleText">
                                     {isDark ?
-                                        <svg width="20px" height="100%" version="1.1" viewBox="0 0 20 20" x="0px" y="0px" fill='#FFFFFF'><g><path fill-rule="evenodd" d="M8.614 2.134a8.001 8.001 0 001.388 15.879 8.003 8.003 0 007.884-6.635 6.947 6.947 0 01-2.884.62 7.004 7.004 0 01-6.388-9.864zM6.017 5.529a5.989 5.989 0 00-2.015 4.484c0 3.311 2.69 6 6 6a5.99 5.99 0 004.495-2.028 9.006 9.006 0 01-8.48-8.456z" clip-rule="evenodd"></path></g></svg>                 
+                                        <svg width="20px" height="100%" version="1.1" viewBox="0 0 20 20" x="0px" y="0px" fill='#FFFFFF'><g><path fillRule="evenodd" d="M8.614 2.134a8.001 8.001 0 001.388 15.879 8.003 8.003 0 007.884-6.635 6.947 6.947 0 01-2.884.62 7.004 7.004 0 01-6.388-9.864zM6.017 5.529a5.989 5.989 0 00-2.015 4.484c0 3.311 2.69 6 6 6a5.99 5.99 0 004.495-2.028 9.006 9.006 0 01-8.48-8.456z" clipRule="evenodd"></path></g></svg>                 
                                         :
-                                        <svg width="20px" height="100%" version="1.1" viewBox="0 0 20 20" x="0px" y="0px"><g><path fill-rule="evenodd" d="M8.614 2.134a8.001 8.001 0 001.388 15.879 8.003 8.003 0 007.884-6.635 6.947 6.947 0 01-2.884.62 7.004 7.004 0 01-6.388-9.864zM6.017 5.529a5.989 5.989 0 00-2.015 4.484c0 3.311 2.69 6 6 6a5.99 5.99 0 004.495-2.028 9.006 9.006 0 01-8.48-8.456z" clip-rule="evenodd"></path></g></svg>
+                                        <svg width="20px" height="100%" version="1.1" viewBox="0 0 20 20" x="0px" y="0px"><g><path fillRule="evenodd" d="M8.614 2.134a8.001 8.001 0 001.388 15.879 8.003 8.003 0 007.884-6.635 6.947 6.947 0 01-2.884.62 7.004 7.004 0 01-6.388-9.864zM6.017 5.529a5.989 5.989 0 00-2.015 4.484c0 3.311 2.69 6 6 6a5.99 5.99 0 004.495-2.028 9.006 9.006 0 01-8.48-8.456z" clipRule="evenodd"></path></g></svg>
                                     }
                                     <p>Thème sombre</p>
                                 </div>
