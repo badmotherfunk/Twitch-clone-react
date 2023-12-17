@@ -47,19 +47,41 @@
     color: #000;
     margin-left: 5px;
     background: none;
-    border-bottom: none!important;
+    border-bottom: none;
   }
   .directoryButton:hover {
     color: #7b31eb;
   }
 
+  
   .directoryButton.active {
     position: fixed;
     top: 15px;
     padding-bottom: 12px;
     color: #7b31eb;
-    border-bottom: 2px solid #7b31eb!important;   
+    border-bottom: 2px solid #7b31eb;   
   }
+
+  .darkDirectoryButton {
+    font-size: 18.5px;
+    font-weight: 500;
+    color: #FFFFFF;
+    margin-left: 5px;
+    background: none;
+    border-bottom: none;
+  }
+  .darkDirectoryButton:hover {
+    color: #bf94ff;
+  }
+
+  .darkDirectoryButton.active {
+    position: fixed;
+    top: 15px;
+    padding-bottom: 12px;
+    color: #bf94ff;
+    border-bottom: 2px solid #bf94ff;   
+  }
+
 
   .logo {
     margin-top: 10px;

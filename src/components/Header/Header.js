@@ -147,7 +147,11 @@ export default function Header() {
                 </li>
                 <li className="liensNav">
                     <Link to="/directory" >
-                    <h2 className={ pathname === "/" ? "directoryButton" : "directoryButton active"} style={{color: theme.link.color, borderBottom: theme.link.borderBottom}}>Parcourir</h2>
+                        {isDark ?
+                            <h2 className={ pathname === "/" ? "darkDirectoryButton" : "darkDirectoryButton active"}>Parcourir</h2>
+                        :
+                            <h2 className={ pathname === "/" ? "directoryButton" : "directoryButton active"}>Parcourir</h2>
+                        }
                     </Link>
                 </li>
                 <li className="liensNav">
