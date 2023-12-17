@@ -129,7 +129,13 @@ export default function Games() {
             
         <div className="flexAccueil">
             <div className="gamesTitleContainer">
-              <h1 className="gamesTitle" style={{color: theme.layout.color}}><span className='titreChannel'>Chaînes live </span>&nbsp;qui pourraient vous plaire</h1>
+              <h1 className={isDark ? "darkGamesTitle" : "gamesTitle"}>
+                <span 
+                className={isDark ? 'darkTitleChannel' : 'titleChannel'}>
+                  Chaînes live 
+                </span>
+                &nbsp;qui pourraient vous plaire
+              </h1>
             </div>
 
           <div className="streamContainer">

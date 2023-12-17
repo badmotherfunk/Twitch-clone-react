@@ -33,14 +33,31 @@
     font-size: 18.5px; 
 }
 
+.darkGamesTitle {
+    display: flex;
+    justify-content: flex-start;
+    color: #FFFFFF;
+    font-weight: 500;
+    font-size: 18.5px; 
+}
 
-.titreChannel {
+.titleChannel {
     color: #5c16c5;
     cursor: pointer;
 }
-.titreChannel:hover {
+.titleChannel:hover {
     color: #7833e0;
     border-bottom: 1px solid #7833e0;
+    height: 19px;
+}
+
+.darkTitleChannel {
+    color: #bf94ff;
+    cursor: pointer;
+}
+.darkTitleChannel:hover {
+    color: #a86efd;
+    border-bottom: 1px solid #a86efd;
     height: 19px;
 }
 

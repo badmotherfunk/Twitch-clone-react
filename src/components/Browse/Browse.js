@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 export default function Browse() {
 
-    const [{theme}] = useContext(ThemeContext)
+    const [{isDark}] = useContext(ThemeContext)
 
     const [categories, setCategories] = useState([]);
 
@@ -67,7 +67,7 @@ export default function Browse() {
                 </div>
 
                 <div className="filterSection">
-                    <h3 style={{color: theme.link.color, borderBottom: theme.link.borderBottom}}>Catégories</h3>
+                    <h3 className={isDark ? 'darkTitleCategory' : 'titleCategory'}>Catégories</h3>
                 </div>
 
             </div>
