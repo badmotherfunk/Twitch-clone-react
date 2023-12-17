@@ -43,10 +43,10 @@ export default function Login(props) {
         
                         <div className="form-modal-container">
                             <label htmlFor="email">Identifiant</label>
-                            <input type="text" className={isDark && "darkInput"}/>
+                            <input type="text" className={isDark ? "darkInput" : "inputText"}/>
         
                             <label htmlFor="password">Mot de passe</label>
-                            <input type="password" className={isDark && "darkInput"}/>
+                            <input type="password" className={isDark ? "darkInput" : "inputText"}/>
         
                             <Link className={isDark ? 'dark-conexion-issue' : 'conexion-issue'} >
                                 Problème de connexion ?
