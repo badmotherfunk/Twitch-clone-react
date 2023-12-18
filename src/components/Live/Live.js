@@ -77,11 +77,13 @@ export default function Live() {
 
     const navigate = useNavigate()
 
-    if(error.code === "ERR_BAD_REQUEST") {
-        navigate("/searchError", { 
-            state:{name: location.state} 
-        })
-    }
+    useEffect(() => {
+        if(error.code === "ERR_BAD_REQUEST") {
+            navigate("/searchError", { 
+                state:{name: location.state} 
+            })
+        }
+    }, [error, location, navigate])
 
     //Gére l'ouverture de la modale
     const [isOpen, setIsOpen] = useState(false)
