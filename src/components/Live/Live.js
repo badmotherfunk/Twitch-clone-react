@@ -147,11 +147,11 @@ export default function Live() {
                     <div className="streamButtons">
                         <button className={isDark ? 'darkReactButton' : 'reactButton'} onClick={handleRegister}>
                             {isDark ? 
-                                <svg className='test' width="20px" height="20px" viewBox="0 0 20 20" aria-hidden="true" fill='#bf94ff'><path d="M15 7V5h-2V3h2V1h2v2h2v2h-2v2h-2Z"></path><path d="M10 2c.339 0 .672.021 1 .062v2.021A6 6 0 1 0 15.917 9h2.021A8 8 0 1 1 10 2Z"></path><path d="M12 10a1 1 0 1 1 2 0 1 1 0 0 1-2 0Zm-5 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2Zm5 1a2 2 0 1 1-4 0h4Z"></path></svg>
+                                <svg className='darkReactImg' width="20px" height="20px" viewBox="0 0 20 20" aria-hidden="true" fill='#bf94ff'><path d="M15 7V5h-2V3h2V1h2v2h2v2h-2v2h-2Z"></path><path d="M10 2c.339 0 .672.021 1 .062v2.021A6 6 0 1 0 15.917 9h2.021A8 8 0 1 1 10 2Z"></path><path d="M12 10a1 1 0 1 1 2 0 1 1 0 0 1-2 0Zm-5 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2Zm5 1a2 2 0 1 1-4 0h4Z"></path></svg>
                             :
-                                <svg width="20px" height="20px" viewBox="0 0 20 20" aria-hidden="true" fill='#6b2fc5'><path d="M15 7V5h-2V3h2V1h2v2h2v2h-2v2h-2Z"></path><path d="M10 2c.339 0 .672.021 1 .062v2.021A6 6 0 1 0 15.917 9h2.021A8 8 0 1 1 10 2Z"></path><path d="M12 10a1 1 0 1 1 2 0 1 1 0 0 1-2 0Zm-5 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2Zm5 1a2 2 0 1 1-4 0h4Z"></path></svg>                            
+                                <svg className='reactImg' width="20px" height="20px" viewBox="0 0 20 20" aria-hidden="true" fill='#6b2fc5'><path d="M15 7V5h-2V3h2V1h2v2h2v2h-2v2h-2Z"></path><path d="M10 2c.339 0 .672.021 1 .062v2.021A6 6 0 1 0 15.917 9h2.021A8 8 0 1 1 10 2Z"></path><path d="M12 10a1 1 0 1 1 2 0 1 1 0 0 1-2 0Zm-5 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2Zm5 1a2 2 0 1 1-4 0h4Z"></path></svg>                            
                             }
-                            <p className={isDark && 'darkButtonText'}>Réagir</p>
+                            <p className={isDark ? 'darkButtonText' : 'buttonText'}>Réagir</p>
                         </button>
                         <button className='follow-button' onClick={handleRegister}>
                             <div className='heart-logo-container'>
