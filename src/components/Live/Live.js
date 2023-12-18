@@ -77,13 +77,15 @@ export default function Live() {
 
     const navigate = useNavigate()
 
+    console.log(error)
+
     useEffect(() => {
-        if(error.code === "ERR_BAD_REQUEST") {
+        if(error.code === "ERR_BAD_REQUEST" && error.response.data.message === "Malformed query params.") {
             navigate("/searchError", { 
                 state:{name: location.state} 
             })
         }
-    }, [error, location, navigate])
+    }, [error, location, userInfo, navigate])
 
     //Gére l'ouverture de la modale
     const [isOpen, setIsOpen] = useState(false)
