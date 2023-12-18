@@ -19,8 +19,10 @@
 }
 
 .logoContainer {
+    position: relative;
     width: 70px;
     height: 70px;
+    cursor: pointer;
 }
 
 .userLogo {
@@ -35,6 +37,46 @@
 .userLogo:hover {
     border: 3px solid #7b31eb;
     transform: translateX(-1px) translateY(-1px);
+}
+
+.liveLayout {
+    position: absolute;
+    bottom: -10px;
+    left: 15px;
+    background-color: rgb(233, 8, 8);
+    font-size: 14px;
+    font-weight: 500;
+    color: #FFFFFF;
+    border-radius: 5px;
+    border: 2px solid #FFFFFF;
+    width: 28px;
+    height: 10px;
+    padding: 5px;
+}
+
+.liveLayout p {
+    position: absolute;
+    bottom: 1px;
+}
+
+.darkLiveLayout {
+    position: absolute;
+    bottom: -10px;
+    left: 15px;
+    background-color: rgb(233, 8, 8);
+    font-size: 14px;
+    font-weight: 500;
+    color: #FFFFFF;
+    border-radius: 5px;
+    border: 2px solid #0e0e10;
+    width: 28px;
+    height: 10px;
+    padding: 5px;
+}
+
+.darkLiveLayout p {
+    position: absolute;
+    bottom: 1px;
 }
 
 .userInfo {
@@ -145,11 +187,22 @@
 .darkSubscribeButton:hover {
     background: rgba(103, 103, 117, 0.38);
 }
+.darkReactButton:hover
+.darkButtonText,
+.darkReactButton:hover
+.test {
+    color: #FFFFFF;
+    fill: #FFFFFF;
+}
 
 .darkSubscribeButton p {
     font-weight: 500;
     font-size: 14.5px;
     font-family: 'roboto', sans-serif;
+}
+
+.darkButtonText {
+    color: #bf94ff;
 }
 
 
