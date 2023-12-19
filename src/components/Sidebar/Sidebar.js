@@ -128,9 +128,9 @@ export default function Sidebar() {
             style={{backgroundColor: theme.sidebarLayout.backgroundColor}}
             >
               {isDark ?
-                <svg width="20px" height="2rem" viewBox="0 0 20 20"><path fill="darkGrey" fill-rule="evenodd" d="M12.002 3.999a2 2 0 0 1 2 2v2L18 6v8l-3.998-2v2a2 2 0 0 1-2 1.999h-8a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h8zM12 6H4v8h8V6z" clip-rule="evenodd"></path></svg>
+                <svg width="20px" height="2rem" viewBox="0 0 20 20"><path fill="darkGrey" fillRule="evenodd" d="M12.002 3.999a2 2 0 0 1 2 2v2L18 6v8l-3.998-2v2a2 2 0 0 1-2 1.999h-8a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h8zM12 6H4v8h8V6z" clipRule="evenodd"></path></svg>
               :
-                <svg width="20px" height="2rem" viewBox="0 0 20 20"><path fill="rgb(83 83 95)" fill-rule="evenodd" d="M12.002 3.999a2 2 0 0 1 2 2v2L18 6v8l-3.998-2v2a2 2 0 0 1-2 1.999h-8a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h8zM12 6H4v8h8V6z" clip-rule="evenodd"></path></svg>
+                <svg width="20px" height="2rem" viewBox="0 0 20 20"><path fill="rgb(83 83 95)" fillRule="evenodd" d="M12.002 3.999a2 2 0 0 1 2 2v2L18 6v8l-3.998-2v2a2 2 0 0 1-2 1.999h-8a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h8zM12 6H4v8h8V6z" clipRule="evenodd"></path></svg>
               }
             </button>
           </div>
