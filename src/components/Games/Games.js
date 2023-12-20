@@ -4,6 +4,7 @@ import api from '../../api'
 import { Link } from 'react-router-dom'
 import Carousel from '../Carousel/Carousel'
 import './Games.css'
+import defaultPicture from './default-picture.png'
 
 export default function Games() {
 
@@ -160,7 +161,11 @@ export default function Games() {
 
                   <div className='userStreamContainer'>
                     <Link to={{pathname: `/live/${game.user_login}`}}>
+                    {game.truePic ?
                       <img src={game.truePic} alt="User logo" className='userLogos' />
+                    :
+                      <img src={defaultPicture} alt="default user logo" className='userLogos'/>
+                    }
                     </Link>
 
                     <div className="userStreamInfos">
