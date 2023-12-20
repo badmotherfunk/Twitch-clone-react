@@ -4,6 +4,7 @@ import './Sidebar.css'
 import { Link } from 'react-router-dom'
 import { useContext } from 'react'
 import { ThemeContext } from '../../Context/Theme'
+import defaultPicture from '../Games/default-picture.png'
 
 export default function Sidebar() {
 
@@ -146,8 +147,11 @@ export default function Sidebar() {
               data-text= { `${stream.user_name} • ${stream.gameName} \n ${stream.title} \n🔴 Live | ${stream.viewer_count} spectateurs` }
               data= {stream.title}
               >
-
-                <img src={stream.truePic} alt="logo user" className="profilePicRonde" />
+                {stream.truePic ?
+                  <img src={stream.truePic} alt="logo user" className="profilePicRonde" />
+                : 
+                  <img src={defaultPicture} alt="logo user" className="profilePicRonde"/> 
+                }
               
                 <div className={active ? "streamUserActive" : "streamUser"} style={{color: theme.sidebarLayout.color}}>{stream.user_name}</div>
 
