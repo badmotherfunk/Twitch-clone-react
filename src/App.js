@@ -23,7 +23,7 @@ function App() {
         <Route path="/" element={<Landing />} />
         <Route path="/directory" element={<Directory />} />
         <Route path="/live/:slug" element={<Live />} />
-        <Route path="/game/:slug" element={<GameStreams />} />
+        <Route path="/directory/game/:slug" element={<GameStreams />} />
         <Route path="/searchError" element={<SearchError />} />
         <Route path="*" element={<Error />} />
       </Routes>

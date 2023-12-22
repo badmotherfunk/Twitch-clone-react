@@ -78,7 +78,7 @@ export default function Browse() {
                     <div key={index} className="carteCatgeory">
                         <div className="categoryBackground">
 
-                            <Link to={ "/game/" + category.name} 
+                            <Link to={ "/directory/game/" + category.name} 
                                 state= {{
                                     gameID: category.id,
                                     cover: category.box_art_url,

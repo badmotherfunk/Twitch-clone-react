@@ -15,8 +15,6 @@ export default function Header() {
 
     const [{theme, isDark}, toggleTheme] = useContext(ThemeContext)
 
-
-
     const { pathname } = useLocation();
     const navigate = useNavigate()
 
@@ -148,9 +146,9 @@ export default function Header() {
                 <li className="liensNav">
                     <Link to="/directory" >
                         {isDark ?
-                            <h2 className={ pathname === "/" ? "darkDirectoryButton" : "darkDirectoryButton active"}>Parcourir</h2>
+                            <h2 className={ pathname === "/directory" || pathname.match("/directory/game/") ? "darkDirectoryButton active" : "darkDirectoryButton"}>Parcourir</h2>
                         :
-                            <h2 className={ pathname === "/" ? "directoryButton" : "directoryButton active"}>Parcourir</h2>
+                            <h2 className={ pathname === "/directory" || pathname.match("/directory/game/") ? "directoryButton active" : "directoryButton"}>Parcourir</h2>
                         }
                     </Link>
                 </li>
