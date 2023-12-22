@@ -96,7 +96,7 @@ export default function Live() {
   return (
     <>
         <div className='containerDecale'>
-            <ReactTwitchEmbedVideo height="754" width="100%" channel={slug}/>
+            <ReactTwitchEmbedVideo height="1040" width="100%" channel={slug}/>
             <div className="contInfo">
 
 
