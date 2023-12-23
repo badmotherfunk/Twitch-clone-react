@@ -109,11 +109,17 @@ export default function Browse() {
                                     cover: category.box_art_url,
                                     name:  category.name
                                 }}
- 
                                 className='lien'>
+
                                 <div className="carteCategoryContainer">
                                     <img src={category.box_art_url} alt="category" className="imgCategory" />
+
+                                    {category.igdb_id > 203610 && category.id > 1910103690 &&
+                                    <div className='newCategorieGame'>NOUVEAU</div>
+                                }
                                 </div>
+
+
                             </Link>
 
                         </div>

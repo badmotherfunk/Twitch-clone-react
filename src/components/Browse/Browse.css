@@ -135,6 +135,19 @@
     padding: 8px 0;
 }
 
+.newCategorieGame {
+    width: 80px;
+    padding: 3px 0;
+    border-radius: 15px;
+    color: #000;
+    background-color: #ff75e6;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
 /* MEDIA QUERIES */
   @media screen and (max-width: 1200px) {
     .categoryGlobal {
