@@ -68,7 +68,7 @@ export default function Header() {
         e.preventDefault()
         
         const gameFiltered = game.find(games => {
-            let game = games.name === streamer || streamer === games.name.toLowerCase()
+            let game = games.name === streamer || games.name.toLowerCase() === streamer
     
             return game
         })
@@ -77,7 +77,7 @@ export default function Header() {
             return navigate(`/live/${streamer}`, {
                 state:{name: streamer}
             })
-        } else if (streamer === gameFiltered.name) {
+        } else if (streamer === gameFiltered.name || streamer === gameFiltered.name.toLowerCase() ) {
             return navigate(`/directory/game/${gameFiltered.name}`, { 
                 state:{gameID: gameFiltered.id, cover: gameFiltered.box_art_url, name: gameFiltered.name} 
             })
