@@ -24,9 +24,10 @@
     flex-shrink: 1;
     display: flex;
     justify-content: center;
+
   }
   .liensNav:nth-child(4) {
-    padding: 0 5px 0 5px
+    padding: 0 5px 0 5px;
   } 
   .liensNav:nth-child(5) {
     padding: 0 5px 0 5px
@@ -96,7 +97,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* margin-left: 175px; */
     flex-shrink: 1;
     width: 400px;
     position: fixed;
@@ -107,7 +107,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* margin-left: 175px; */
     flex-shrink: 1;
     width: 400px;
     position: fixed;
@@ -137,6 +136,7 @@
     display: flex;
     flex-direction: row;
     width: 100%;
+    margin-top: 2px;
   }
 
   .searchFocus {
@@ -203,7 +203,7 @@
   .logoLoupe {
     width: 22px;
   }
-
+  
   .inputRecherche {
     width: 100%;
     border-top-left-radius: 5px;
@@ -212,12 +212,31 @@
     border: 0.5px solid #7c7c7c;
     outline: none;
     font-size: 14px;
+    z-index: 2;
   }
   .inputRecherche:hover {
-    border: 2px solid #7c7c7c;
+    outline: 1px solid #7c7c7c;
   }
   .inputRecherche:focus {
-    border: 4px solid #7b31eb;
+    outline: 3px solid #7b31eb;
+  }
+
+  .darkInputRecherche {
+    width: 100%;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    padding: 8px;
+    border: 0.5px solid #7c7c7c;
+    outline: none;
+    font-size: 14px;
+    background-color: rgb(24, 24, 27);
+    color: #FFFFFF;
+  }
+  .darkInputRecherche:hover {
+    outline: 1px solid #7c7c7c;
+  }
+  .darkInputRecherche:focus {
+    outline: 3px solid #a871fa;
   }
   
   .loginButton,

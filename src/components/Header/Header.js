@@ -159,12 +159,11 @@ export default function Header() {
 
                             <div className="searchInputContainer">
                                 <input type="text" 
-                                className="inputRecherche" 
+                                className={isDark ? "darkInputRecherche" : "inputRecherche"} 
                                 onFocus={handleFocus} 
                                 onBlur={handleCloseFocus} 
                                 placeholder='Rechercher' 
                                 value={streamer} onChange={(e) => setStreamer(e.target.value)}
-                                style={{backgroundColor: theme.layout.backgroundColor, color: theme.layout.color}}
                                 />
                                 <button type='submit'
                                 className={streamer.length === 0 ? "notAllowed" : "searchButton"}
