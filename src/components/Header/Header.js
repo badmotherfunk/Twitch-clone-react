@@ -187,7 +187,7 @@ export default function Header() {
                                             
                                         { streamer && game && 
                                             game.slice(0, 5).map((games, index) => (
-                                                <Link to={{pathname: `/game/${games.name}`}}
+                                                <Link to={{pathname: `directory/game/${games.name}`}}
                                                 key={index}
                                                 state= {{
                                                     gameID: games.id,

@@ -305,6 +305,21 @@
     color: rgb(151 19 17);
 }
 
+.darkViewer {
+    display: flex;
+    flex-direction: row;
+    right: 400px;
+    color: #ff8280;;
+    gap: 1px;
+    justify-content: flex-end;
+}
+.darkViewer p {
+    font-size: 14.5px;
+    font-weight: 500;
+    margin-top: 2px;
+}
+
+
 .streamTags {
     position: relative;
     left: 250px;
