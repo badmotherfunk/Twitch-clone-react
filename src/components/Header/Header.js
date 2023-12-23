@@ -60,8 +60,6 @@ export default function Header() {
             setIsActive(false)
         }
     }, [streamer])
-    console.log(game)
-
 
     
     // Accéder à la catégorie d'un jeu, où au live d'un streamer dans la barre de recherche
