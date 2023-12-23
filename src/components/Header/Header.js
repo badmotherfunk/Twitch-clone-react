@@ -78,7 +78,7 @@ export default function Header() {
                 state:{name: streamer}
             })
         } else if (streamer === gameFiltered.name) {
-            return navigate(`/game/${gameFiltered.name}`, { 
+            return navigate(`/directory/game/${gameFiltered.name}`, { 
                 state:{gameID: gameFiltered.id, cover: gameFiltered.box_art_url, name: gameFiltered.name} 
             })
         } else if (error) {
