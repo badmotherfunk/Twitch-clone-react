@@ -73,10 +73,12 @@ export default function Header() {
         })
 
         if(streamer && gameFiltered === undefined) {
+            setIsActive(false)
             return navigate(`/live/${streamer}`, {
                 state:{name: streamer}
             })
         } else if (streamer === gameFiltered.name || streamer === gameFiltered.name.toLowerCase() ) {
+            setIsActive(false)
             return navigate(`/directory/game/${gameFiltered.name}`, { 
                 state:{gameID: gameFiltered.id, cover: gameFiltered.box_art_url, name: gameFiltered.name} 
             })
@@ -85,7 +87,6 @@ export default function Header() {
         }
 
         setStreamer([])
-        setIsActive(false)
     }
 
 
