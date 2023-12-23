@@ -34,6 +34,8 @@ export default function Browse() {
 
     }, [])
 
+    console.log(categories)
+
   return (
     <div className="categoryGlobal">
 
@@ -114,7 +116,7 @@ export default function Browse() {
                                 <div className="carteCategoryContainer">
                                     <img src={category.box_art_url} alt="category" className="imgCategory" />
 
-                                    {category.igdb_id > 203610 && category.id > 1910103690 &&
+                                    {category.igdb_id > 203600 && category.id > 380978750 &&
                                     <div className='newCategorieGame'>NOUVEAU</div>
                                 }
                                 </div>
