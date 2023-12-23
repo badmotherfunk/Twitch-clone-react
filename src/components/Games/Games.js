@@ -182,7 +182,7 @@ export default function Games() {
                       >
                         {game.user_name}
                       </div>
-                      <Link to={{pathname: `/game/${game.game_name}`}}
+                      <Link to={{pathname: `directory/game/${game.game_name}`}}
                         state= {{
                           gameID: game.game_id,
                           cover: game.box_art_url,

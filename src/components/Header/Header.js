@@ -60,6 +60,7 @@ export default function Header() {
             setIsActive(false)
         }
     }, [streamer])
+    console.log(game)
 
 
     
