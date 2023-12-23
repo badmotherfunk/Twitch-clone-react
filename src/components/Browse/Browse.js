@@ -117,8 +117,8 @@ export default function Browse() {
                                     <img src={category.box_art_url} alt="category" className="imgCategory" />
 
                                     {category.igdb_id > 203600 && category.id > 380978750 &&
-                                    <div className='newCategorieGame'>NOUVEAU</div>
-                                }
+                                        <div className='newCategorieGame'>NOUVEAU</div>
+                                    }
                                 </div>
 
 
