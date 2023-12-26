@@ -151,7 +151,7 @@ export default function GameStreams() {
                         <div key={index} className="carteGames">
                             <div className="carteBackground">
                 
-                                <Link className="lien" to={{pathname: `/live/${stream.user_login}`}}>
+                                <Link className="lien" to={{pathname: `/live/${stream.user_login}`}} state={{name: stream.user_login}}>
                                     <div className="carteContainer">
                                         <p className='liveCarte'>LIVE</p>
                                         <img src={stream.thumbnail_url} alt="jeu profile" className="imgCarte" />
@@ -166,12 +166,12 @@ export default function GameStreams() {
                             <div className="carteBodyGames">
                 
                                 <div className='userStreamContainer'>
-                                    <Link to={{pathname: `/live/${stream.user_login}`}}>
+                                    <Link to={{pathname: `/live/${stream.user_login}`}} state={{name: stream.user_login}}>
                                         <img src={stream.truePic} alt="User logo" className='userLogos' />
                                     </Link>
                 
                                     <div className="userStreamInfos">
-                                        <Link className="titleLink" to={{pathname: `/live/${stream.user_login}`}}>
+                                        <Link className="titleLink" to={{pathname: `/live/${stream.user_login}`}} state={{name: stream.user_login}}>
                                             <h5 className={isDark ? "darkTitreCarteGames" : "titreCarteGames"} 
                                             data-text={stream.title}
                                             >

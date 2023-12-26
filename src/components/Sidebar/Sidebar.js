@@ -141,7 +141,7 @@ export default function Sidebar() {
         <ul className="listeStream" >
 
           {topStreams.map((stream, index) => (
-            <Link key={index} to={{pathname: `/live/${stream.user_login}`}}>
+            <Link key={index} to={{pathname: `/live/${stream.user_login}`}} state={{name: stream.user_login}}>
 
               <li className={active ? "containerFlexSidebarActive" : "containerFlexSidebar"}
               data-text= { `${stream.user_name} • ${stream.gameName} \n ${stream.title} \n🔴 Live | ${stream.viewer_count} spectateurs` }

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import Register from '../Register/Register'
@@ -6,9 +6,16 @@ import './Banner.css'
 
 export default function Banner() {
 
-  //Récupère le pathname et extrait l'username du streamer
+  const [username, setUsername] = useState([])
+
+  //Récupère le nom de l'utilisateur grace au state passé dans useLocation
   const location = useLocation()
-  const username = location.pathname.slice(6)
+  useEffect(() => {
+    if(location.state) {
+      const user = location.state.name
+      setUsername(user)
+    }
+  }, [location])
 
   //Gère l'état de la modal pour le bouton s'inscrire
   const [isRegister, setIsRegister] = useState(false)
