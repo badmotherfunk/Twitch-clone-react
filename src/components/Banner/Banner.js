@@ -30,7 +30,7 @@ export default function Banner() {
       
       <div className="bannerContainer">
         <img alt="CoolCat" className="coolCat" src="https://static.twitchcdn.net/assets/coolcat-edacb6fbd813ce2f0272.png"/>
-        {username && location.pathname.match("/live/" + username) ?
+        {username && location.pathname.match("/live/" + username.toLowerCase()) ?
         <>
           <h3 className='bannerTitre'>Inscrivez-vous pour profiter de ce que {username} a de mieux à offrir</h3>
           <h4 className='bannerTexte'>Chattez, suivez ou abonnez-vous – Twitch vous appartient.</h4>
