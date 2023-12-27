@@ -164,7 +164,6 @@ export default function Sidebar() {
                 </div>
 
                 <div className={active ? "gameNameSidebarActive" : "gameNameSidebar"} style={{color: theme.text.color}}>{stream.gameName}</div>
-
               </li>
               : 
               <li className={active ? "darkContainerFlexSidebarActive" : "darkContainerFlexSidebar"}

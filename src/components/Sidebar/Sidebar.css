@@ -151,6 +151,10 @@
     position: relative;
   }
 
+  .darkContainerFlexSidebar:hover {
+    background: rgba(85, 85, 85, 0.2);
+  }
+
   .profilePicRonde {
     position: relative;
     top: 8px;
