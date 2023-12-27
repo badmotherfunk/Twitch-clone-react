@@ -138,6 +138,19 @@
     background: rgba(185, 185, 185, 0.2);
   }
 
+  .darkContainerFlexSidebar {
+    padding: 0 10px 0 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    text-decoration: none;
+    list-style: none;
+    cursor: pointer;
+    align-items: center;
+    padding-left: 10px;
+    position: relative;
+  }
+
   .profilePicRonde {
     position: relative;
     top: 8px;
@@ -204,6 +217,19 @@
   }
 
   .containerFlexSidebarActive {
+    padding: 0 10px 10px 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    text-decoration: none;
+    list-style: none;
+    cursor: pointer;
+    align-items: center;
+    padding-left: 10px;
+    position: relative;
+  }
+
+  .darkContainerFlexSidebarActive {
     padding: 0 10px 10px 0;
     display: flex;
     justify-content: space-between;
@@ -358,6 +384,36 @@
   z-index: 99;
 }
 
+/* DARK TOOLTIP STREAM */
+
+.darkContainerFlexSidebar:after {
+  visibility: hidden;
+  content: attr(data);
+  text-align: left;
+  border-radius: 2px;
+  padding: 4px 10px;
+  background: #222222;
+  color: #FFF;
+  left: 250px;
+  border-radius: 5px;
+  font-size: 13px;
+  line-height: 21px;
+  box-shadow: 5px 5px 5px 1px rgba(54, 54, 54, 0.2);
+  width: 200px;
+  position: absolute;
+}
+
+.darkContainerFlexSidebar:hover:after {
+  visibility: visible;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  z-index: 99;
+}
+
 /* TOOLTIP STREAM ACTIVE  */
 
 .containerFlexSidebarActive:after {
@@ -379,6 +435,35 @@
 }
 
 .containerFlexSidebarActive:hover:after {
+  visibility: visible;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  width: 220px;
+  height: auto;
+  line-height: 20px;
+  z-index: 99;
+}
+
+
+/* DARK TOOLTIP STREAM ACTIVE */
+.darkContainerFlexSidebarActive:after {
+  visibility: hidden;
+  content: attr(data-text);
+  text-align: left;
+  border-radius: 2px;
+  padding: 5px 10px;
+  background: #222222;
+  color: #FFF;
+  left: 55px;
+  border-radius: 5px;
+  font-size: 13px;
+  box-shadow: 5px 5px 5px 1px rgba(54, 54, 54, 0.2);
+  white-space: pre-line;
+  overflow: hidden;
+  position:absolute;
+}
+
+.darkContainerFlexSidebarActive:hover:after {
   visibility: visible;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;

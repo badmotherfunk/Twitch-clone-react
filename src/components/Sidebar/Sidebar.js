@@ -144,13 +144,15 @@ export default function Sidebar() {
             <Link key={index} to={{pathname: `/live/${stream.user_login}`}} 
             state={{name: stream.user_name}}>
 
+              {!isDark ?
+
               <li className={active ? "containerFlexSidebarActive" : "containerFlexSidebar"}
               data-text= { `${stream.user_name} • ${stream.gameName} \n ${stream.title} \n🔴 Live | ${stream.viewer_count} spectateurs` }
               data= {stream.title}
               >
                 {stream.truePic ?
                   <img src={stream.truePic} alt="logo user" className="profilePicRonde" />
-                : 
+                  : 
                   <img src={defaultPicture} alt="logo user" className="profilePicRonde"/> 
                 }
               
@@ -164,6 +166,28 @@ export default function Sidebar() {
                 <div className={active ? "gameNameSidebarActive" : "gameNameSidebar"} style={{color: theme.text.color}}>{stream.gameName}</div>
 
               </li>
+              : 
+              <li className={active ? "darkContainerFlexSidebarActive" : "darkContainerFlexSidebar"}
+              data-text= { `${stream.user_name} • ${stream.gameName} \n ${stream.title} \n🔴 Live | ${stream.viewer_count} spectateurs` }
+              data= {stream.title}
+              >
+                {stream.truePic ?
+                  <img src={stream.truePic} alt="logo user" className="profilePicRonde" />
+                  : 
+                  <img src={defaultPicture} alt="logo user" className="profilePicRonde"/> 
+                }
+              
+                <div className={active ? "streamUserActive" : "streamUser"} style={{color: theme.sidebarLayout.color}}>{stream.user_name}</div>
+
+                <div className={active ? "viewerRightActive" : "viewerRight"} style={{color: theme.text.color}}>
+                  <div className="redDot"></div>
+                  <div>{stream.viewer_count}</div>
+                </div>
+
+                <div className={active ? "gameNameSidebarActive" : "gameNameSidebar"} style={{color: theme.text.color}}>{stream.gameName}</div>
+
+              </li> 
+              }
             </Link>
             ))}
             
