@@ -69,8 +69,8 @@
     color: #FFFFFF;
     border-radius: 5px;
     border: 2px solid #0e0e10;
-    width: 28px;
-    height: 9.5px;
+    width: 42px;
+    height: 23px;
     padding: 5px;
 }
 
@@ -207,7 +207,7 @@
 
 .darkSubscribeButton p {
     font-weight: 500;
-    font-size: 14.5px;
+    font-size: 13px;
     font-family: 'roboto', sans-serif;
 }
 
@@ -315,7 +315,7 @@
     justify-content: flex-end;
 }
 .darkViewer p {
-    font-size: 14.5px;
+    font-size: 13px;
     font-weight: 500;
     margin-top: 2px;
 }
