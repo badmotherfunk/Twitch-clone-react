@@ -47,7 +47,7 @@ export default function Carousel({games}) {
             return (
               <div className="carousel">
                 <div
-                style={ {display:"flex", alignItems:"center", marginBottom: "40px"}}
+                // style={ {display:"flex", alignItems:"center", marginBottom: "40px"}}
                 size="small"
                 color="primary"
                 onClick={() => {
@@ -69,7 +69,7 @@ export default function Carousel({games}) {
               />
 
               <div
-              style={ {display:"flex", alignItems:"center", marginBottom: "40px"}}
+              // style={ {display:"flex", alignItems:"center", marginBottom: "40px"}}
               size="small"
               color="primary"
               onClick={() => {

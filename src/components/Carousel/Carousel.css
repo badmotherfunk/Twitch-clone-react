@@ -4,7 +4,7 @@
 
 .carousel-global {
     width: 100%;
-    height: 350px;
+    height: 370px;
     overflow: hidden;
 }
 
@@ -18,18 +18,20 @@
 
 .carousel {
     display: flex;
+    align-items: center;
     width: 100%;
+    margin-top: 50px;
 }
+
 
 .arrowBackIcon {
     cursor: pointer;
-    padding: 6px;
     border-radius: 5px;
+    
 }
 
 .arrowForwardIcon {
     cursor: pointer;
-    padding: 6px;
     border-radius: 5px;
 }
 
@@ -39,13 +41,11 @@
 
 .darkArrowBackIcon {
     cursor: pointer;
-    padding: 6px;
     border-radius: 5px;
 }
 
 .darkArrowForwardIcon {
     cursor: pointer;
-    padding: 6px;
     border-radius: 5px;
 }
 
@@ -85,8 +85,8 @@
     display: flex;
     flex-direction: column;
     gap: 5px;
-    width: 202px;
-    height: 284px;
+    width: 250px;
+    height: 290px;
     position: absolute;
     right: -1px;
     background-color: #fff;
@@ -231,8 +231,13 @@
     user-select: none;
 }
 
+@media screen and (min-width: 2300px) {
+    .card-info-container {
+        width: 217px;
+    }
+}
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 805px) {
     .card-info-container {
         visibility: hidden;
     }
@@ -244,6 +249,7 @@
         margin-right: 0;
     }
 }
+
 
 @media screen and (max-width : 480px) {
     .arrowBackIcon {

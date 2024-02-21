@@ -1,515 +1,526 @@
 
 .headerTop {
-    background-color: #FFF;
-    height: 50px;
-    position: fixed;
-    width: 100vw;
-    z-index: 1000;
-    box-shadow: 1px 1px 2px rgba(26, 26, 26, 0.2);
-    color: #000;
-  }
-  
-  .listeMenu {
-    height: 50px;
-    display: flex;
-    align-items: center;
-    width: 100%;
-  }
-  .liensNav {
-    list-style-type: none;
-    padding: 0 10px;
-  }
-  .liensNav:nth-child(3) {
-    margin: 0 auto;
-    flex-shrink: 1;
-    display: flex;
-    justify-content: center;
+  background-color: #FFF;
+  height: 45px;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 1px 1px 2px rgba(26, 26, 26, 0.2);
+  color: #000;
+}
 
-  }
-  .liensNav:nth-child(4) {
-    padding: 0 5px 0 5px;
-  } 
-  .liensNav:nth-child(5) {
-    padding: 0 5px 0 5px
-  } 
-  .liensNav:nth-child(6) {
-    padding: 0 5px 0 6px
-  }
-  .liensNav:nth-child(7) {
-    padding: 0 10px 0 5px
-  }
-  .liensNav:nth-child(8) {
-    padding: 0 10px 0 0
-  }
-
-  .directoryButton {
-    font-size: 18.5px;
-    font-weight: 500;
-    color: #000;
-    margin-left: 5px;
-    background: none;
-    border-bottom: none;
-  }
-  .directoryButton:hover {
-    color: #7b31eb;
-  }
-
-  
-  .directoryButton.active {
-    position: fixed;
-    top: 15px;
-    padding-bottom: 12px;
-    color: #7b31eb;
-    border-bottom: 2px solid #7b31eb;   
-  }
-
-  .darkDirectoryButton {
-    font-size: 18.5px;
-    font-weight: 500;
-    color: #FFFFFF;
-    margin-left: 5px;
-    background: none;
-    border-bottom: none;
-  }
-  .darkDirectoryButton:hover {
-    color: #bf94ff;
-  }
-
-  .darkDirectoryButton.active {
-    position: fixed;
-    top: 15px;
-    padding-bottom: 12px;
-    color: #bf94ff;
-    border-bottom: 2px solid #bf94ff;   
-  }
-
-
-  .logo {
-    margin-top: 10px;
-    width: 34px;
-    cursor: pointer;
-  }
-  .logo:hover {
-    transform: scale(1.1);
-  }
-
-  .formSubmit {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex-shrink: 1;
-    width: 400px;
-    position: fixed;
-    top: 0;
-  }
-
-  .formSubmitActive {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex-shrink: 1;
-    width: 400px;
-    position: fixed;
-    top: 0;
-    box-shadow: 0 0 5px 2px rgba(26, 26, 26, 0.2);
-    background-color: #fff;
-    border-radius: 7px;
-  }
-
-  .formSubmit button:hover {
-    background-color: #e6e6e7;
-  }
-
-  .searchContainer {
-    padding: 5px;
-    background-color: #fff;
-    border-radius: 10px;
-  }
-
-  .searchContainerFocus {
-    padding: 5px;
-    background-color: #fff;
-    border-radius: 10px;
-  }
-
-  .searchInputContainer {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    margin-top: 2px;
-  }
-
-  .searchFocus {
-    font-size: 14px;
-    color: #333333;
-    padding: 5px;
-    cursor: pointer;
-  }
-
- .searchContent {
+.listeMenu {
+  height: 50px;
   display: flex;
-  flex-direction: column;
-  gap: 5px;
-  margin-top: 5px;
- }
-
- .searchGameInfo {
-  display: flex;
-  flex-direction: row;
   align-items: center;
-  gap: 5px;
- }
+  width: 100%;
+}
+.liensNav {
+  list-style-type: none;
+  padding: 0 10px;
+}
+.liensNav:nth-child(2) {
+  width: 90px;
+}
+.liensNav:nth-child(3) {
+  margin: 0 auto;
+  flex-shrink: 1;
+  display: flex;
+  justify-content: center;
+}
+.liensNav:nth-child(4) {
+  padding: 0 5px 0 5px;
+} 
+.liensNav:nth-child(5) {
+  padding: 0 5px 0 5px
+} 
+.liensNav:nth-child(6) {
+  padding: 0 5px 0 6px
+}
+.liensNav:nth-child(7) {
+  padding: 0 10px 0 5px
+}
+.liensNav:nth-child(8) {
+  padding: 0 10px 0 0
+}
 
- a {
-  text-decoration: none;
-  color: #333333;
- }
-
- .logoLoupeInfo {
-    height: 18px;
- }
-
-  .searchContent img {
-    width: 8%;
-  }
-
-  .goToChannel {
-    display: flex;
-    border: none;
-    outline: none;
-    background: none;
-    margin-top: 20px;
-    font-size: 14px;
-    font-family: 'roboto', sans-serif;
-    cursor: pointer;
-  }
-
-  .searchButton {
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    padding: 4px 6px;
-    border: none;
-    cursor: pointer;
-  }
-
-  .notAllowed {
-    cursor: not-allowed;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    padding: 4px 6px;
-    border: none;
-  }
-
-  .logoLoupe {
-    width: 22px;
-  }
-  
-  .inputRecherche {
-    width: 100%;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-    padding: 8px;
-    border: 0.5px solid #7c7c7c;
-    outline: none;
-    font-size: 14px;
-    z-index: 2;
-  }
-  .inputRecherche:hover {
-    outline: 1px solid #7c7c7c;
-  }
-  .inputRecherche:focus {
-    outline: 3px solid #7b31eb;
-  }
-
-  .darkInputRecherche {
-    width: 100%;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-    padding: 8px;
-    border: 0.5px solid #7c7c7c;
-    outline: none;
-    font-size: 14px;
-    background-color: rgb(24, 24, 27);
-    color: #FFFFFF;
-  }
-  .darkInputRecherche:hover {
-    outline: 1px solid #7c7c7c;
-  }
-  .darkInputRecherche:focus {
-    outline: 3px solid #a871fa;
-  }
-  
-  .loginButton,
-  .registerButton {
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    padding: 4px 6px;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .menuResBtn {
-    display: none;
-    position: fixed;
-    top: 10px;
-    right: 20px;
-    color: #000;
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
-  }
-
-  .menuIco {
-    width: 25px;
-  }
-  
-  .logoUser {
-    width: 21px;
-    cursor: pointer;
-    padding: 5px;
-    margin-top: 5px;
-  }
-
-  .logoUser:hover {
-    background-color: #e9e7e7;
-    border-radius: 5px;
-  }
-
-  .darkLogoUser {
-    width: 21px;
-    cursor: pointer;
-    padding: 5px;
-    margin-top: 5px;
-  }
-
-  .darkLogoUser:hover {
-    background-color: #313131;
-    border-radius: 5px;
-  }
-  
-  .formLogin button{
-    background: #f1f1f1;
-    padding: 8px 9px;
-    border-radius: 3px;
-    font-size: 13px;
-    color: #000;
-    font-weight: 500;
-    width: 100px;
-    font-family: 'roboto', sans-serif;
-  }
-  
-  .formLogin button:hover {
-    background: #e9e7e7;
-  }
-
-  .darkFormLogin button{
-    background: rgba(83,83,95,.38);
-    padding: 8px 9px;
-    border-radius: 3px;
-    font-size: 13px;
-    color: #FFFFFF;
-    font-weight: 500;
-    width: 100px;
-    font-family: 'roboto', sans-serif;
-  }
-
-  .darkFormLogin button:hover {
-    background: rgba(103, 103, 117, 0.38);
-  }
-  
-  .formRegister button{
-    background: #9146FF;
-    padding: 8px 11px;
-    border-radius: 3px;
-    font-size: 13px;
-    color: #fff;
-    font-weight: 500;
-    font-family: 'roboto', sans-serif;
-  }
-  .formRegister button:hover {
-    background: #7b31eb;
-  }
-
-  .userButton {
-    outline: none;
-    border: none;
-    background: none;
-  }
-
-  .userPreferences {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    width: 205px;
-    border-radius: 5px;
-    height: 80px;
-    padding: 15px 15px 3px 15px;
-    top: 40px;
-    right: 15px;
-    font-size: 14px;
-    box-shadow: 0 0 5px 2px rgba(26, 26, 26, 0.2);
-    background-color: #fff;
-  }
-
-  .darkUserPreferences {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    width: 205px;
-    border-radius: 5px;
-    height: 80px;
-    padding: 15px 15px 3px 15px;
-    top: 40px;
-    right: 15px;
-    font-size: 14px;
-    box-shadow: 0 0 5px 2px rgba(26, 26, 26, 0.2);
-    background-color: #1f1f23;
-  }
-
-  .toggleTheme {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px
-  }
-
-  .toggleText {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    font-size: 13px;
-    gap: 5px;
-  }
-
-  .toggleButton {
-    appearance: none;
-    content: "";
-    cursor: pointer;
-    border: 2px solid black;
-    outline: none;
-    width: 33px;
-    height: 19px;
-    border-radius: 10px;
-    position: relative;
-  }
-
-  .toggleButton::after {
-    content: "";
-    width: 9px;
-    height: 9px;
-    border: 1px solid #000;
-    background-color: #000;
-    position: absolute;
-    border-radius: 10px;
-    left: 2px;
-    top: 2px;
-  }
-
-  /* Dark toggle button */
-  .darkToggleButton {
-    appearance: none;
-    content: "";
-    cursor: pointer;
-    border: 2px solid #a871fa;
-    outline: none;
-    width: 33px;
-    height: 19px;
-    border-radius: 10px;
-    position: relative;
-  }
-
-  .darkToggleButton::after {
-    content: "";
-    width: 9px;
-    height: 9px;
-    border: 1px solid #a871fa;
-    background-color: #a871fa;
-    position: absolute;
-    border-radius: 10px;
-    left: 15px;
-    top: 2px;
-  }
-
-  .borderPreferences {
-    width: 100%;
-    height: 1px;
-    background-color: #d3d3d3;
-    margin-top: 15px;
-  }
-
-  /* Dark Border */
-  .darkBorderPreferences {
-    width: 100%;
-    height: 1px;
-    background-color: #4b4b4b;
-    margin-top: 15px;
-  }
-
-  .conexionButton {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    border: none;
-    background: none;
-    gap: 5px;
-    width: fit-content;
-    padding: 10px 0;
-    cursor: pointer;
-  }
-
-  .darkConexionButton {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    border: none;
-    background: none;
-    gap: 5px;
-    width: fit-content;
-    padding: 10px 0;
-    cursor: pointer;
-    color: #FFFFFF;
-  }
-
-
-
-  /* ------------------- Media queries ------------------- */
-
-
-  @media screen and (max-width: 1024px) {
-
-    .formSubmit {
-      width: 30%;
-    }
-    .formSubmitActive {
-      width: 30%;
-  }
+.directoryButton {
+  font-size: 17px;
+  font-weight: 500;
+  color: #000;
+  margin-left: 5px;
+  margin-bottom: 5px;
+  background: none;
+  border-bottom: none;
+}
+.directoryButton:hover {
+  color: #5c16c5;
 }
 
 
-  @media screen and (max-width: 768px) {
+.directoryButton.active {
+  position: fixed;
+  top: 12px;
+  padding-bottom: 12px;
+  color: #5c16c5;
+  border-bottom: 2px solid #5c16c5;   
+}
 
-    .liensNav {
-      padding: 0 5px;
-    }
-    .formLogin {
-      transform: scale(0.8);
-    }
-    .formSubmit {
-      transform: scale(0.8);
-    }
-    .formSubmitActive {
-      transform: scale(0.8);
-    }
-    .formRegister {
-        transform: scale(0.8);
-    }
+.darkDirectoryButton {
+  font-size: 18.5px;
+  font-weight: 500;
+  color: #FFFFFF;
+  margin-left: 5px;
+  background: none;
+  border-bottom: none;
+}
+.darkDirectoryButton:hover {
+  color: #bf94ff;
+}
+
+.darkDirectoryButton.active {
+  position: fixed;
+  top: 15px;
+  padding-bottom: 12px;
+  color: #bf94ff;
+  border-bottom: 2px solid #bf94ff;   
+}
+
+
+.logo {
+  margin-top: 5px;
+  width: 31px;
+  cursor: pointer;
+}
+.logo:hover {
+  transform: scale(1.1);
+}
+
+.formSubmit {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 1;
+  width: 400px;
+  position: fixed;
+  top: 0;
+}
+
+.formSubmitActive {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 1;
+  width: 400px;
+  position: fixed;
+  top: 0;
+  box-shadow: 0 0 5px 2px rgba(26, 26, 26, 0.2);
+  background-color: #fff;
+  border-radius: 7px;
+}
+
+.formSubmit button:hover {
+  background-color: #e6e6e7;
+}
+
+.searchContainer {
+  padding: 4px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.searchContainerFocus {
+  padding: 5px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.searchInputContainer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-top: 2px;
+}
+
+.searchFocus {
+  font-size: 14px;
+  color: #333333;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.searchContent {
+display: flex;
+flex-direction: column;
+gap: 5px;
+margin-top: 5px;
+}
+
+.searchGameInfo {
+display: flex;
+flex-direction: row;
+align-items: center;
+gap: 5px;
+}
+
+a {
+text-decoration: none;
+color: #333333;
+}
+
+.logoLoupeInfo {
+  height: 18px;
+}
+
+.searchContent img {
+  width: 8%;
+}
+
+.goToChannel {
+  display: flex;
+  border: none;
+  outline: none;
+  background: none;
+  margin-top: 20px;
+  font-size: 14px;
+  font-family: 'roboto', sans-serif;
+  cursor: pointer;
+}
+
+.searchButton {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding: 4px 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.notAllowed {
+  cursor: not-allowed;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding: 4px 6px;
+  border: none;
+}
+
+.logoLoupe {
+  width: 22px;
+}
+
+.inputRecherche {
+  width: 100%;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  padding: 8px;
+  border: 0.5px solid #7c7c7c;
+  outline: none;
+  font-size: 13px;
+  z-index: 2;
+}
+.inputRecherche:hover {
+  outline: 1px solid #7c7c7c;
+}
+.inputRecherche:focus {
+  outline: 3px solid #7b31eb;
+}
+
+.darkInputRecherche {
+  width: 100%;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  padding: 8px;
+  border: 0.5px solid #7c7c7c;
+  outline: none;
+  font-size: 14px;
+  background-color: rgb(24, 24, 27);
+  color: #FFFFFF;
+}
+.darkInputRecherche:hover {
+  outline: 1px solid #7c7c7c;
+}
+.darkInputRecherche:focus {
+  outline: 3px solid #a871fa;
+}
+
+.loginButton,
+.registerButton {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding: 4px 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.menuResBtn {
+  display: none;
+  position: fixed;
+  top: 10px;
+  right: 20px;
+  color: #000;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.menuIco {
+  width: 25px;
+}
+
+.logoUser {
+  /* width: 21px; */
+  cursor: pointer;
+  padding: 5px;
+  margin-top: 5px;
+}
+
+.logoUser:hover {
+  background-color: #e9e7e7;
+  border-radius: 5px;
+}
+
+.darkLogoUser {
+  width: 28px;
+  cursor: pointer;
+  padding: 5px;
+  margin-top: 5px;
+}
+
+.darkLogoUser:hover {
+  background-color: #313131;
+  border-radius: 5px;
+}
+
+.formLogin button{
+  background: #f1f1f1;
+  padding: 6px 9px;
+  border-radius: 3px;
+  font-size: 13px;
+  color: #000;
+  font-weight: 500;
+  width: 100px;
+  font-family: 'roboto', sans-serif;
+}
+
+.formLogin button:hover {
+  background: #e9e7e7;
+}
+
+.darkFormLogin button{
+  background: rgba(83,83,95,.38);
+  padding: 8px 9px;
+  border-radius: 3px;
+  font-size: 12.5px;
+  color: #FFFFFF;
+  font-weight: 500;
+  width: 100px;
+  font-family: 'roboto', sans-serif;
+}
+
+.darkFormLogin button:hover {
+  background: rgba(103, 103, 117, 0.38);
+}
+
+.formRegister button{
+  background: #9146FF;
+  padding: 6px 9px;
+  border-radius: 3px;
+  font-size: 12.5px;
+  color: #fff;
+  font-weight: 500;
+  font-family: 'roboto', sans-serif;
+}
+.formRegister button:hover {
+  background: #7b31eb;
+}
+
+.userButton {
+  outline: none;
+  border: none;
+  background: none;
+}
+
+.userPreferences {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 205px;
+  border-radius: 5px;
+  height: 80px;
+  padding: 15px 15px 3px 15px;
+  height: 95px;
+  top: 40px;
+  right: 15px;
+  font-size: 14px;
+  box-shadow: 0 0 5px 2px rgba(26, 26, 26, 0.2);
+  background-color: #fff;
+}
+
+.darkUserPreferences {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 205px;
+  border-radius: 5px;
+  height: 95px;
+  padding: 15px 15px 3px 15px;
+  top: 40px;
+  right: 15px;
+  font-size: 14px;
+  box-shadow: 0 0 5px 2px rgba(26, 26, 26, 0.2);
+  background-color: #1f1f23;
+}
+
+.toggleTheme {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px
+}
+
+.toggleText {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 13px;
+  gap: 5px;
+}
+
+.toggleButton {
+  appearance: none;
+  content: "";
+  cursor: pointer;
+  border: 2px solid black;
+  outline: none;
+  width: 33px;
+  height: 19px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.toggleButton::after {
+  content: "";
+  width: 9px;
+  height: 9px;
+  border: 1px solid #000;
+  background-color: #000;
+  position: absolute;
+  border-radius: 10px;
+  left: 2px;
+  top: 2px;
+}
+
+/* Dark toggle button */
+.darkToggleButton {
+  appearance: none;
+  content: "";
+  cursor: pointer;
+  border: 2px solid #a871fa;
+  outline: none;
+  width: 33px;
+  height: 19px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.darkToggleButton::after {
+  content: "";
+  width: 9px;
+  height: 9px;
+  border: 1px solid #a871fa;
+  background-color: #a871fa;
+  position: absolute;
+  border-radius: 10px;
+  left: 15px;
+  top: 2px;
+}
+
+.borderPreferences {
+  width: 100%;
+  height: 1px;
+  background-color: #d3d3d3;
+  margin-top: 15px;
+}
+
+/* Dark Border */
+.darkBorderPreferences {
+  width: 100%;
+  height: 1px;
+  background-color: #4b4b4b;
+  margin-top: 15px;
+}
+
+.conexionButton {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: none;
+  background: none;
+  gap: 5px;
+  width: fit-content;
+  padding: 10px 0;
+  cursor: pointer;
+}
+
+.darkConexionButton {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: none;
+  background: none;
+  gap: 5px;
+  width: fit-content;
+  padding: 10px 0;
+  cursor: pointer;
+  color: #FFFFFF;
+}
+
+
+
+/* ------------------- Media queries ------------------- */
+
+
+@media screen and (max-width: 1024px) {
+
+  .formSubmit {
+    width: 30%;
+  }
+  .formSubmitActive {
+    width: 30%;
+}
 }
 
 
 @media screen and (max-width: 768px) {
+
+  .liensNav {
+    padding: 0 5px;
+  }
+  .formLogin button {
+    width: 70px;
+    height: 25px;
+    font-size: 10px;
+    padding: 0;
+  }
+  .darkFormLogin button {
+    width: 70px;
+    height: 25px;
+    font-size: 10px;
+    padding: 0;
+  }
   .formSubmit {
+    transform: scale(0.8);
     margin-left: 0;
+  }
+  .formSubmitActive {
+    transform: scale(0.8);
+  }
+  .formRegister button {
+    width: 60px;
+    height: 25px;
+    font-size: 10px;
+    padding: 0;
+    margin-left: 10px;
   }
 
   .liensNav:nth-child(5),
@@ -520,21 +531,21 @@
 
 @media screen and (max-width: 480px) {
 
-  .directoryButton {
-    font-size: 15px;
-    margin-left: 0;
-  }
+.directoryButton {
+  font-size: 15px;
+  margin-left: 0;
+  margin-top: 2px;
+}
 
-  .logoUser {
-    display: none;
-  }
+.liensNav:nth-child(3) {
+  padding: 0;
+}
 
-  .liensNav:nth-child(3) {
-    padding: 0;
-  }
-  
-  .formSubmit {
-    transform: scale(0.8);
-  }
+.logoUser {
+  display: none;
+}
+.darkLogoUser {
+  display: none;
+}
 
 }

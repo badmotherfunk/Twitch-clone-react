@@ -13,7 +13,7 @@
     display: flex;
     width: 100%;
     margin-top: 5px;
-    padding: 10px 20px;
+    padding: 10px 0;
     width: 100%;
     justify-content: space-between;
 }
@@ -49,8 +49,8 @@
     color: #FFFFFF;
     border-radius: 5px;
     border: 2px solid #FFFFFF;
-    width: 28px;
-    height: 9.5px;
+    width: 42px;
+    height: 23px;
     padding: 5px;
 }
 
@@ -157,7 +157,7 @@
 
 .subscribeButton p {
     font-weight: 500;
-    font-size: 14.5px;
+    font-size: 13px;
     font-family: 'roboto', sans-serif;
 }
 
@@ -173,6 +173,7 @@
 .buttonText,
 .reactButton:hover
 .reactImg {
+    font-size: 13px;
     color: #000;
     fill: #000;
 }
@@ -216,33 +217,33 @@
 
 
 .userName {
-    font-size: 19px;
+    font-size: 18px;
     font-weight: 500;
     padding-bottom: 5px;
     cursor: pointer;
 }
 .userName:hover {
     border-bottom: 1px solid #7b31eb;
-    height: 14px;
+    height: 20px;
     width: fit-content;
     margin-bottom: 8px;
 
 }
 
 .streamTitle {
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 500;
 }
 
 .gameTitle {
-    font-size: 15px;
+    font-size: 13px;
     color: #6b2fc5;
     cursor: pointer;
 }
 .gameTitle:hover {
     color: #7b31eb;
     border-bottom: 1px solid #7b31eb;
-    height: 15px;
+    height: 17px;
 }
 
 .streamInfo {
@@ -262,7 +263,7 @@
     background-color: #e6e6e9;
     border-radius: 50px;
     padding: 3.5px 10px;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 600;
     color: #5e5e5e;
     cursor: pointer;
@@ -277,7 +278,7 @@
     background-color: rgba(83,83,95,.38);
     border-radius: 50px;
     padding: 3.5px 10px;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 600;
     color: #adadb8;
     cursor: pointer;
@@ -297,7 +298,7 @@
     justify-content: flex-end;
 }
 .viewer p {
-    font-size: 14.5px;
+    font-size: 13px;
     font-weight: 500;
     margin-top: 2px;
 }
@@ -334,6 +335,14 @@
 @media screen and (max-width: 900px) {
     .viewer {
         right: 50px;
+    }
+
+    .containerDecale {
+        padding: 30px 0 130px 0;
+    }
+
+    .contInfo {
+        padding: 10px 0;
     }
 }
 

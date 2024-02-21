@@ -34,11 +34,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 3px;
+    gap: 2.5px;
     flex-direction: row;
     background-color: #9147ff;
     width: fit-content;
-    padding: 9px 11px;
+    padding: 8px 11px;
     border: none;
     outline: none;
     border-radius: 5px;
@@ -50,7 +50,7 @@
 .follow-button p {
     margin-left: 16px;
     font-weight: 500;
-    font-size: 14.5px;
+    font-size: 13px;
     font-family: 'roboto', sans-serif;
 }
 
@@ -106,9 +106,13 @@
 .stream-container {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(305px, 1fr));
     grid-gap: 10px;
 }
+
+
+
+/* --------- MEDIA QUEIRES --------- */
 
 @media screen and (max-width: 1200px) {
     .category-container-global {
@@ -120,3 +124,37 @@
         margin-right: 0;
     }
 }
+
+@media screen and (max-width: 1024px) {
+    .category-container-global {
+        margin-left: 0;
+        padding: 50px 20px 100px 40px;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .category-container-global {
+        margin-left: 0;
+        padding: 50px 20px 100px 20px;
+    }
+
+    .category-stream-title {
+        display: flex;
+        justify-content: center;
+    }
+
+    .stream-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .category-stream-title {
+        margin: 0;
+    }
+
+}
+

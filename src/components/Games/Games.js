@@ -72,8 +72,8 @@ export default function Games() {
 
         //Redimensionner les images
         let newUrl = stream.thumbnail_url
-        .replace("{width}", "350")
-        .replace("{height}", "200")
+        .replace("{width}", "305")
+        .replace("{height}", "175")
         stream.thumbnail_url = newUrl
         
     

@@ -30,8 +30,8 @@ export default function GameStreams() {
             //Modifier la taille des images des streams récupérés
             let finalArray = dataArray.map(stream => {
                 let newURL = stream.thumbnail_url
-                .replace('{width}', "350")
-                .replace('{height}', "200");
+                .replace('{width}', "305")
+                .replace('{height}', "175");
 
                 stream.thumbnail_url = newURL
 
