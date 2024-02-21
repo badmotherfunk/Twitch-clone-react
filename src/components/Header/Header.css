@@ -67,10 +67,11 @@
 }
 
 .darkDirectoryButton {
-  font-size: 18.5px;
+  font-size: 17px;
   font-weight: 500;
   color: #FFFFFF;
   margin-left: 5px;
+  margin-bottom: 5px;
   background: none;
   border-bottom: none;
 }
@@ -80,7 +81,7 @@
 
 .darkDirectoryButton.active {
   position: fixed;
-  top: 15px;
+  top: 12px;
   padding-bottom: 12px;
   color: #bf94ff;
   border-bottom: 2px solid #bf94ff;   
