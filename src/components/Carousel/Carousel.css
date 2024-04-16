@@ -27,7 +27,6 @@
 .arrowBackIcon {
     cursor: pointer;
     border-radius: 5px;
-    
 }
 
 .arrowForwardIcon {
@@ -248,6 +247,13 @@
     .arrowForwardIcon {
         margin-right: 0;
     }
+}
+
+@media screen and (max-width : 525px) {
+    .carousel-global {
+        width: 96%;
+    }
+
 }
 
 
